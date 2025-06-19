@@ -1,0 +1,37 @@
+# ===== Unity 기본 =====
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+[Uu]serSettings/
+
+# ===== VS/IDE =====
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+.vscode/
+.idea/
+
+# ===== OS 파일 =====
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# ===== 기타 =====
+*.apk
+*.aab
+*.exe
+*.zip
+*.log

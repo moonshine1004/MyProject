@@ -1,0 +1,604 @@
+Using pre-set license
+Built from '6000.0/staging' branch; Version is '6000.0.48f1 (170d2541580d) revision 1510693'; Using compiler version '193933523'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26100) 64bit Core' Language: 'ko' Physical Memory: 31849 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.0.48f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+C:/Users/c/Desktop/프로젝트/MyProject
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+50769
+-job-worker-count
+7
+-background-job-worker-count
+8
+-gc-helper-count
+1
+Successfully changed project path to: C:/Users/c/Desktop/프로젝트/MyProject
+C:/Users/c/Desktop/프로젝트/MyProject
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [1796]  Target information:
+
+Player connection [1796]  * "[IP] 192.168.219.106 [Port] 0 [Flags] 2 [Guid] 2643153597 [EditorId] 2643153597 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-PDUOFTE) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [1796] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [1796] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 7
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 2.06 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.0.48f1 (170d2541580d)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.48f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/c/Desktop/프로젝트/MyProject/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon RX 9070 XT (ID=0x7550)
+    Vendor:   ATI
+    VRAM:     16304 MB
+    Driver:   32.0.21013.1000
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.48f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.48f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.48f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56540
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.48f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002288 seconds.
+- Loaded All Assemblies, in  0.256 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.218 seconds
+Domain Reload Profiling: 473ms
+	BeginReloadAssembly (88ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (25ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (102ms)
+		LoadAssemblies (86ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (99ms)
+			TypeCache.Refresh (98ms)
+				TypeCache.ScanAssembly (87ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (219ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (180ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (14ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (41ms)
+			ProcessInitializeOnLoadAttributes (91ms)
+			ProcessInitializeOnLoadMethodAttributes (31ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.501 seconds
+Refreshing native plugins compatible for Editor in 0.98 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.463 seconds
+Domain Reload Profiling: 960ms
+	BeginReloadAssembly (101ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (25ms)
+	RebuildCommonClasses (21ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (342ms)
+		LoadAssemblies (238ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (157ms)
+			TypeCache.Refresh (116ms)
+				TypeCache.ScanAssembly (105ms)
+			BuildScriptInfoCaches (34ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (463ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (376ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (1ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (78ms)
+			ProcessInitializeOnLoadAttributes (231ms)
+			ProcessInitializeOnLoadMethodAttributes (60ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 1.05 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 212 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6585 unused Assets / (4.3 MB). Loaded Objects now: 7289.
+Memory consumption went from 195.3 MB to 191.0 MB.
+Total: 6.087700 ms (FindLiveObjects: 0.657200 ms CreateObjectMapping: 0.272500 ms MarkObjects: 3.307500 ms  DeleteObjects: 1.849500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1159.492340 seconds.
+  path: Assets/PlayerController.inputactions
+  artifactKey: Guid(00bdda948d8f6614dbecafe2c2f10101) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayerController.inputactions using Guid(00bdda948d8f6614dbecafe2c2f10101) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '963b8116e5090348c064e579092127ac') in 0.0155282 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 45.681569 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_32.asset
+  artifactKey: Guid(4a2f98c4f954bb2428fd8d56dab555e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_32.asset using Guid(4a2f98c4f954bb2428fd8d56dab555e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'af2258ef6b882ce7ba3e5f0f45c9c12b') in 0.0809596 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_56.asset
+  artifactKey: Guid(3ca556e1dd064174c8dd1f9def889fbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_56.asset using Guid(3ca556e1dd064174c8dd1f9def889fbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd60033462dff2f929b9c0717e864b149') in 0.011871 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_138.asset
+  artifactKey: Guid(17004bb58a3d29d49b68b8983b7d8baa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_138.asset using Guid(17004bb58a3d29d49b68b8983b7d8baa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '645f9addefd0751b8cb9d522243a3e0a') in 0.0077129 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_133.asset
+  artifactKey: Guid(84bb708cd17286f458410df50b6dd690) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_133.asset using Guid(84bb708cd17286f458410df50b6dd690) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '14563745e346db45bf118697f0f82c0b') in 0.0112664 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_158.asset
+  artifactKey: Guid(7f69ace7b1aed974e82604095cf1012c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_158.asset using Guid(7f69ace7b1aed974e82604095cf1012c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'aec156a69cb72140708f8d067447e89a') in 0.0120486 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_145.asset
+  artifactKey: Guid(c27d3933029c63e44b5ca0a281defb4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_145.asset using Guid(c27d3933029c63e44b5ca0a281defb4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3a532c323c8acb8fc06509f20fc5db8c') in 0.0127188 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_140.asset
+  artifactKey: Guid(647bb7d5e52d5664085f1cfed25352d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_140.asset using Guid(647bb7d5e52d5664085f1cfed25352d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b337a4a60d7d11c77ce2862a587272fa') in 0.0101603 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_129.asset
+  artifactKey: Guid(6f7f9c11e1753f64d864aa58a3099441) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_129.asset using Guid(6f7f9c11e1753f64d864aa58a3099441) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '598e43a452c29c55bd705d9d36641129') in 0.0060055 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/yougan.png
+  artifactKey: Guid(e5e63a5a17215354bb740667da07bbec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/yougan.png using Guid(e5e63a5a17215354bb740667da07bbec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a12940e4804bed7dddb722410021699e') in 0.023002 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_130.asset
+  artifactKey: Guid(aeef583a24102784691cafd1109bd367) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_130.asset using Guid(aeef583a24102784691cafd1109bd367) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '441b25b00c52de5e7b1300b0d0bb9e91') in 0.0097957 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_155.asset
+  artifactKey: Guid(ca055eaddc4bc7f48a2adc387d09d461) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_155.asset using Guid(ca055eaddc4bc7f48a2adc387d09d461) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '108b802c46ba1b2d2ceb631a03fbcf85') in 0.0112215 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_150.asset
+  artifactKey: Guid(5353d37656f64fe4e957613cb9c80195) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_150.asset using Guid(5353d37656f64fe4e957613cb9c80195) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f0e44069a4d27cadeb4f856498f5b7f9') in 0.0119125 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_132.asset
+  artifactKey: Guid(b059d29b3f4b45f4d9b94e1390476cf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_132.asset using Guid(b059d29b3f4b45f4d9b94e1390476cf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2e1c3dad8ffe7454e9dd6202bf83082b') in 0.0186618 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_121.asset
+  artifactKey: Guid(2be8b2eaa9ab05c41aa127db8c91497a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_121.asset using Guid(2be8b2eaa9ab05c41aa127db8c91497a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'df8ca306070c8a79d715d7d80f337049') in 0.0100659 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_126.asset
+  artifactKey: Guid(83de631fd72554a43973918d9098c912) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_126.asset using Guid(83de631fd72554a43973918d9098c912) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a0b76497a178f084a7bcfd1a4fb5f387') in 0.0114081 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_48.asset
+  artifactKey: Guid(cd2902a95302ce24c94dc3ca3f5074b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_48.asset using Guid(cd2902a95302ce24c94dc3ca3f5074b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '41e6271913475e42b5506f8711e5dc83') in 0.0122687 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_128.asset
+  artifactKey: Guid(e70228638bbf31f4486b8ba4b3c23d52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_128.asset using Guid(e70228638bbf31f4486b8ba4b3c23d52) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '72a0cb4042ba8ef57fd7715cf431d852') in 0.0122357 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_131.asset
+  artifactKey: Guid(d42734f98b216aa40830eb5b6fcaeabf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_131.asset using Guid(d42734f98b216aa40830eb5b6fcaeabf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fac2a4db0dc5d04a5d2ddbab7254ff3f') in 0.0109903 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_141.asset
+  artifactKey: Guid(485c036a5cdc3a64c8e89d27a16ebb39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_141.asset using Guid(485c036a5cdc3a64c8e89d27a16ebb39) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7375f93745b65e26f964aefa89762247') in 0.0118175 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_149.asset
+  artifactKey: Guid(aa940d9dd96acd941b4d325993187e1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_149.asset using Guid(aa940d9dd96acd941b4d325993187e1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2c71bf9fb9411a27126a404c7687a026') in 0.0105069 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/kusa2.png
+  artifactKey: Guid(202f586441f4b9348b71ba5504d5f1d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/kusa2.png using Guid(202f586441f4b9348b71ba5504d5f1d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd532822a5246e1d20e4cfb1d85f953fb') in 0.0111927 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_148.asset
+  artifactKey: Guid(4d2118dd2bab3864683a480c56c2379f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_148.asset using Guid(4d2118dd2bab3864683a480c56c2379f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c79da437f887def3ea8daa1d7d433536') in 0.0107854 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/world_yama2.png
+  artifactKey: Guid(fd7106dfd4573d44bbbb605fa717da93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/world_yama2.png using Guid(fd7106dfd4573d44bbbb605fa717da93) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5cd91bdf47f8ad7a1109b0d45f749bf7') in 0.0205202 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_123.asset
+  artifactKey: Guid(cc14fff71732bb74a8ef8d585b6a1d33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_123.asset using Guid(cc14fff71732bb74a8ef8d585b6a1d33) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd6627f5f91dfaa45306b2b8e824e339d') in 0.0122585 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_124.asset
+  artifactKey: Guid(338c7aa83c3b7fb41a3d82aa50bbb862) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_124.asset using Guid(338c7aa83c3b7fb41a3d82aa50bbb862) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd0fc8ac1ce44d9e31e22d7d3ad8721aa') in 0.0112489 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_147.asset
+  artifactKey: Guid(c4a236b9562fb1a4c86b48cbb58b6953) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_147.asset using Guid(c4a236b9562fb1a4c86b48cbb58b6953) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c61af7d3b138b9f0b7eb8b922919845c') in 0.0095881 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_122.asset
+  artifactKey: Guid(a9169ba66e6ef524baeaad18a5749270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_122.asset using Guid(a9169ba66e6ef524baeaad18a5749270) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a4e517fe1659b4d8b18e9cc83483511f') in 0.0106059 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_57.asset
+  artifactKey: Guid(84acb904989aee249b0d24d0ee22a9f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_57.asset using Guid(84acb904989aee249b0d24d0ee22a9f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cbcc1b75237926d85c601dda0b25a834') in 0.0139505 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_142.asset
+  artifactKey: Guid(7e53612b983f98848afebf249794b675) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_142.asset using Guid(7e53612b983f98848afebf249794b675) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4af82c5cd1228faf16ff134c71093e48') in 0.0121867 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/mizu1.png
+  artifactKey: Guid(fe38d6f2ec202854abcd683844d0f92a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/mizu1.png using Guid(fe38d6f2ec202854abcd683844d0f92a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '348c1f33c51f13cbc1a62a6e29db577f') in 0.0125615 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_153.asset
+  artifactKey: Guid(e36013ff6ee990f45bdef1b530106ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_153.asset using Guid(e36013ff6ee990f45bdef1b530106ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '65afa0ff293f336c0f51db5ea7a8a02b') in 0.0130293 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_154.asset
+  artifactKey: Guid(b691732d83fb79442bc3a52eee140cc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_154.asset using Guid(b691732d83fb79442bc3a52eee140cc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3e72b85803d1b82f1467925190d2621b') in 0.0111262 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_157.asset
+  artifactKey: Guid(46ce2ec84d998cc4e9d2689ee1e721c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_157.asset using Guid(46ce2ec84d998cc4e9d2689ee1e721c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '083a66868a16826c39eea812905a6f6f') in 0.0097037 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo
+  artifactKey: Guid(87966ca31d7813742b44352ebc4dc31a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo using Guid(87966ca31d7813742b44352ebc4dc31a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '93d29b56fa9363be24cc1486a9d60bac') in 0.0006382 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_151.asset
+  artifactKey: Guid(0151ccb7c364c874bac41043eb21ca36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_151.asset using Guid(0151ccb7c364c874bac41043eb21ca36) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '59d2d24fe7224213ae7ab2561b7255ac') in 0.0118032 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_143.asset
+  artifactKey: Guid(e8150971294d41a4d956e7a007420b32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_143.asset using Guid(e8150971294d41a4d956e7a007420b32) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '84736db174f05607533c5748297497bd') in 0.0147372 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_159.asset
+  artifactKey: Guid(2d7ce7c1064f248488f112c3f6b058a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_159.asset using Guid(2d7ce7c1064f248488f112c3f6b058a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '279c8c79c119c6292ab68ed9f31af61c') in 0.0095377 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_135.asset
+  artifactKey: Guid(2438ec1514fbac443a21030f402140e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_135.asset using Guid(2438ec1514fbac443a21030f402140e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '66e8a5d10387859581d2676722ea7cad') in 0.0112889 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000239 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_127.asset
+  artifactKey: Guid(55bfac7ae5bdc5c4db55e9473f7d98e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_127.asset using Guid(55bfac7ae5bdc5c4db55e9473f7d98e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4227c6736a2d6778a925b6d86cc63b10') in 0.0100239 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/hana.png
+  artifactKey: Guid(6f02b0be604104d4ebdcc08c9bd2456d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/hana.png using Guid(6f02b0be604104d4ebdcc08c9bd2456d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '70a50f4e71e9d2d444b0ae40c6120a03') in 0.0120905 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_136.asset
+  artifactKey: Guid(f3e2f3948ad187944a18f1f4e7036ebb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_136.asset using Guid(f3e2f3948ad187944a18f1f4e7036ebb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6805d139255eba463d449ebdcca4889b') in 0.0111256 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_146.asset
+  artifactKey: Guid(c3a80532ae8e2094cb9ebe3b47342639) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_146.asset using Guid(c3a80532ae8e2094cb9ebe3b47342639) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b71d36a3bb1850c9a9a1a0573babea4e') in 0.0096304 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_139.asset
+  artifactKey: Guid(f7044e16aac0e2a41bdeccd460315004) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_139.asset using Guid(f7044e16aac0e2a41bdeccd460315004) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '41a437b531c54ecb3adbba4afc64e8d8') in 0.0095337 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_125.asset
+  artifactKey: Guid(905135cb0010d034daa2e68ebfce6365) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_125.asset using Guid(905135cb0010d034daa2e68ebfce6365) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e1b757b2fccc1a7156e481e9c8a3b718') in 0.0092778 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_156.asset
+  artifactKey: Guid(af3dd82d2bb70bb4ebd2382c8298b818) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_156.asset using Guid(af3dd82d2bb70bb4ebd2382c8298b818) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f54c3fdaa819673adb2316b56654b0da') in 0.0117735 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/world.png
+  artifactKey: Guid(7063b96c5483ae04cbc1e738b7df25d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/world.png using Guid(7063b96c5483ae04cbc1e738b7df25d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b8a266c67c7dd52cd402977b71509bfc') in 0.0142531 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_152.asset
+  artifactKey: Guid(ea3dc2ed4c569f04d93861c1b59c6985) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_152.asset using Guid(ea3dc2ed4c569f04d93861c1b59c6985) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5dacef8e393c45c93c7bed7d2aec5578') in 0.0128419 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_137.asset
+  artifactKey: Guid(8b8acbca3f0a2184783830b3c198b45f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_137.asset using Guid(8b8acbca3f0a2184783830b3c198b45f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9fb90f791746ea54af6926c1853a32b7') in 0.0130149 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_144.asset
+  artifactKey: Guid(38977d9a3e205254899d4a3b4e7c8baa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_144.asset using Guid(38977d9a3e205254899d4a3b4e7c8baa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '998b1e7da9b65383eb39c5014e5223be') in 0.0104691 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_49.asset
+  artifactKey: Guid(8d364db46fb4e024c857b5707dd77530) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/MapChip_pipo/base_49.asset using Guid(8d364db46fb4e024c857b5707dd77530) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '143aa743d10437e76a730c7313354d30') in 0.0104855 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.775335 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/Sample
+  artifactKey: Guid(50231cb8d69a5824aa54086f0ffa0bcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/Sample using Guid(50231cb8d69a5824aa54086f0ffa0bcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '278cd98c13c0a12e76c5c6919a947fe0') in 0.0004764 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

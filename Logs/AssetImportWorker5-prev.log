@@ -1,0 +1,560 @@
+Using pre-set license
+Built from '6000.0/staging' branch; Version is '6000.0.48f1 (170d2541580d) revision 1510693'; Using compiler version '193933523'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26100) 64bit Core' Language: 'ko' Physical Memory: 31849 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.0.48f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker5
+-projectPath
+C:/Users/c/Desktop/프로젝트/MyProject
+-logFile
+Logs/AssetImportWorker5.log
+-srvPort
+50769
+-job-worker-count
+7
+-background-job-worker-count
+8
+-gc-helper-count
+1
+Successfully changed project path to: C:/Users/c/Desktop/프로젝트/MyProject
+C:/Users/c/Desktop/프로젝트/MyProject
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [12672]  Target information:
+
+Player connection [12672]  * "[IP] 192.168.219.106 [Port] 0 [Flags] 2 [Guid] 2833795886 [EditorId] 2833795886 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-PDUOFTE) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [12672] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [12672] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 7
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 1.92 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.0.48f1 (170d2541580d)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.48f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/c/Desktop/프로젝트/MyProject/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon RX 9070 XT (ID=0x7550)
+    Vendor:   ATI
+    VRAM:     16304 MB
+    Driver:   32.0.21013.1000
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.48f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.48f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.48f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56928
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.48f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001868 seconds.
+- Loaded All Assemblies, in  0.198 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.164 seconds
+Domain Reload Profiling: 360ms
+	BeginReloadAssembly (66ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (0ms)
+	RebuildCommonClasses (19ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (80ms)
+		LoadAssemblies (64ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (78ms)
+			TypeCache.Refresh (77ms)
+				TypeCache.ScanAssembly (70ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (164ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (138ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (11ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (29ms)
+			ProcessInitializeOnLoadAttributes (70ms)
+			ProcessInitializeOnLoadMethodAttributes (26ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.425 seconds
+Refreshing native plugins compatible for Editor in 0.95 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.401 seconds
+Domain Reload Profiling: 823ms
+	BeginReloadAssembly (91ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (20ms)
+	RebuildCommonClasses (22ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (21ms)
+	LoadAllAssembliesAndSetupDomain (281ms)
+		LoadAssemblies (191ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (140ms)
+			TypeCache.Refresh (100ms)
+				TypeCache.ScanAssembly (90ms)
+			BuildScriptInfoCaches (33ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (402ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (330ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (1ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (65ms)
+			ProcessInitializeOnLoadAttributes (202ms)
+			ProcessInitializeOnLoadMethodAttributes (57ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 0.83 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 212 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6585 unused Assets / (3.8 MB). Loaded Objects now: 7289.
+Memory consumption went from 195.4 MB to 191.6 MB.
+Total: 5.192200 ms (FindLiveObjects: 0.612400 ms CreateObjectMapping: 0.172800 ms MarkObjects: 3.003100 ms  DeleteObjects: 1.403200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1305.432943 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/Character_02.png
+  artifactKey: Guid(7171627f212a1454e92b7f5c2f1f1595) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/Character_02.png using Guid(7171627f212a1454e92b7f5c2f1f1595) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e219dd69e78936b5b6b7d7d6c39b9e7e') in 0.0876561 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/SlimeD.png
+  artifactKey: Guid(1801ad7a2f0fa54479e32c2145869492) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/SlimeD.png using Guid(1801ad7a2f0fa54479e32c2145869492) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9307a483918b5cb00792ad5684cc1b40') in 0.0126449 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/SlimeA.png
+  artifactKey: Guid(1cc5e4ead2f15b3449eb47df613703d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/SlimeA.png using Guid(1cc5e4ead2f15b3449eb47df613703d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '011221b4beae588ea7d8f97c2d4a292e') in 0.011232 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/MinotaurB.png
+  artifactKey: Guid(ed6c2e088c1268246a8c14c7688d73b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/MinotaurB.png using Guid(ed6c2e088c1268246a8c14c7688d73b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cccef8419709cce90b91c5fdf3146208') in 0.0109178 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/WaspA.png
+  artifactKey: Guid(2a29afeeb1afb294b9001035518847b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/WaspA.png using Guid(2a29afeeb1afb294b9001035518847b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fd23957266a718a6a3aa27f8d05e3a0b') in 0.0120605 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/WormB.png
+  artifactKey: Guid(996c550641f276347bd45ca78052d047) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/WormB.png using Guid(996c550641f276347bd45ca78052d047) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7df2d39a291fe9d6c642f0ee8f8cd646') in 0.0108896 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/SkeletonC.png
+  artifactKey: Guid(929389ff369f5114a9e8ac88d6d7370d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/SkeletonC.png using Guid(929389ff369f5114a9e8ac88d6d7370d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd6e4315fa498e00cbfda75b537590eee') in 0.0108215 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/WormC.png
+  artifactKey: Guid(ddfa4fcba950f6c489ae9589018a9b20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/WormC.png using Guid(ddfa4fcba950f6c489ae9589018a9b20) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8b9f7ff4591998c59c796a96e69c6da9') in 0.0114571 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/SlimeswordF.png
+  artifactKey: Guid(fe2f99223535c2546ab57a54a90bb687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/SlimeswordF.png using Guid(fe2f99223535c2546ab57a54a90bb687) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '93a9a7a0fe8e4662fe4f87aa3db495e7') in 0.0120775 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/Character_04.png
+  artifactKey: Guid(c8ee7089018fb43438dd813c580efb64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/Character_04.png using Guid(c8ee7089018fb43438dd813c580efb64) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '88bff29b935dfd83b7eb3382a86a83aa') in 0.0113821 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/MinotaurA.png
+  artifactKey: Guid(4ab1b6b4e2eb5454cb73379d052c3783) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/MinotaurA.png using Guid(4ab1b6b4e2eb5454cb73379d052c3783) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '05f6a9285c1d89121e540cbf044ad631') in 0.0096577 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/SlimeE.png
+  artifactKey: Guid(4fa107020114ea249bdcdf524ad2c7d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/SlimeE.png using Guid(4fa107020114ea249bdcdf524ad2c7d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f66116592f01d471eb5c63e353059ded') in 0.0115473 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/ZombiB.png
+  artifactKey: Guid(422d8fdd56e872642b7c8df999c6c11b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Battlers/ZombiB.png using Guid(422d8fdd56e872642b7c8df999c6c11b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e964ae276a2493c9c1bce9aa000a15df') in 0.0112311 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.172474 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments
+  artifactKey: Guid(039933d1239ac774089e1f64df3a5e37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments using Guid(039933d1239ac774089e1f64df3a5e37) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c2d3d4ce78650268875259bb7cc11756') in 0.000475 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.144587 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0/Sprite-0001_1.asset
+  artifactKey: Guid(2b122afa69fc9ba498b0832c3306bd03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0/Sprite-0001_1.asset using Guid(2b122afa69fc9ba498b0832c3306bd03) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6aade04483aca3f0a1d8d41d06504bbf') in 0.013081 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0/Sprite-0003_13.asset
+  artifactKey: Guid(31e8e5a4046e87041b2deb3caac9c7d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0/Sprite-0003_13.asset using Guid(31e8e5a4046e87041b2deb3caac9c7d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '41d0675b4eadd7ae6f28ab33b928f59b') in 0.0181578 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0/Sprite-0001_3.asset
+  artifactKey: Guid(28e172bb9f5a368468489d84d41e051c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0/Sprite-0001_3.asset using Guid(28e172bb9f5a368468489d84d41e051c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '632a1652eb5daccb273b9c0326f15251') in 0.0111772 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0/Sprite-0003_15.asset
+  artifactKey: Guid(ed751175fd57af449bb1434b7c0ae56f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0/Sprite-0003_15.asset using Guid(ed751175fd57af449bb1434b7c0ae56f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '25b86bc3ab8529b11f9c5d07f32562f3') in 0.0106587 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0/Sprite-0003_14.asset
+  artifactKey: Guid(0059b70683f57ea4aae170575f7ba8d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0/Sprite-0003_14.asset using Guid(0059b70683f57ea4aae170575f7ba8d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7d84dde6043ec3d0e76a604283705d06') in 0.0102195 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0/Sprite-0001_8.asset
+  artifactKey: Guid(3a9b6ada7137a1a4d871bcc22d914cfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0/Sprite-0001_8.asset using Guid(3a9b6ada7137a1a4d871bcc22d914cfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd7021863ca3054ef1cf7cb125cb60ae4') in 0.0093708 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0/Sprite-0003_9.asset
+  artifactKey: Guid(5244485435f83c24fa36bc4000fe9c70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0/Sprite-0003_9.asset using Guid(5244485435f83c24fa36bc4000fe9c70) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '342519fb7b15259025dd111a103ca711') in 0.0084605 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0/Sprite-0003_7.asset
+  artifactKey: Guid(ace4b3755f410b046bde163eb68fd51b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0/Sprite-0003_7.asset using Guid(ace4b3755f410b046bde163eb68fd51b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '16e1f96ba7cee9cafa4e7d4bc9a94c02') in 0.0103186 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0/Sprite-0003_10.asset
+  artifactKey: Guid(6f9d43a12c68f5147be91ce11ad222c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0/Sprite-0003_10.asset using Guid(6f9d43a12c68f5147be91ce11ad222c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5291c06b2fec4192767e1d7d1e11938c') in 0.0102843 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0
+  artifactKey: Guid(a456a716bd884e44a8dd0cb01d1f445f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0 using Guid(a456a716bd884e44a8dd0cb01d1f445f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f7e6a8ab1e0b0495ab5a41119f7b2bbc') in 0.0005042 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0/Sprite-0001_13.asset
+  artifactKey: Guid(1aa5692b0cfeba14b9132de4de12c8e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0/Sprite-0001_13.asset using Guid(1aa5692b0cfeba14b9132de4de12c8e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '77b48c4f7a903d4300334d277895ba23') in 0.0081912 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0/Sprite-0001_12.asset
+  artifactKey: Guid(74405221a2bd5d240bc82e4f7bba62be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.5.0/Sprite-0001_12.asset using Guid(74405221a2bd5d240bc82e4f7bba62be) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '37b42dc12ed953db12dda68e0f8cf34b') in 0.0085076 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.333748 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.7.4/anim_autotile_35.png
+  artifactKey: Guid(0efbac10ac8302b4c9a6dd55a566fd2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.7.4/anim_autotile_35.png using Guid(0efbac10ac8302b4c9a6dd55a566fd2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '06ed81f33dce8bf13551ec7c91d7867a') in 0.0251803 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.7.4/anim_autotile_46.png
+  artifactKey: Guid(7b4604a2ae4214b4482264421d0d7411) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.7.4/anim_autotile_46.png using Guid(7b4604a2ae4214b4482264421d0d7411) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f43acff5107832609dce1ae3a378570c') in 0.0080853 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.7.4/anim_autotile_47.png
+  artifactKey: Guid(44fa710193133ce4792c39a2de490fdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.7.4/anim_autotile_47.png using Guid(44fa710193133ce4792c39a2de490fdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a86e14ac4da00a91beb5a7c7f48198ea') in 0.0097387 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.7.4/New Fang Auto Tile 6.asset
+  artifactKey: Guid(68d97af72fb4e81478fe540a827036d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.7.4/New Fang Auto Tile 6.asset using Guid(68d97af72fb4e81478fe540a827036d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '617d2a3981eca7a32ada71cdf3fb2e7c') in 0.0220323 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 192
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.7.4/anim_autotile_43.png
+  artifactKey: Guid(e4630dedfe76ac34e8c03ff9e803fd5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.7.4/anim_autotile_43.png using Guid(e4630dedfe76ac34e8c03ff9e803fd5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f693d6976385cb37a6e1b3a5f99725e7') in 0.0101061 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.7.4/anim_autotile_38.png
+  artifactKey: Guid(e627eb6358844cc409e379dc747c1bbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.7.4/anim_autotile_38.png using Guid(e627eb6358844cc409e379dc747c1bbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6fe6477dd1100cf70be5c39740b182fa') in 0.0095365 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.7.4/New Fang Auto Tile 16.asset
+  artifactKey: Guid(cc6fe86b67ac20a42935e2b465da7aae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.7.4/New Fang Auto Tile 16.asset using Guid(cc6fe86b67ac20a42935e2b465da7aae) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6c97f155c51230e095ec1c212649945f') in 0.0220821 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 192
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.7.4/New Fang Auto Tile 9.asset
+  artifactKey: Guid(6396e43ceff127f4eab452376ab8d67c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.7.4/New Fang Auto Tile 9.asset using Guid(6396e43ceff127f4eab452376ab8d67c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f6c76cde0b2c33ffb2f4339ad0dee85b') in 0.020361 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 192
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.7.4/anim_autotile_41.png
+  artifactKey: Guid(822429eea93dd3b428ee8fbb2a4b94ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Super_Retro_Collection/Resources/Environments/TilePalette_updates/2.7.4/anim_autotile_41.png using Guid(822429eea93dd3b428ee8fbb2a4b94ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e8529fc6407f4fe44ff09fc4d894a4ba') in 0.0078896 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 46.691347 seconds.
+  path: Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/Tiles/Packing Group.asset
+  artifactKey: Guid(3b70bd8ec9102944babcad314d76b551) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/Gif/Ruccho/FangAutoTile/Sample/Tiles/Packing Group.asset using Guid(3b70bd8ec9102944babcad314d76b551) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c969e9153eee83b3dfdf2ecbe3561da9') in 0.0834445 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 721
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.709558 seconds.
+  path: Assets/외부 에셋/M STUDIO/Card Game Kit/Base Assets/Card/card_level.png
+  artifactKey: Guid(655dd008c8324412b997b984f1322b6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/M STUDIO/Card Game Kit/Base Assets/Card/card_level.png using Guid(655dd008c8324412b997b984f1322b6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9d18ed0d24a70c07c00d9d8beebaec83') in 0.0187199 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/외부 에셋/M STUDIO/Card Game Kit/Base Assets/Card/card_level_frame.png
+  artifactKey: Guid(4dd933b4df88c414d9dac02cc72ae96c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/M STUDIO/Card Game Kit/Base Assets/Card/card_level_frame.png using Guid(4dd933b4df88c414d9dac02cc72ae96c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7d3cc24d9ef581cf2078756ba69262ab') in 0.0135995 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.213640 seconds.
+  path: Assets/외부 에셋/M STUDIO/Card Game Kit/Base Assets/Intents/buff_defense.png
+  artifactKey: Guid(e60462361db3140c59c13b7122a2106c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/M STUDIO/Card Game Kit/Base Assets/Intents/buff_defense.png using Guid(e60462361db3140c59c13b7122a2106c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b4be502caaacb17b2094980cbbde4422') in 0.0122138 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/외부 에셋/M STUDIO/Card Game Kit/Base Assets/Intents
+  artifactKey: Guid(4b484e855a2a9461896aac42c67dbaf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/M STUDIO/Card Game Kit/Base Assets/Intents using Guid(4b484e855a2a9461896aac42c67dbaf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7672bd6e94131183828efd54ef703849') in 0.0004077 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/외부 에셋/M STUDIO/Card Game Kit/Base Assets/Intents/buff_defense_down.png
+  artifactKey: Guid(e80d1ecfd06c74b5f8bcdd4b0745f92c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/M STUDIO/Card Game Kit/Base Assets/Intents/buff_defense_down.png using Guid(e80d1ecfd06c74b5f8bcdd4b0745f92c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bb84e539ec43cbe63b5e53e786d53c69') in 0.0140027 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.230488 seconds.
+  path: Assets/외부 에셋/M STUDIO/Card Game Kit/Base Assets/Map Icons/04.png
+  artifactKey: Guid(e6eed6c2563884002ae7cb10446a7474) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/M STUDIO/Card Game Kit/Base Assets/Map Icons/04.png using Guid(e6eed6c2563884002ae7cb10446a7474) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fa9fa4da1f3a42be82e9fbf9a564b645') in 0.0142591 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/외부 에셋/M STUDIO/Card Game Kit/Base Assets/Map Icons
+  artifactKey: Guid(a32715f5a4e133e47a3ca5ae8e6c8399) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/M STUDIO/Card Game Kit/Base Assets/Map Icons using Guid(a32715f5a4e133e47a3ca5ae8e6c8399) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cee1e5909b4733eaed33e7906acc13fc') in 0.0005626 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/외부 에셋/M STUDIO/Card Game Kit/Base Assets/Map Icons/05.png
+  artifactKey: Guid(98abcbea52fa34611bcecdae5814372d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/M STUDIO/Card Game Kit/Base Assets/Map Icons/05.png using Guid(98abcbea52fa34611bcecdae5814372d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '015d24f5df8ec417d11db6a79a69a105') in 0.0126308 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/외부 에셋/M STUDIO/Card Game Kit/Base Assets/Map Icons/C02.png
+  artifactKey: Guid(0343606bf24454d2c802e80020a6e7a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/M STUDIO/Card Game Kit/Base Assets/Map Icons/C02.png using Guid(0343606bf24454d2c802e80020a6e7a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '41d8688ed8cf7bad78e1a846b04d22a1') in 0.0144629 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/외부 에셋/M STUDIO/Card Game Kit/Base Assets/Map Icons/C09.png
+  artifactKey: Guid(624748d5d99a6473782022e12a908f1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/M STUDIO/Card Game Kit/Base Assets/Map Icons/C09.png using Guid(624748d5d99a6473782022e12a908f1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b7c0ca83605e52d5bffc882200c3a131') in 0.0142108 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/외부 에셋/M STUDIO/Card Game Kit/Base Assets/Map Icons/06.png
+  artifactKey: Guid(84605f03162064daa87d5f4cb8444457) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/외부 에셋/M STUDIO/Card Game Kit/Base Assets/Map Icons/06.png using Guid(84605f03162064daa87d5f4cb8444457) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '888f82b7952fb7fceff9d3f4a226adc4') in 0.0143521 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
