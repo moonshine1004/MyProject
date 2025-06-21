@@ -63,12 +63,16 @@
   <ItemGroup>
     <Compile Include="Assets\외부 에셋\Gif\Super_Retro_Collection\Resources\Prefabs_with_behavior\tall_grass_react_on_contact\Scripts\TallGrassAnimationOnContact.cs" />
     <Compile Include="Assets\외부 에셋\Gif\Super_Retro_Collection\Scripts\CharacterAppearance.cs" />
+    <Compile Include="Assets\Scripts\Character\Damageable.cs" />
     <Compile Include="Assets\외부 에셋\Gif\Super_Retro_Collection\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\외부 에셋\Gif\Ruccho\FangAutoTile\Sample\OnMapPlayerController.cs" />
     <Compile Include="Assets\외부 에셋\Gif\Super_Retro_Collection\Resources\Prefabs\Crops\Scripts\SpriteSelectFrame.cs" />
+    <Compile Include="Assets\Scripts\Character\CharacterStat.cs" />
     <Compile Include="Assets\외부 에셋\Gif\Super_Retro_Collection\Resources\Prefabs_with_behavior\chest_open_on_contact\Scripts\ChestAnimationOnContact.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\PlayerAnimatorCore.cs" />
+    <Compile Include="Assets\Scripts\Character\Attack.cs" />
+    <Compile Include="Assets\Scripts\Core\PlayerAnimatorCore.cs" />
+    <Compile Include="Assets\Scripts\Character\Enum.cs" />
+    <Compile Include="Assets\Scripts\Character\Player\PlayerController.cs" />
     <Compile Include="Assets\외부 에셋\Gif\Super_Retro_Collection\Resources\Prefabs_with_behavior\block_push_on_contact\Scripts\BlockPushOnContact.cs" />
   </ItemGroup>
   <ItemGroup>
