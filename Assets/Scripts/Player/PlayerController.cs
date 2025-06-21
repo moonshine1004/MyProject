@@ -78,10 +78,33 @@ public class PlayerController : MonoBehaviour
         }
         transform.localScale = scale;
     }
-    //Q스킬 발동 메서드
+    //스킬 발동 메서드들-->하나로 관리할 수 있도록 수정 요망
+    //공격 트리거를 온, 각 공격에 해당하는 키를 온
     public void OnQSkill(InputAction.CallbackContext callback)
     {
-        _animator.SetTrigger(PlayerAnimatorCore.SwordAttack);
+        _animator.SetTrigger(PlayerAnimatorCore.AttackInput);
+        _animator.SetTrigger(PlayerAnimatorCore.InputQ);
     }
+    public void OnWSkill(InputAction.CallbackContext callback)
+    {
+        _animator.SetTrigger(PlayerAnimatorCore.AttackInput);
+        _animator.SetTrigger(PlayerAnimatorCore.InputW);
+    }
+    public void OnESkill(InputAction.CallbackContext callback)
+    {
+        _animator.SetTrigger(PlayerAnimatorCore.AttackInput);
+        _animator.SetTrigger(PlayerAnimatorCore.InputE);
+    }
+    public void OnRSkill(InputAction.CallbackContext callback)
+    {
+        _animator.SetTrigger(PlayerAnimatorCore.AttackInput);
+        _animator.SetTrigger(PlayerAnimatorCore.InputR);
+    }
+    public void OnTSkill(InputAction.CallbackContext callback)
+    {
+        _animator.SetTrigger(PlayerAnimatorCore.AttackInput);
+        _animator.SetTrigger(PlayerAnimatorCore.InputT);
+    }
+
 
 }

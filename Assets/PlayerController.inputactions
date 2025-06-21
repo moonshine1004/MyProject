@@ -15,9 +15,45 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Attack",
+                    "name": "QSkill",
                     "type": "Button",
                     "id": "414f7c17-6a60-40ce-91c6-bed57951e9fb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "WSkill",
+                    "type": "Button",
+                    "id": "0ddc00b1-9778-4e06-be50-765884783f87",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ESkill",
+                    "type": "Button",
+                    "id": "59db9948-3af4-4562-8928-747b679b406c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RSkill",
+                    "type": "Button",
+                    "id": "d8912158-2766-4ba2-b5c2-377a85721a60",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TSkill",
+                    "type": "Button",
+                    "id": "bf5e90a1-37d6-447a-9af8-514d4c0a0857",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -43,7 +79,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack",
+                    "action": "QSkill",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -54,7 +90,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack",
+                    "action": "WSkill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fb19623c-5b86-4a97-aede-9bc89e21130d",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WSkill",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -65,7 +112,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack",
+                    "action": "ESkill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "046bd79d-4f95-4274-b281-665f384fc334",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ESkill",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -76,7 +134,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack",
+                    "action": "RSkill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "869e0580-c18d-4ea4-bb1e-813ece7dc6f8",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RSkill",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -87,7 +156,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack",
+                    "action": "TSkill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c1149aa9-fdf9-43e3-bac8-d401e0a2e566",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TSkill",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
