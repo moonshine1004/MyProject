@@ -1,13 +1,16 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class CharacterStat : MonoBehaviour
 {
     public UnityEvent<int> GetHit;
     
-    [SerializeField] private int _health;
-    [SerializeField] private int _maxHealth;
+    [SerializeField] private int _maxHealth=100;
+    [SerializeField] private int _health=100;
     private bool isAlive = true;
+
+    public Slider healthSlider;
 
     private int Health
     {
@@ -15,26 +18,37 @@ public class CharacterStat : MonoBehaviour
         set { _health = _health - value; }
     }
 
+    private void Start()
+    {
+        healthSlider.maxValue = _maxHealth; //healthSlider 초기화
+    }
     private void Awake()
     {
         // 코드로 이벤트 연결
-        GetHit.AddListener(HealthCahange);
+        GetHit.AddListener(TakeDamage);
+        
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Update()
     {
-        Damageable enemy = collision.gameObject.GetComponent<Damageable>();
-
-        GetHit.Invoke(enemy.damage);
+        healthSlider.value = _health; //healthSlider변화
     }
     private void OnDestroy()
     {
         // 구독 해제
-        GetHit.RemoveListener(HealthCahange);
+        GetHit.RemoveListener(TakeDamage);
     }
     
-    private void HealthCahange(int damage)
+    //데미지를 입을 때 발생하는 상황 모두 넣어둠
+    public void TakeDamage(int damage)
     {
-        Health = damage;
+        Health = damage; //Health 프로퍼티로 _health-damage
+        healthSlider.value=_health; //healthSlider변화
     }
-    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //충돌하는 오브젝트의 Damageabla 컴포넌트를 가져옴
+        Damageable hit = collision.gameObject.GetComponent<Damageable>();
+        //GetHit 이벤트를 데미지를 매게변수로 하여 이벤트
+        GetHit.Invoke(hit.damage);
+    }
 }
