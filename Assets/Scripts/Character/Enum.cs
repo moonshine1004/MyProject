@@ -20,4 +20,11 @@ public class Enum : MonoBehaviour
         Circle = 4,
 
     }
+    public enum TargetType
+    {
+        NoneTarget = 0,
+        SelfTarget = 1,
+        EnemyTarget = 2,
+        AllTarget = 3,
+    }
 }

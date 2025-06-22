@@ -14,13 +14,10 @@ public class PlayerController : MonoBehaviour
     private Vector3 targetPos =Vector3.zero; //목표 위치
     //이동 상태
     bool isMoving = false;
+    //스킬 인덱스
+    public int NowSkillIndex=0;
 
-    //개념 정리용 가짜 메서드
-    private void ForStudy()
-    {
-        //인풋 액션을 매개변수로 받는 메서드는 public으로 선언해야 Input System으로부터 이벤트를 받아왔을 때 메서드를 실행할 수 있음?
-        //애니메이터를 실행할 때 애니메이터의 파라메터
-    }
+    
     private void Start()
     {
         //컴포넌트 겟
@@ -46,11 +43,12 @@ public class PlayerController : MonoBehaviour
             }
             else //도착하지 않았으면
             {
-                OnSetDirection();
+
                 _rb.linearVelocity = direction * moveSpeed; //방향과 속도 곱함
                 _animator.SetBool(PlayerAnimatorCore.isMoving, true); //애니메이터 파라메터 변환
             }
         }
+        OnSetDirection();
     }
     //클릭 기반 이동 메서드
     public void OnClickMove(InputAction.CallbackContext callback)
@@ -80,31 +78,36 @@ public class PlayerController : MonoBehaviour
     }
     //스킬 발동 메서드들-->하나로 관리할 수 있도록 수정 요망
     //공격 트리거를 온, 각 공격에 해당하는 키를 온
-    public void OnQSkill(InputAction.CallbackContext callback)
+    public void OnSkillInput(InputAction.CallbackContext callback)
     {
-        _animator.SetTrigger(PlayerAnimatorCore.AttackInput);
-        _animator.SetTrigger(PlayerAnimatorCore.InputQ);
+        _animator.SetBool(PlayerAnimatorCore.OnSkillInput, true);
+        _animator.SetInteger(PlayerAnimatorCore.SkillIndex, NowSkillIndex);
     }
-    public void OnWSkill(InputAction.CallbackContext callback)
-    {
-        _animator.SetTrigger(PlayerAnimatorCore.AttackInput);
-        _animator.SetTrigger(PlayerAnimatorCore.InputW);
-    }
-    public void OnESkill(InputAction.CallbackContext callback)
-    {
-        _animator.SetTrigger(PlayerAnimatorCore.AttackInput);
-        _animator.SetTrigger(PlayerAnimatorCore.InputE);
-    }
-    public void OnRSkill(InputAction.CallbackContext callback)
-    {
-        _animator.SetTrigger(PlayerAnimatorCore.AttackInput);
-        _animator.SetTrigger(PlayerAnimatorCore.InputR);
-    }
-    public void OnTSkill(InputAction.CallbackContext callback)
-    {
-        _animator.SetTrigger(PlayerAnimatorCore.AttackInput);
-        _animator.SetTrigger(PlayerAnimatorCore.InputT);
-    }
+
+
+
+
+
+    //public void OnQSkill(InputAction.CallbackContext callback)
+    //{
+    //    _animator.SetInteger(PlayerAnimatorCore.SkillIndex, SkillIndex);
+    //}
+    //public void OnWSkill(InputAction.CallbackContext callback)
+    //{
+    //    _animator.SetInteger(PlayerAnimatorCore.SkillIndex, SkillIndex);
+    //}
+    //public void OnESkill(InputAction.CallbackContext callback)
+    //{
+    //    _animator.SetInteger(PlayerAnimatorCore.SkillIndex, SkillIndex);
+    //}
+    //public void OnRSkill(InputAction.CallbackContext callback)
+    //{
+    //    _animator.SetInteger(PlayerAnimatorCore.SkillIndex, SkillIndex);
+    //}
+    //public void OnTSkill(InputAction.CallbackContext callback)
+    //{
+    //    _animator.SetInteger(PlayerAnimatorCore.SkillIndex, SkillIndex);
+    //}
 
 
 }

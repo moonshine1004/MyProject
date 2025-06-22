@@ -12,48 +12,12 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
-                    "name": "QSkill",
+                    "name": "OnSkillInput",
                     "type": "Button",
                     "id": "414f7c17-6a60-40ce-91c6-bed57951e9fb",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "WSkill",
-                    "type": "Button",
-                    "id": "0ddc00b1-9778-4e06-be50-765884783f87",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "ESkill",
-                    "type": "Button",
-                    "id": "59db9948-3af4-4562-8928-747b679b406c",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "RSkill",
-                    "type": "Button",
-                    "id": "d8912158-2766-4ba2-b5c2-377a85721a60",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "TSkill",
-                    "type": "Button",
-                    "id": "bf5e90a1-37d6-447a-9af8-514d4c0a0857",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -79,95 +43,51 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "QSkill",
+                    "action": "OnSkillInput",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "53ef90dd-4eb4-4c24-beaa-6cbb6f0fde03",
+                    "id": "090e32fe-f22a-4dca-908b-858c7414755f",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "WSkill",
+                    "action": "OnSkillInput",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "fb19623c-5b86-4a97-aede-9bc89e21130d",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "WSkill",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "29f42e76-d2ed-4f8d-8878-6e2a10ae76df",
+                    "id": "1c5288b8-c55f-47b9-bdfd-a3b67e466b20",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ESkill",
+                    "action": "OnSkillInput",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "046bd79d-4f95-4274-b281-665f384fc334",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ESkill",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1bf56d19-acc2-47b2-ad06-8c1856cdeaf9",
+                    "id": "91dcb7c7-25d0-4760-abc5-fe85e2fc150f",
                     "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RSkill",
+                    "action": "OnSkillInput",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "869e0580-c18d-4ea4-bb1e-813ece7dc6f8",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RSkill",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f883db80-ae77-4825-8c34-13965732bce4",
+                    "id": "85803e1e-e131-4902-b71d-7941548db6bc",
                     "path": "<Keyboard>/t",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "TSkill",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c1149aa9-fdf9-43e3-bac8-d401e0a2e566",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TSkill",
+                    "action": "OnSkillInput",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

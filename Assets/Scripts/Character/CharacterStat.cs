@@ -7,7 +7,7 @@ public class CharacterStat : MonoBehaviour
     public UnityEvent<int> GetHit;
     
     [SerializeField] private int _maxHealth=100;
-    [SerializeField] private int _health=100;
+    [SerializeField] private int _health;
     private bool isAlive = true;
 
     public Slider healthSlider;
@@ -15,11 +15,12 @@ public class CharacterStat : MonoBehaviour
     private int Health
     {
         get { return _health; }
-        set { _health = _health - value; }
+        set { _health = value; }
     }
 
     private void Start()
     {
+        _health = _maxHealth;
         healthSlider.maxValue = _maxHealth; //healthSlider 초기화
     }
     private void Awake()
@@ -41,7 +42,7 @@ public class CharacterStat : MonoBehaviour
     //데미지를 입을 때 발생하는 상황 모두 넣어둠
     public void TakeDamage(int damage)
     {
-        Health = damage; //Health 프로퍼티로 _health-damage
+        Health -= damage; //Health 프로퍼티로 _health-damage
         healthSlider.value=_health; //healthSlider변화
     }
     private void OnCollisionEnter2D(Collision2D collision)
