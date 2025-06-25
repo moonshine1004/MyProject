@@ -13,18 +13,18 @@ public class CardCreater : MonoBehaviour
 
     public void ImportCards()
     {
-        var cards = CardParser.ParseCSVToCards(csvFile);//카드파서 클래스로 읽어온 csv파일을 문자열 리스트로 바꿔서 cards에 초기화
-
+        var cards = CardParser.ParseCSVToCards(csvFile); //읽어 온 CSV파일을 CardPaser클래스의 ParseCSVToCards메서드에 넣어서 카드 객체 리스트로 만들어 cards 카드 리스트형 변수에 대입
+        //폴더가 없으면 생성
         if (!AssetDatabase.IsValidFolder(outputFolder))
         {
             Directory.CreateDirectory(outputFolder);
         }
-
+        //cards리스트에 있는 모든 요소들을 하나씩 꺼내어 스크립터블 오브젝트 에셋으로 저장
         foreach (var card in cards)
         {
             AssetDatabase.CreateAsset(card, $"{outputFolder}/Card_{card.CardID}.asset");
         }
-
+        //이상의 내용을 에디터에 저장
         AssetDatabase.SaveAssets();
     }
 }

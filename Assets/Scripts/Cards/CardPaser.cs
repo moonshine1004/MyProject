@@ -1,48 +1,51 @@
 using UnityEngine;
 using UnityEditor;
+//리스트를 사용하기 위한 네임스페이스
 using System.Collections.Generic;
 
+//정적 클래스-->인스턴스 없이 호출 가능
 public static class CardParser
 {
-    //
+    //CSV파일을 받아 카드 타입 객체의 리스트를 반환하는 스크립트
     public static List<Card> ParseCSVToCards(TextAsset csvFile)
     {
-        var result = new List<Card>();
-        var rows = ParseCSV(csvFile.text);
-
+        var result = new List<Card>(); //카드 리스트 생성
+        var rows = ParseCSV(csvFile.text); //CSV파일의 텍스트를 ParseCSV메서드에 넣어 문자열 배열의 리스트로 만들어 대입-->인덱스가 바뀔 때마다 행이 바뀜
+        //데이터가 적어 의미 없는 경우 종료
         if (rows.Count < 4)
         {
             Debug.LogError("[CardParser] CSV 줄 수가 너무 적습니다.");
             return result;
         }
 
-        string[] headers = rows[1];
-
-        for (int i = 3; i < rows.Count; i++) // 데이터 줄은 3번째부터 시작
+        string[] headers = rows[1]; //문자열 배열 리스트의 2번째 요소(데이터의 2번째 행)를 문자열 배열에 대입
+        //줄별로 파싱
+        for (int i = 3; i < rows.Count; i++) //데이터 행은 4번째부터 시작해서 마지막 행까지
         {
-            string[] row = rows[i];
-
+            string[] row = rows[i]; //i번째 행(현재 행)의 데이터를 가져옴
+            //현재 행의 길이가 0이거나 행의 0번째 요소가 null이면 빈줄 스킵함(넘어감)
             if (row.Length == 0 || string.IsNullOrWhiteSpace(row[0]))
             {
                 Debug.LogWarning($"[CardParser] 빈 줄 스킵: row {i}");
                 continue;
             }
-
+            //카드 스크립터블 오브젝트(인스턴스)를 메모리에 생성
             Card card = ScriptableObject.CreateInstance<Card>();
-
+            //각 열을 파싱하는 내부 루프
+            //이거 왜 &&?
             for (int j = 0; j < headers.Length && j < row.Length; j++)
             {
-                string header = headers[j].Trim();
-                string value = row[j].Trim();
+                string header = headers[j].Trim(); //.Trim(): 앞뒤 공백 제거 후 헤더 변수에 저장, 첫번째 루프 밖에 있는 headers배열을 대입함으로서 엑셀 데이터의 행 이동 없이 열만 이동
+                string value = row[j].Trim(); //첫 루프 내의 rows배열을 대입 받아 루프가 반복 될 때마다 엑셀 대이터의 다음 행으로 이동하여 행 내의 j번째 행의 값에 공백 제거 후 값 변수에 저장
 
                 if (string.IsNullOrEmpty(value)) continue; // 빈 값 스킵
 
-                try
+                try //예외를 확인
                 {
-                    switch (header)
+                    switch (header) //문자열 변수인 헤더의 값에 따라 스위치문
                     {
                         case "CardID":
-                            if (int.TryParse(value, out var id))
+                            if (int.TryParse(value, out var id)) //value문자열을 int로 변환 시도 성공 시 id에 대입됨, 실패 시 false반환
                                 card.CardID = id;
                             break;
                         case "Cost":
@@ -65,62 +68,65 @@ public static class CardParser
                         
                     }
                 }
-                catch (System.Exception ex)
+                catch (System.Exception ex) //try가 예외를 확인하면 실행
                 {
                     Debug.LogWarning($"[CardParser] '{header}' 값 '{value}' 처리 실패 (row {i}): {ex.Message}");
                 }
             }
 
-            result.Add(card);
+            result.Add(card); //카드 리스트에 추가
         }
 
-        return result;
+        return result; //카드 리스트 반환
     }
 
-
+    //CSV파일을 받아와 문자열 배열 리스트를 반환하는 스크립트
+    //구분자를 기준으로 텍스트를 잘라 문자열 배열 리스트로 만듦
     private static List<string[]> ParseCSV(string csvText)
     {
-        List<string[]> result = new List<string[]>(); //문자열 리스트 result선언
-        var lines = csvText.Split(new[] { "\r\n", "\n" }, System.StringSplitOptions.RemoveEmptyEntries);//빈 문자열을 제외하고 특정 구분자("\r\n", "\n"-->줄바꿈) 단위로 잘라 열(line)에 저장
+        List<string[]> result = new List<string[]>(); //문자열 배열 리스트 result선언
+        //csvText.Split: 문자열을 특정 구분자로 나누어 문자열을 분리하는 C# 표준 라이브러리에 포함된 메서드
+        var lines = csvText.Split(new[] { "\r\n", "\n" }, System.StringSplitOptions.RemoveEmptyEntries); //빈 문자열을 제외하고 특정 구분자("\r\n", "\n"-->줄바꿈) 단위로 잘라 행(line)에 저장
 
-        foreach (var line in lines)//각 열을 다시 자름 lines들을 순회하여 얻은 것을 line에 저장
+        foreach (var line in lines)//위에서 얻은 lines행의 요소를 하나씩 꺼내어 ParseCSVLine메서드를 통해 문자열 배열로 바꿈 (i.e.문자열을 잘라 문자열 배열로 바꿈)
         {
-            result.Add(ParseCSVLine(line));//result 리스트에 ParseCSVLine메서드 실행하여 얻은 값을 대입
+            result.Add(ParseCSVLine(line));//result 리스트에 line을 매게변수로 받는 ParseCSVLine메서드 실행하여 얻은 값을 대입
         }
 
         return result;
     }
-
+    //문자열을 받아와 문자열 배열을 반환하는 메서드
+    //ParseCSV에서 구분자를 기준으로 자른 각 단어를 
     private static string[] ParseCSVLine(string line)
     {
-        List<string> values = new List<string>(); //values라는 문자열 배열 선언
+        List<string> values = new List<string>(); //values라는 문자열 리스트 선언
         bool inQuotes = false;
-        string current = "";
+        string current = ""; //문자를 담아둘 문자열 
 
-        for (int i = 0; i < line.Length; i++)
+        for (int i = 0; i < line.Length; i++) //문자열의 길이 만큼 반복
         {
-            char c = line[i];
+            char c = line[i]; //문자열의 i번째 문자 저장하는 문자 변수
 
-            if (c == '"')
+            if (c == '"') //i번째 문자가 공백이면 
             {
-                inQuotes = !inQuotes;
+                inQuotes = !inQuotes; //inQuotes를 트루로
             }
-            else if (c == ',' && !inQuotes)
+            else if (c == ',' && !inQuotes) //i번째 문사가 콤마거나 inQuotes가 트루면
             {
-                values.Add(current.Trim());
-                current = "";
+                values.Add(current.Trim()); //values 배열에 문자들을 저장해둔 current를 앞뒤 공백 제거후 넣음
+                current = ""; //current는 다시 공백으로 초기화
             }
             else
             {
-                current += c;
+                current += c; //문자열에 i번째 문자 저장
             }
         }
 
-        values.Add(current.Trim());
-        return values.ToArray();
+        values.Add(current.Trim()); 
+        return values.ToArray(); //리스트를 배열로 바꾸어 반환
     }
 
-    /* 개발 기능: 엑셀 데이터 테이블을 파싱하여 스크립터블 오브젝트를 동적으로 생성할 수 있도록 함 --> 이는 게임 특성 상 반복적인 밸런싱과 많은 양의 오브젝트를 다룸에 있어 큰 이점을 가짐
+    /* 개발 기능: 엑셀 데이터 테이블을 파싱하여 스크립터블 오브젝트를 동적으로 생성할 수 있는 파이프라인 개발 --> 이는 게임 특성 상 반복적인 밸런싱과 많은 양의 오브젝트를 다룸에 있어 큰 이점을 가짐
      * 사용 기술: 유니티 스크립터블 오브젝트, using System.IO, AssetDatabase, [ContextMenu]
      *  1)유니티 스크립터블 오브젝트: 유니티의 스크립터블 오브젝트는 구조가 같은 대량의 서로 다른 오브젝트를 다루는데에 용이한 유니티의 데이터 컨테이너이다. 
      *                                이 기능을 사용하면 복수의 데이터를 빠르게 에셋으로 만드어 저장하여 사용할 수 있다는 이점이 있다.
