@@ -28,11 +28,7 @@ public class MonsterPooling : MonoBehaviour
         //프리팹을 인스턴스로 변환하여 반환
         return Instantiate(_MonsterPrefab);
     }
-    ////풀에서 몬스터를 꺼낼 때 호출
-    //private void GetMonster()
-    //{
-        
-    //}
+
 
     //객체를 풀에 넣을 때
     private void OnMonsterRelease(GameObject monster)

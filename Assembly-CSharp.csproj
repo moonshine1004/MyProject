@@ -61,6 +61,8 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.48f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Cards\CardPrefab.cs" />
+    <Compile Include="Assets\Scripts\Core\CardManager.cs" />
     <Compile Include="Assets\외부 에셋\Gif\Super_Retro_Collection\Resources\Prefabs_with_behavior\tall_grass_react_on_contact\Scripts\TallGrassAnimationOnContact.cs" />
     <Compile Include="Assets\외부 에셋\Gif\Super_Retro_Collection\Scripts\CharacterAppearance.cs" />
     <Compile Include="Assets\Scripts\Character\Damageable.cs" />
@@ -68,6 +70,7 @@
     <Compile Include="Assets\Scripts\Cards\Card.cs" />
     <Compile Include="Assets\외부 에셋\Gif\Ruccho\FangAutoTile\Sample\OnMapPlayerController.cs" />
     <Compile Include="Assets\외부 에셋\Gif\Super_Retro_Collection\Resources\Prefabs\Crops\Scripts\SpriteSelectFrame.cs" />
+    <Compile Include="Assets\Scripts\Cards\CardPooling.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterStat.cs" />
     <Compile Include="Assets\외부 에셋\Gif\Super_Retro_Collection\Resources\Prefabs_with_behavior\chest_open_on_contact\Scripts\ChestAnimationOnContact.cs" />
     <Compile Include="Assets\Scripts\Character\Monster\MonsterPooling.cs" />
