@@ -71,7 +71,6 @@
     <Compile Include="Assets\Scripts\Character\CharacterStat.cs" />
     <Compile Include="Assets\외부 에셋\Gif\Super_Retro_Collection\Resources\Prefabs_with_behavior\chest_open_on_contact\Scripts\ChestAnimationOnContact.cs" />
     <Compile Include="Assets\Scripts\Character\Monster\MonsterPooling.cs" />
-    <Compile Include="Assets\Scripts\Character\Attack.cs" />
     <Compile Include="Assets\Scripts\Core\PlayerAnimatorCore.cs" />
     <Compile Include="Assets\Scripts\Cards\CardPaser.cs" />
     <Compile Include="Assets\Scripts\Core\Enum.cs" />
