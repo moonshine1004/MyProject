@@ -82,19 +82,42 @@
     <Compile Include="Assets\외부 에셋\Gif\Super_Retro_Collection\Resources\Prefabs_with_behavior\block_push_on_contact\Scripts\BlockPushOnContact.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile-2-Pass.shader" />
     <None Include="Assets\외부 에셋\Gif\Super_Retro_Collection\Resources\Prefabs\Crops\README_HOW_TO_USE_CROPS.txt" />
     <None Include="Assets\외부 에셋\M STUDIO\Card Game Kit\Spine Animations\Vacuum\Vacuum.atlas.txt" />
     <None Include="Assets\외부 에셋\M STUDIO\Card Game Kit\Spine Animations\Bubbles\Bubbles.atlas.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\외부 에셋\M STUDIO\Card Game Kit\Spine Animations\PlateKnight\PlateKnight.atlas.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\외부 에셋\M STUDIO\Card Game Kit\Spine Animations\Fish\EliteEnemy.atlas.txt" />
     <None Include="Assets\외부 에셋\M STUDIO\Card Game Kit\Spine Animations\Mop\Boss.atlas.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\외부 에셋\M STUDIO\Card Game Kit\Spine Animations\Player\Player.atlas.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
     <None Include="Assets\외부 에셋\M STUDIO\Card Game Kit\Spine Animations\Pig Hammer\MinorEnemy.atlas.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\외부 에셋\M STUDIO\Card Game Kit\Spine Animations\JuicerKnight\JuicerKnight.atlas.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\외부 에셋\M STUDIO\Card Game Kit\Spine Animations\LaundryKnight\LaundryKnight.atlas.txt" />
     <None Include="Assets\외부 에셋\Gif\Ruccho\FangAutoTile\Readme.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\외부 에셋\M STUDIO\Card Game Kit\Spine Animations\EggKnight\EggKnight.atlas.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\외부 에셋\Gif\Ruccho\FangAutoTile\Readme-ja.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
