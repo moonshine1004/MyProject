@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rb;
     private Animator _animator;
     //변수
-    [SerializeField] private float moveSpeed; //이동 속도
+    [SerializeField] private float _moveSpeed; //이동 속도
     //위치값
     private Vector3 screenPos; //마우스 클릭된 스크린 위치 값
     private Vector3 worldPos; //스크린 위치값을 월드 위치로 변환
@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     bool isMoving = false;
     //스킬 인덱스
     public int NowSkillIndex=0;
+    UsingCardList _UsingCardList;
 
     
     private void Start()
@@ -44,7 +45,7 @@ public class PlayerController : MonoBehaviour
             else //도착하지 않았으면
             {
 
-                _rb.linearVelocity = direction * moveSpeed; //방향과 속도 곱함
+                _rb.linearVelocity = direction * _moveSpeed; //방향과 속도 곱함
                 _animator.SetBool(PlayerAnimatorCore.isMoving, true); //애니메이터 파라메터 변환
             }
         }
@@ -81,33 +82,14 @@ public class PlayerController : MonoBehaviour
     public void OnSkillInput(InputAction.CallbackContext callback)
     {
         _animator.SetBool(PlayerAnimatorCore.OnSkillInput, true);
-        //_animator.SetInteger(PlayerAnimatorCore.SkillIndex, NowSkillIndex);
+        var name = callback.control.name; //인풋 액션의 컨트롤 이름을 가져옴
+        _UsingCardList.UseCard(NowSkillIndex); //현재 스킬 인덱스에 해당하는 카드 사용
+        //_animator.SetInteger(PlayerAnimatorCore.SkillIndex, _UsingCardList.hand[NowSkillIndex].CardID);
+
     }
-
-
-
-
-
-    //public void OnQSkill(InputAction.CallbackContext callback)
-    //{
-    //    _animator.SetInteger(PlayerAnimatorCore.SkillIndex, SkillIndex);
-    //}
-    //public void OnWSkill(InputAction.CallbackContext callback)
-    //{
-    //    _animator.SetInteger(PlayerAnimatorCore.SkillIndex, SkillIndex);
-    //}
-    //public void OnESkill(InputAction.CallbackContext callback)
-    //{
-    //    _animator.SetInteger(PlayerAnimatorCore.SkillIndex, SkillIndex);
-    //}
-    //public void OnRSkill(InputAction.CallbackContext callback)
-    //{
-    //    _animator.SetInteger(PlayerAnimatorCore.SkillIndex, SkillIndex);
-    //}
-    //public void OnTSkill(InputAction.CallbackContext callback)
-    //{
-    //    _animator.SetInteger(PlayerAnimatorCore.SkillIndex, SkillIndex);
-    //}
-
+    public enum SkillType
+    {
+        Q=0, W=1, E=2, R=3, T=4
+    }
 
 }
