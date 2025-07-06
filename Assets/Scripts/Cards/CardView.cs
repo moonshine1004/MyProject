@@ -2,24 +2,23 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CardPrefab : MonoBehaviour
+public class CardView : MonoBehaviour
 {
     [SerializeField] private TMP_Text _costText;
     [SerializeField] private TMP_Text _damageText;
     [SerializeField] private Image _image;
-    [SerializeField] private Image elementIcon;
+    //[SerializeField] private Image elementIcon;
 
-    private Card cardData;
+    private CardData cardData;
 
-    public void Initialize(Card card)
+    public void Initialize(CardData card)
     {
         cardData = card;
 
         _costText.text = card._Cost.ToString();
         _damageText.text = card._Damage.ToString();
 
-        // 예시: 속성에 따른 색상 처리
-        //elementIcon.color = GetColorByElement(card._element);
+        
     }
 
     public void ResetView()
@@ -27,7 +26,6 @@ public class CardPrefab : MonoBehaviour
         cardData = null;
         _costText.text = "";
         _damageText.text = "";
-        //elementIcon.color = Color.white;
     }
 
     private Color GetColorByElement(Enum.Element element)

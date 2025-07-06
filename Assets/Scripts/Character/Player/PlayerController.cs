@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
     public void OnSkillInput(InputAction.CallbackContext callback)
     {
         _animator.SetBool(PlayerAnimatorCore.OnSkillInput, true);
-        _animator.SetInteger(PlayerAnimatorCore.SkillIndex, NowSkillIndex);
+        //_animator.SetInteger(PlayerAnimatorCore.SkillIndex, NowSkillIndex);
     }
 
 

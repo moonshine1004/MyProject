@@ -448,8 +448,8 @@ RectTransform:
   m_GameObject: {fileID: 4917504365446651917}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.29116964, y: 0.29116964, z: 0.29116964}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4530528821309137946}
   - {fileID: 8148759573169647067}
@@ -480,7 +480,6 @@ MonoBehaviour:
   _costText: {fileID: 5625239961413042814}
   _damageText: {fileID: 2412573029417310401}
   _image: {fileID: 4173193702737207964}
-  elementIcon: {fileID: 0}
 --- !u!1 &5021837106823095240
 GameObject:
   m_ObjectHideFlags: 0

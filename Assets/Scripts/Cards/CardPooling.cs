@@ -1,41 +1,71 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
 public class CardPooling : MonoBehaviour
 {
-    public GameObject cardPrefab;
-    public Transform cardParent; // Canvas 하위 빈 오브젝트 (예: CardPanel)
-
-    private ObjectPool<CardPrefab> cardPool;
-
-    private void Awake()
+    //카드 풀링을 위한 클래스
+    [SerializeField] private CardView _cardViewPrefab; //카드 프리팹 위임
+    [SerializeField] private Transform _cardParent; //카드가 생성될 부모 오브젝트
+    private ObjectPool<CardView> _cardPool; //카드 프리팹 풀
+    private void Start()
     {
-        cardPool = new ObjectPool<CardPrefab>(
-            createFunc: () => {
-                GameObject go = Instantiate(cardPrefab, cardParent);
-                return go.GetComponent<CardPrefab>();
-            },
-            actionOnGet: card => card.gameObject.SetActive(true),
-            actionOnRelease: card => {
-                card.ResetView();
-                card.gameObject.SetActive(false);
-            },
-            actionOnDestroy: card => Destroy(card.gameObject),
+        //카드 오브젝트 풀 생성
+        _cardPool = new ObjectPool<CardView>(
+            CreateCard,
+            OnTakeFromPool,
+            OnReturnedToPool,
+            OnDestroyCard,
             collectionCheck: false,
             defaultCapacity: 10,
-            maxSize: 100
+            maxSize: 20
         );
+        //초기 카드 12장 생성
+        for (int i = 0; i < 12; i++)
+        {
+            var card = CreateCard();
+            _cardPool.Release(card);
+        }
+    }
+    //카드 생성 메서드
+    private CardView CreateCard()
+    {
+        //카드 프리팹을 인스턴스화 후 반환
+        var card = Instantiate(_cardViewPrefab, _cardParent);
+        card.gameObject.SetActive(false); //인스턴스화 후 비활성화
+        return card; 
+    }
+    //카드 풀에서 카드를 꺼낼 때(활성화)
+    private void OnTakeFromPool(CardView card)
+    {
+        card.gameObject.SetActive(true);
+    }
+    //카드를 풀에 반환(비활성화)
+    private void OnReturnedToPool(CardView card)
+    {
+        card.ResetView();
+        card.gameObject.SetActive(false);
+    }
+    //풀의 크기를 초과했을 때 몬스터를 삭제
+    private void OnDestroyCard(CardView card)
+    {
+        Destroy(card.gameObject);
     }
 
-    public CardPrefab GetCard(Card cardData, Sprite image)
+    // 카드 꺼내는 메서드
+    public CardView GetCardView(CardData data)
     {
-        var card = cardPool.Get();
-        card.Initialize(cardData);
+        var card = _cardPool.Get();
+        card.Initialize(data);
         return card;
     }
 
-    public void ReleaseCard(CardPrefab card)
+    // 카드 반환 메서드
+    public void ReturnCardView(CardView card)
     {
-        cardPool.Release(card);
+        _cardPool.Release(card);
     }
+
+
+
 }

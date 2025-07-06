@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CardManager : MonoBehaviour
 {
-    [SerializeField] private List<Card> cards;
+    [SerializeField] private List<CardData> cards;
 
 
 }
