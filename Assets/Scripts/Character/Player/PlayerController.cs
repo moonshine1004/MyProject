@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    //조작기기를 이용하여 플레이어를 컨트롤하는 것에 대한 클래스입니다.
+    
     //컴포넌트
     private Rigidbody2D _rb;
     private Animator _animator;
@@ -83,13 +85,13 @@ public class PlayerController : MonoBehaviour
     {
         _animator.SetBool(PlayerAnimatorCore.OnSkillInput, true);
         var name = callback.control.name; //인풋 액션의 컨트롤 이름을 가져옴
-        _UsingCardList.UseCard(NowSkillIndex); //현재 스킬 인덱스에 해당하는 카드 사용
-        //_animator.SetInteger(PlayerAnimatorCore.SkillIndex, _UsingCardList.hand[NowSkillIndex].CardID);
-
+        if (System.Enum.TryParse(name, out Enum.SkillType keyEnum))
+        {
+            NowSkillIndex = (int)keyEnum;
+            _UsingCardList.UseCard(NowSkillIndex); //현재 스킬 인덱스에 해당하는 카드 사용
+            _animator.SetInteger(PlayerAnimatorCore.SkillIndex, _UsingCardList.hand[NowSkillIndex].CardID); //애니메이터 인티저를 카드덱
+        }
     }
-    public enum SkillType
-    {
-        Q=0, W=1, E=2, R=3, T=4
-    }
+    
 
 }

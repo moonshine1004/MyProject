@@ -4,16 +4,19 @@ using UnityEngine.UI;
 
 public class CardView : MonoBehaviour
 {
+    //카드 UI오브젝트 클래스입니다.
+    
+    //
     [SerializeField] private TMP_Text _costText;
     [SerializeField] private TMP_Text _damageText;
     [SerializeField] private Image _image;
     //[SerializeField] private Image elementIcon;
 
-    private CardData cardData;
+    private CardData _cardData;
 
     public void Initialize(CardData card)
     {
-        cardData = card;
+        _cardData = card;
 
         _costText.text = card._Cost.ToString();
         _damageText.text = card._Damage.ToString();
@@ -23,7 +26,7 @@ public class CardView : MonoBehaviour
 
     public void ResetView()
     {
-        cardData = null;
+        _cardData = null;
         _costText.text = "";
         _damageText.text = "";
     }

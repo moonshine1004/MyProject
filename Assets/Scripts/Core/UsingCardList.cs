@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class UsingCardList : MonoBehaviour
@@ -8,7 +9,7 @@ public class UsingCardList : MonoBehaviour
     private List<CardData> discardPile = new List<CardData>(); //사용된 카드 리스트
     public CardData[] hand = new CardData[5]; //qwert키에 할당되는 카드 배열
     private const int initialHandSize = 5; //드로우 카드 수
-    private Deck _deck; //카드 덱 위임
+    [SerializeField] private Deck _deck; //카드 덱 위임
 
     private void Start()
     {
@@ -73,9 +74,13 @@ public class UsingCardList : MonoBehaviour
             if (hand[i] == null)
             {
                 hand[i] = list[i];
-                return;
             }
         }
+    }
+
+    public void ThisToPlayer(List<CardData> carddatd)
+    {
+        carddatd = new List<CardData>(hand);
     }
 
 }
