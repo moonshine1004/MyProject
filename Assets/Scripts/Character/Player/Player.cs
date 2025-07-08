@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR;
 
 public class Player : MonoBehaviour
 {
     //player 동작의 전반을 다루는 스크립트 입니다.
-    private UsingCardList _UsingCardList;
+    [SerializeField] private UsingCardList _UsingCardList;
 
     [SerializeField] private CardPooling _cardPooling; //카드 풀 위임
     [SerializeField] private List<CardData> _cardData = new List<CardData>(); //카드 데이터(스크립터블 오브젝트) 리스트
@@ -14,7 +15,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-
+        _UsingCardList.AddCardToHand(_cardData);
     }
     //스킬 액션 이벤트가 인보크 되면 카드 풀에 있는 카드를 꺼내 옴
     public void CardKeyInput(InputAction.CallbackContext callback)
@@ -25,10 +26,11 @@ public class Player : MonoBehaviour
         }
     }
 
-    [ContextMenu("Fill Card")]
+
+    [ContextMenu("Reset Counter")]
     private void fill()
     {
-        _UsingCardList.ThisToPlayer(_cardData);
+        _cardData = new List<CardData>(_UsingCardList.hand);
         Debug.Log("test");
     }
 }

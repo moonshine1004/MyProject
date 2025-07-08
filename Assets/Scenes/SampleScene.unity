@@ -737,6 +737,9 @@ PrefabInstance:
       addedObject: {fileID: 1276253318}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 4bd0f04d4d5d7a74285047a62b96e713, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1276253325}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 4bd0f04d4d5d7a74285047a62b96e713, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1276253321}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 4bd0f04d4d5d7a74285047a62b96e713, type: 3}
       insertIndex: -1
@@ -750,9 +753,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 4bd0f04d4d5d7a74285047a62b96e713, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1276253324}
-    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 4bd0f04d4d5d7a74285047a62b96e713, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1276253325}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 4bd0f04d4d5d7a74285047a62b96e713, type: 3}
 --- !u!1 &821372376
 GameObject:
@@ -1968,7 +1968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 30
-  NowSkillIndex: 1
+  NowSkillIndex: 2
 --- !u!4 &1276253322 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: 4bd0f04d4d5d7a74285047a62b96e713, type: 3}
@@ -2053,6 +2053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ae0c5614513ba04395fb4e4916d2818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _UsingCardList: {fileID: 1393031577}
   _cardPooling: {fileID: 1555403937}
   _cardData:
   - {fileID: 0}

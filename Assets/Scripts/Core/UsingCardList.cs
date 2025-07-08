@@ -67,7 +67,7 @@ public class UsingCardList : MonoBehaviour
         }
     }
     //드로우 카드 리스트를 채우는 메서드
-    private void AddCardToHand(List<CardData> list)
+    public void AddCardToHand(List<CardData> list)
     {
         for (int i = 0; i < hand.Length; i++)
         {
@@ -78,9 +78,6 @@ public class UsingCardList : MonoBehaviour
         }
     }
 
-    public void ThisToPlayer(List<CardData> carddatd)
-    {
-        carddatd = new List<CardData>(hand);
-    }
+    
 
 }
