@@ -5,19 +5,19 @@ using UnityEngine.XR;
 
 public class Player : MonoBehaviour
 {
-    //player µ¿ÀÛÀÇ Àü¹İÀ» ´Ù·ç´Â ½ºÅ©¸³Æ® ÀÔ´Ï´Ù.
+    //player ë™ì‘ì˜ ì „ë°˜ì„ ë‹¤ë£¨ëŠ” ìŠ¤í¬ë¦½íŠ¸ ì…ë‹ˆë‹¤.
     [SerializeField] private UsingCardList _UsingCardList;
 
-    [SerializeField] private CardPooling _cardPooling; //Ä«µå Ç® À§ÀÓ
-    [SerializeField] private List<CardData> _cardData = new List<CardData>(); //Ä«µå µ¥ÀÌÅÍ(½ºÅ©¸³ÅÍºí ¿ÀºêÁ§Æ®) ¸®½ºÆ®
-    private CardView _currentCard; //Ä«µå ÇÁ¸®ÆÕ
-    [SerializeField] private PlayerController _playerController; //ÇöÀç »ç¿ë ÁßÀÎ Ä«µå ÀÎµ¦½º¸¦ À§ÀÓ ¹Ş¾Æ¿È
+    [SerializeField] private CardPooling _cardPooling; //ì¹´ë“œ í’€ ìœ„ì„
+    [SerializeField] private List<CardData> _cardData = new List<CardData>(); //ì¹´ë“œ ë°ì´í„°(ìŠ¤í¬ë¦½í„°ë¸” ì˜¤ë¸Œì íŠ¸) ë¦¬ìŠ¤íŠ¸
+    private CardView _currentCard; //ì¹´ë“œ í”„ë¦¬íŒ¹
+    [SerializeField] private PlayerController _playerController; //í˜„ì¬ ì‚¬ìš© ì¤‘ì¸ ì¹´ë“œ ì¸ë±ìŠ¤ë¥¼ ìœ„ì„ ë°›ì•„ì˜´
 
     private void Start()
     {
         _UsingCardList.AddCardToHand(_cardData);
     }
-    //½ºÅ³ ¾×¼Ç ÀÌº¥Æ®°¡ ÀÎº¸Å© µÇ¸é Ä«µå Ç®¿¡ ÀÖ´Â Ä«µå¸¦ ²¨³» ¿È
+    //ìŠ¤í‚¬ ì•¡ì…˜ ì´ë²¤íŠ¸ê°€ ì¸ë³´í¬ ë˜ë©´ ì¹´ë“œ í’€ì— ìˆëŠ” ì¹´ë“œë¥¼ êº¼ë‚´ ì˜´
     public void CardKeyInput(InputAction.CallbackContext callback)
     {
         if (callback.started)

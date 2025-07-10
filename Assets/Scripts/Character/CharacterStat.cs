@@ -6,6 +6,8 @@ public class CharacterStat : MonoBehaviour
 {
     public UnityEvent<int> GetHit;
     
+
+
     [SerializeField] private int _maxHealth=100;
     [SerializeField] private int _health;
     private bool isAlive = true;
@@ -21,35 +23,35 @@ public class CharacterStat : MonoBehaviour
     private void Start()
     {
         _health = _maxHealth;
-        healthSlider.maxValue = _maxHealth; //healthSlider ÃÊ±âÈ­
+        healthSlider.maxValue = _maxHealth; //healthSlider ì´ˆê¸°í™”
     }
     private void Awake()
     {
-        // ÄÚµå·Î ÀÌº¥Æ® ¿¬°á
+        // ì½”ë“œë¡œ ì´ë²¤íŠ¸ ì—°ê²°
         GetHit.AddListener(TakeDamage);
         
     }
     private void Update()
     {
-        healthSlider.value = _health; //healthSliderº¯È­
+        healthSlider.value = _health; //healthSliderë³€í™”
     }
     private void OnDestroy()
     {
-        // ±¸µ¶ ÇØÁ¦
+        // êµ¬ë… í•´ì œ
         GetHit.RemoveListener(TakeDamage);
     }
     
-    //µ¥¹ÌÁö¸¦ ÀÔÀ» ¶§ ¹ß»ıÇÏ´Â »óÈ² ¸ğµÎ ³Ö¾îµÒ
+    //ë°ë¯¸ì§€ë¥¼ ì…ì„ ë•Œ ë°œìƒí•˜ëŠ” ìƒí™© ëª¨ë‘ ë„£ì–´ë‘ 
     public void TakeDamage(int damage)
     {
-        Health -= damage; //Health ÇÁ·ÎÆÛÆ¼·Î _health-damage
-        healthSlider.value=_health; //healthSliderº¯È­
+        Health -= damage; //Health í”„ë¡œí¼í‹°ë¡œ _health-damage
+        healthSlider.value=_health; //healthSliderë³€í™”
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Ãæµ¹ÇÏ´Â ¿ÀºêÁ§Æ®ÀÇ Damageabla ÄÄÆ÷³ÍÆ®¸¦ °¡Á®¿È
+        //ì¶©ëŒí•˜ëŠ” ì˜¤ë¸Œì íŠ¸ì˜ Damageabla ì»´í¬ë„ŒíŠ¸ë¥¼ ê°€ì ¸ì˜´
         Damageable hit = collision.gameObject.GetComponent<Damageable>();
-        //GetHit ÀÌº¥Æ®¸¦ µ¥¹ÌÁö¸¦ ¸Å°Ôº¯¼ö·Î ÇÏ¿© ÀÌº¥Æ®
+        //GetHit ì´ë²¤íŠ¸ë¥¼ ë°ë¯¸ì§€ë¥¼ ë§¤ê²Œë³€ìˆ˜ë¡œ í•˜ì—¬ ì´ë²¤íŠ¸
         GetHit.Invoke(hit.damage);
     }
 }

@@ -3,27 +3,27 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    //Á¶ÀÛ±â±â¸¦ ÀÌ¿ëÇÏ¿© ÇÃ·¹ÀÌ¾î¸¦ ÄÁÆ®·ÑÇÏ´Â °Í¿¡ ´ëÇÑ Å¬·¡½ºÀÔ´Ï´Ù.
+    //ì¡°ì‘ê¸°ê¸°ë¥¼ ì´ìš©í•˜ì—¬ í”Œë ˆì´ì–´ë¥¼ ì»¨íŠ¸ë¡¤í•˜ëŠ” ê²ƒì— ëŒ€í•œ í´ë˜ìŠ¤ì…ë‹ˆë‹¤.
     
-    //ÄÄÆ÷³ÍÆ®
+    //ì»´í¬ë„ŒíŠ¸
     private Rigidbody2D _rb;
     private Animator _animator;
-    //º¯¼ö
-    [SerializeField] private float _moveSpeed; //ÀÌµ¿ ¼Óµµ
-    //À§Ä¡°ª
-    private Vector3 screenPos; //¸¶¿ì½º Å¬¸¯µÈ ½ºÅ©¸° À§Ä¡ °ª
-    private Vector3 worldPos; //½ºÅ©¸° À§Ä¡°ªÀ» ¿ùµå À§Ä¡·Î º¯È¯
-    private Vector3 targetPos =Vector3.zero; //¸ñÇ¥ À§Ä¡
-    //ÀÌµ¿ »óÅÂ
+    //ë³€ìˆ˜
+    [SerializeField] private float _moveSpeed; //ì´ë™ ì†ë„
+    //ìœ„ì¹˜ê°’
+    private Vector3 screenPos; //ë§ˆìš°ìŠ¤ í´ë¦­ëœ ìŠ¤í¬ë¦° ìœ„ì¹˜ ê°’
+    private Vector3 worldPos; //ìŠ¤í¬ë¦° ìœ„ì¹˜ê°’ì„ ì›”ë“œ ìœ„ì¹˜ë¡œ ë³€í™˜
+    private Vector3 targetPos =Vector3.zero; //ëª©í‘œ ìœ„ì¹˜
+    //ì´ë™ ìƒíƒœ
     bool isMoving = false;
-    //½ºÅ³ ÀÎµ¦½º
+    //ìŠ¤í‚¬ ì¸ë±ìŠ¤
     public int NowSkillIndex=0;
     UsingCardList _UsingCardList;
 
     
     private void Start()
     {
-        //ÄÄÆ÷³ÍÆ® °Ù
+        //ì»´í¬ë„ŒíŠ¸ ê²Ÿ
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
 
@@ -33,41 +33,41 @@ public class PlayerController : MonoBehaviour
     {
         if (isMoving)
         {
-            //ÇöÀç À§Ä¡¿Í ¸ñÇ¥ À§Ä¡¸¦ ³ë¸»¶óÀÌÁ¦ÀÌ¼ÇÇÏ¿© ¹æÇâ °è»ê
+            //í˜„ì¬ ìœ„ì¹˜ì™€ ëª©í‘œ ìœ„ì¹˜ë¥¼ ë…¸ë§ë¼ì´ì œì´ì…˜í•˜ì—¬ ë°©í–¥ ê³„ì‚°
             Vector2 currentPos = _rb.position;
             Vector2 direction = ((Vector2)targetPos - currentPos).normalized;
-            //¸ñÇ¥ À§Ä¡±îÁöÀÇ °Å¸® °è»ê(°Å¸®¿¡ µû¶ó ÀÌµ¿ ¿©ºÎ º¯È¯)
+            //ëª©í‘œ ìœ„ì¹˜ê¹Œì§€ì˜ ê±°ë¦¬ ê³„ì‚°(ê±°ë¦¬ì— ë”°ë¼ ì´ë™ ì—¬ë¶€ ë³€í™˜)
             float distance = Vector2.Distance(currentPos, targetPos);
-            if (distance < 0.1f) //µµÂøÇÏ¸é
+            if (distance < 0.1f) //ë„ì°©í•˜ë©´
             {
-                _rb.linearVelocity = Vector2.zero; //¼Óµµ 0
-                isMoving = false; //ÀÌµ¿ ÇØÁ¦
-                _animator.SetBool(PlayerAnimatorCore.isMoving, false); //¾Ö´Ï¸ŞÀÌÅÍ ÆÄ¶ó¸ŞÅÍ º¯È¯
+                _rb.linearVelocity = Vector2.zero; //ì†ë„ 0
+                isMoving = false; //ì´ë™ í•´ì œ
+                _animator.SetBool(PlayerAnimatorCore.isMoving, false); //ì• ë‹ˆë©”ì´í„° íŒŒë¼ë©”í„° ë³€í™˜
             }
-            else //µµÂøÇÏÁö ¾Ê¾ÒÀ¸¸é
+            else //ë„ì°©í•˜ì§€ ì•Šì•˜ìœ¼ë©´
             {
 
-                _rb.linearVelocity = direction * _moveSpeed; //¹æÇâ°ú ¼Óµµ °öÇÔ
-                _animator.SetBool(PlayerAnimatorCore.isMoving, true); //¾Ö´Ï¸ŞÀÌÅÍ ÆÄ¶ó¸ŞÅÍ º¯È¯
+                _rb.linearVelocity = direction * _moveSpeed; //ë°©í–¥ê³¼ ì†ë„ ê³±í•¨
+                _animator.SetBool(PlayerAnimatorCore.isMoving, true); //ì• ë‹ˆë©”ì´í„° íŒŒë¼ë©”í„° ë³€í™˜
             }
         }
         OnSetDirection();
     }
-    //Å¬¸¯ ±â¹İ ÀÌµ¿ ¸Ş¼­µå
+    //í´ë¦­ ê¸°ë°˜ ì´ë™ ë©”ì„œë“œ
     public void OnClickMove(InputAction.CallbackContext callback)
     {
-        //ÀÌº¥Æ®¸¦ ¹Ş¾Æ¿À¸é ½ÇÇàµÇ´Â ÇÔ¼ö
-        //ÀÌº¥Æ®´Â ÀÎÇ² ¾×¼Ç ½Ã½ºÅÛÀÇ ÇÃ·¹ÀÌ¾î ÄÁÆ®·Ñ·¯ÀÇ ¿ìÅ¬¸¯¿¡ ¼³Á¤
-        screenPos = Mouse.current.position.ReadValue(); //¸¶¿ì½º°¡ Å¬¸¯ µÈ È­¸é(·ÎÄÃ) À§Ä¡ Á¤º¸¸¦ ÀúÀå
-        worldPos = Camera.main.ScreenToWorldPoint(screenPos); //È­¸é À§Ä¡ Á¤º¸¸¦ ¿ùµå À§Ä¡·Î º¯È¯
+        //ì´ë²¤íŠ¸ë¥¼ ë°›ì•„ì˜¤ë©´ ì‹¤í–‰ë˜ëŠ” í•¨ìˆ˜
+        //ì´ë²¤íŠ¸ëŠ” ì¸í’‹ ì•¡ì…˜ ì‹œìŠ¤í…œì˜ í”Œë ˆì´ì–´ ì»¨íŠ¸ë¡¤ëŸ¬ì˜ ìš°í´ë¦­ì— ì„¤ì •
+        screenPos = Mouse.current.position.ReadValue(); //ë§ˆìš°ìŠ¤ê°€ í´ë¦­ ëœ í™”ë©´(ë¡œì»¬) ìœ„ì¹˜ ì •ë³´ë¥¼ ì €ì¥
+        worldPos = Camera.main.ScreenToWorldPoint(screenPos); //í™”ë©´ ìœ„ì¹˜ ì •ë³´ë¥¼ ì›”ë“œ ìœ„ì¹˜ë¡œ ë³€í™˜
         worldPos.z = 0;
-        targetPos = worldPos; //Å¸°Ù À§Ä¡¸¦ ¿ùµå À§Ä¡·Î º¯È¯
-        isMoving = true; //ÀÌµ¿ ÇØÁ¦
+        targetPos = worldPos; //íƒ€ê²Ÿ ìœ„ì¹˜ë¥¼ ì›”ë“œ ìœ„ì¹˜ë¡œ ë³€í™˜
+        isMoving = true; //ì´ë™ í•´ì œ
     }
-    //¹æÇâ ÀüÈ¯ ¸Ş¼­µå
+    //ë°©í–¥ ì „í™˜ ë©”ì„œë“œ
     private void OnSetDirection()
     {
-        //Ä³¸¯ÅÍ ¹æÇâ º¯¼ö --> ´õ È¿À²ÀûÀÎ ¹æ¹ı Áú¹®
+        //ìºë¦­í„° ë°©í–¥ ë³€ìˆ˜ --> ë” íš¨ìœ¨ì ì¸ ë°©ë²• ì§ˆë¬¸
         Vector3 scale = transform.localScale;
         if (transform.localScale.x > 0 && targetPos.x < 0)
         {
@@ -79,17 +79,18 @@ public class PlayerController : MonoBehaviour
         }
         transform.localScale = scale;
     }
-    //½ºÅ³ ¹ßµ¿ ¸Ş¼­µåµé-->ÇÏ³ª·Î °ü¸®ÇÒ ¼ö ÀÖµµ·Ï ¼öÁ¤ ¿ä¸Á
-    //°ø°İ Æ®¸®°Å¸¦ ¿Â, °¢ °ø°İ¿¡ ÇØ´çÇÏ´Â Å°¸¦ ¿Â
+    //ìŠ¤í‚¬ ë°œë™ ë©”ì„œë“œë“¤-->í•˜ë‚˜ë¡œ ê´€ë¦¬í•  ìˆ˜ ìˆë„ë¡ ìˆ˜ì • ìš”ë§
+    //ê³µê²© íŠ¸ë¦¬ê±°ë¥¼ ì˜¨, ê° ê³µê²©ì— í•´ë‹¹í•˜ëŠ” í‚¤ë¥¼ ì˜¨
     public void OnSkillInput(InputAction.CallbackContext callback)
     {
         _animator.SetBool(PlayerAnimatorCore.OnSkillInput, true);
-        var name = callback.control.name; //ÀÎÇ² ¾×¼ÇÀÇ ÄÁÆ®·Ñ ÀÌ¸§À» °¡Á®¿È
+        var name = callback.control.name; //ì¸í’‹ ì•¡ì…˜ì˜ ì»¨íŠ¸ë¡¤ ì´ë¦„ì„ ê°€ì ¸ì˜´
         if (System.Enum.TryParse(name, out Enum.SkillType keyEnum))
         {
             NowSkillIndex = (int)keyEnum;
-            _UsingCardList.UseCard(NowSkillIndex); //ÇöÀç ½ºÅ³ ÀÎµ¦½º¿¡ ÇØ´çÇÏ´Â Ä«µå »ç¿ë
-            _animator.SetInteger(PlayerAnimatorCore.SkillIndex, _UsingCardList.hand[NowSkillIndex].CardID); //¾Ö´Ï¸ŞÀÌÅÍ ÀÎÆ¼Àú¸¦ Ä«µåµ¦
+            _UsingCardList.UseCard(NowSkillIndex); //í˜„ì¬ ìŠ¤í‚¬ ì¸ë±ìŠ¤ì— í•´ë‹¹í•˜ëŠ” ì¹´ë“œ ì‚¬ìš©
+            _animator.SetInteger(PlayerAnimatorCore.SkillIndex, _UsingCardList.hand[NowSkillIndex].CardID); //ì• ë‹ˆë©”ì´í„° ì¸í‹°ì €ë¥¼ ì¹´ë“œë±
+
         }
     }
     

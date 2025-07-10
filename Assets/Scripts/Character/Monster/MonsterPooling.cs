@@ -3,39 +3,40 @@ using UnityEngine.Pool;
 
 public class MonsterPooling : MonoBehaviour
 {
-    //¸ó½ºÅÍ ÇÁ¸®ÆÕÀ» ¹ÞÀ» °ÔÀÓ ¿ÀºêÁ§Æ® ¼±¾ð
+    //ëª¬ìŠ¤í„° í”„ë¦¬íŒ¹ì„ ë°›ì„ ê²Œìž„ ì˜¤ë¸Œì íŠ¸ ì„ ì–¸
     [SerializeField] private GameObject _MonsterPrefab;
-    //À¯´ÏÆ¼ ¿ÀºêÁ§Æ® Ç® ¼±¾ð
+    //ìœ ë‹ˆí‹° ì˜¤ë¸Œì íŠ¸ í’€ ì„ ì–¸
     private ObjectPool<GameObject> _MonsterPool;
     
 
+
     private void Start()
     {
-        //ObjectPool »ý¼ºÀÚ
-        //ÃÊ±â 10°³ »ý¼º
-        //ÃÖ´ë 30°³±îÁö Ç®¿¡ ÀúÀå
+        //ObjectPool ìƒì„±ìž
+        //ì´ˆê¸° 10ê°œ ìƒì„±
+        //ìµœëŒ€ 30ê°œê¹Œì§€ í’€ì— ì €ìž¥
         _MonsterPool = new ObjectPool<GameObject>(CreatMonster, null, OnMonsterRelease, OnDestroyMonster,true, defaultCapacity: 10, maxSize: 30);
-        //10°³ »ý¼º
+        //10ê°œ ìƒì„±
         for (int i = 0; i < 10; i++)
         {
-            var monster = CreatMonster(); //¸ó½ºÅÍÇ®¿¡¼­ ²¨³»¿È
-            _MonsterPool.Release(monster); //¹Ù·Î ³ÖÀ½
+            var monster = CreatMonster(); //ëª¬ìŠ¤í„°í’€ì—ì„œ êº¼ë‚´ì˜´
+            _MonsterPool.Release(monster); //ë°”ë¡œ ë„£ìŒ
         }
     }
-    //¸ó½ºÅÍ »ý¼º
+    //ëª¬ìŠ¤í„° ìƒì„±
     private GameObject CreatMonster()
     {
-        //ÇÁ¸®ÆÕÀ» ÀÎ½ºÅÏ½º·Î º¯È¯ÇÏ¿© ¹ÝÈ¯
+        //í”„ë¦¬íŒ¹ì„ ì¸ìŠ¤í„´ìŠ¤ë¡œ ë³€í™˜í•˜ì—¬ ë°˜í™˜
         return Instantiate(_MonsterPrefab);
     }
 
 
-    //°´Ã¼¸¦ Ç®¿¡ ³ÖÀ» ¶§
+    //ê°ì²´ë¥¼ í’€ì— ë„£ì„ ë•Œ
     private void OnMonsterRelease(GameObject monster)
     {
         monster.SetActive(false);
     }
-    //Ç®ÀÇ Å©±â¸¦ ÃÊ°úÇÏ¿´À» ¶§ ¸ó½ºÅÍ¸¦ »èÁ¦
+    //í’€ì˜ í¬ê¸°ë¥¼ ì´ˆê³¼í•˜ì˜€ì„ ë•Œ ëª¬ìŠ¤í„°ë¥¼ ì‚­ì œ
     private void OnDestroyMonster(GameObject monster)
     {
         Destroy(monster);
@@ -51,19 +52,19 @@ public class MonsterPooling : MonoBehaviour
 
 
 
-    /* ¿ÀºêÁ§Æ® Ç®¸µ: ¿ÀºêÁ§Æ® Ç®¸µÀº ´ÙÀ½°ú °°Àº ºÎºÐ¿¡¼­ ÀÌÁ¡ÀÌ ÀÖ´Ù.
-     *  1)Èü ¸Þ¸ð¸® È¿À²¼º: Instantiate´Â È£Ãâ°úÁ¤¿¡¼­ Èü¿¡ ¸Þ¸ð¸®¸¦ ÇÒ´çÇÏ´Âµ¥, ÀÌ¶§ ¿ÀºêÁ§Æ® Ç®¸µÀ» ÅëÇØ ÇÊ¿äÇÑ ¸Þ¸ð¸®¸¦ ¹Ì¸® ÇÒ´çÇÔÀ¸·Î¼­ ³¶ºñµÇ´Â ¸Þ¸ð¸® °ø°£À» ÁÙÀÏ ¼ö ÀÖ´Ù. 
-     *  2)±íÀº º¹»ç ¹æÁö: Instantiate´Â ´Ü¼ø º¹»ç°¡ ¾Æ´Ï¶ó °ÔÀÓ ¿ÀºêÁ§Æ®ÀÇ Transform, SpriteRendererµîÀÇ ¸ðµç ÄÄÆ÷³ÍÆ®¸¦ º¹»çÇÏ¿© ¿ÏÀüÈ÷ »õ·Î¿î °´Ã¼¸¦ ¸¸µé°Ô µÈ´Ù. ÀÌ·¯ÇÑ ±íÀº º¹»ç ÀÛ¾÷Àº °íºñ¿ë ÀÛ¾÷À¸·Î ¸¹Àº ¸®¼Ò½º¸¦ ÇÊ¿ä·Î ÇÔÀ¸·Î ¿ÀºêÁ§Æ® Ç®¸µÀ» ÅëÇØ¼­ ÀÌ·¯ÇÑ ÀÛ¾÷À» ÇÊ¿äÇÑ ¸¸Å­ ¹Ì¸®ÇØµÎ¾î °ÔÀÓ ½ÇÇà Áß¿¡ µå´Â ºñ¿ëÀ» ÁÙÀÏ ¼ö ÀÖ´Ù.
-     *  3)Destroy´Â ·»´õ¸µÀÌ ³¡³­ ÈÄ °´Ã¼¸¦ »èÁ¦ÇÏ°Ô µÇ´Âµ¥, ÀÌ¶§ DestroyÇÒ ¿ÀºêÁ§Æ®°¡ ½×ÀÌ°Ô µÇ¸é(Áö¿¬»èÁ¦ Å¥°¡ ½×ÀÌ°Ô µÇ¸é) ÇÁ·¹ÀÓÀÌ Æ¢°Ô µÈ´Ù. ¿ÀºêÁ§Æ® Ç®¸µÀº ¿ÀºêÁ§Æ®¸¦ »èÁ¦ÇÒ ¶§ ¿ÀºêÁ§Æ®¸¦ ºñÈ°¼ºÈ­ ÇÏ°Ô ÇÔÀ¸·Î½á ºñ¿ëÀ» Àý¾àÇÑ´Ù.
-     *  4)ÃÊ±âÈ­ ÀýÂ÷ »ý·«: ¿ÀºêÁ§Æ® Ç®¸µÀ» »ç¿ëÇÏÁö ¾Ê°í ¿ÀºêÁ§Æ®¸¦ ÆÄ±«ÇÒ °æ¿ì °¢ ¿ÀºêÁ§Æ®¿¡ Á¸ÀçÇÏ´Â AI, HP µîÀÇ Á¤º¸¸¦ ÇÔ²² ÆÄ±«ÇÏ°Ô µÇÁö¸¸ ¿ÀºêÁ§Æ® Ç®¸µÀ» »ç¿ëÇÒ °æ¿ì °´Ã¼ ³»ºÎ¸¦ ÃÊ±âÈ­ÇÏ´Â °Í¸¸À¸·Î ¸®¼ÂÀ» ÇÒ ¼ö ÀÖ¾î ºñ¿ëÀ» ÁÙÀÏ ¼ö ÀÖ´Ù.
-     *  5)Garbage Collection ´ë»óÀ» ÁÙÀÓ: Garbage CollectionÀº ´õÀÌ»ó »ç¿ëÇÏÁö ¾Ê´Â °´Ã¼¸¦ ÀÚµ¿À¸·Î ¼ö°ÅÇÏ¿© ¸Þ¸ð¸® °ø°£¿¡¼­ »èÁ¦ÇÏ´Â ½Ã½ºÅÛÀ¸·Î µ¿±â½ÄÀ¸·Î ÀÛµ¿ÇÏ±â ¶§¹®¿¡ ½×¿´´Ù »èÁ¦ÇÏ°Ô µÇ¸é ÀÏ½ÃÀûÀ¸·Î °ÔÀÓ¿¡ ºÎ´ãÀ» ÁÙ ¼ö ÀÖ´Ù. ¶§¹®¿¡ °´Ã¼¸¦ »èÁ¦ÇÏÁö ¾Ê°í ÃÊ±âÈ­ ÈÄ ´Ù½Ã »ç¿ëÇÏ°Ô µÇ¸é °ÔÀÓÀÇ ºÎÇÏ¸¦ ÁÙÀÏ ¼ö ÀÖ´Ù.
-     * »ç¿ë±â¼ú: À¯´ÏÆ¼ ObjectPool
-     * ¹®Á¦»óÈ² ¹× ÇØ°á°úÁ¤: GC(Garbage Collector)ÀÇ °£ÇæÀû °³ÀÔ, µ¿ÀûÀ¸·Î »ý¼ºµÈ ¸ó½ºÅÍµéÀÇ º¹ÀâÇÑ ÃÊ±âÈ­ ·ÎÁ÷ ¹Ýº¹À¸·Î ÀÎÇÑ ·º-->UnityEngine.Pool.ObjectPool<T> API¸¦ ÇÐ½À ÈÄ µµÀÔ
-     * ¹è¿îÁ¡
-     *  1)ObjectPool<T>À» ´Ü¼øÇÑ Àç»ç¿ë µµ±¸°¡ ¾Æ´Ñ, GC ¹ß»ý Á¦¾î µî ÃÖÀûÈ­ ¼ö´ÜÀÇ ÇÊ¿ä¼ºÀ» ÀÌÇØÇÏ°í ÀÌ¸¦ ±¸ÇöÇÔ 
-     *  2)±íÀº º¹»ç, ºñµ¿±â½Ä Ã³¸® ¸ðµ¨ µî¿¡ ´ëÇÑ ÀÌÇØ¸¦ È®ÀåÇÏ¿© ÃÖÀûÈ­ÀÇ ÇÊ¿ä¼ºÀ» ÇÐ½ÀÇÔ
-     * ¼ºÀåÇÑ ºÎºÐ: C#»ý¼ºÀÚ¿¡ ´ëÇÑ ÀÌÇØ, ±íÀº º¹»ç¿¡ ´ëÇÑ ÀÌÇØ
-     * ÇâÈÄ º¸¿ÏÇÒ Á¡: ÇöÀç ÄÚµå¿¡¼­´Â ´Ü¼øÈ÷ ¿ÀºêÁ§Æ®¸¦ È°¼ºÈ­/ºñÈ°¼ºÈ­¸¸ ÇÏ°í ÀÖ´Ù, ÃßÈÄ¿¡´Â ÀÌ¸¦ ¼öÁ¤ÇÏ¿© È°¼ºÈ­ ½Ã ÇÔ²² ½ÇÇàÇÒ ÄÚµå¸¦ GetMonster()¿¡ Ãß°¡ÇÏ¿© ÄÚµå¸¦ ´õ È¿À²ÀûÀ¸·Î ¸¸µé °èÈ¹ÀÌ´Ù. ¶ÇÇÑ 
+    /* ì˜¤ë¸Œì íŠ¸ í’€ë§: ì˜¤ë¸Œì íŠ¸ í’€ë§ì€ ë‹¤ìŒê³¼ ê°™ì€ ë¶€ë¶„ì—ì„œ ì´ì ì´ ìžˆë‹¤.
+     *  1)íž™ ë©”ëª¨ë¦¬ íš¨ìœ¨ì„±: InstantiateëŠ” í˜¸ì¶œê³¼ì •ì—ì„œ íž™ì— ë©”ëª¨ë¦¬ë¥¼ í• ë‹¹í•˜ëŠ”ë°, ì´ë•Œ ì˜¤ë¸Œì íŠ¸ í’€ë§ì„ í†µí•´ í•„ìš”í•œ ë©”ëª¨ë¦¬ë¥¼ ë¯¸ë¦¬ í• ë‹¹í•¨ìœ¼ë¡œì„œ ë‚­ë¹„ë˜ëŠ” ë©”ëª¨ë¦¬ ê³µê°„ì„ ì¤„ì¼ ìˆ˜ ìžˆë‹¤. 
+     *  2)ê¹Šì€ ë³µì‚¬ ë°©ì§€: InstantiateëŠ” ë‹¨ìˆœ ë³µì‚¬ê°€ ì•„ë‹ˆë¼ ê²Œìž„ ì˜¤ë¸Œì íŠ¸ì˜ Transform, SpriteRendererë“±ì˜ ëª¨ë“  ì»´í¬ë„ŒíŠ¸ë¥¼ ë³µì‚¬í•˜ì—¬ ì™„ì „ížˆ ìƒˆë¡œìš´ ê°ì²´ë¥¼ ë§Œë“¤ê²Œ ëœë‹¤. ì´ëŸ¬í•œ ê¹Šì€ ë³µì‚¬ ìž‘ì—…ì€ ê³ ë¹„ìš© ìž‘ì—…ìœ¼ë¡œ ë§Žì€ ë¦¬ì†ŒìŠ¤ë¥¼ í•„ìš”ë¡œ í•¨ìœ¼ë¡œ ì˜¤ë¸Œì íŠ¸ í’€ë§ì„ í†µí•´ì„œ ì´ëŸ¬í•œ ìž‘ì—…ì„ í•„ìš”í•œ ë§Œí¼ ë¯¸ë¦¬í•´ë‘ì–´ ê²Œìž„ ì‹¤í–‰ ì¤‘ì— ë“œëŠ” ë¹„ìš©ì„ ì¤„ì¼ ìˆ˜ ìžˆë‹¤.
+     *  3)DestroyëŠ” ë Œë”ë§ì´ ëë‚œ í›„ ê°ì²´ë¥¼ ì‚­ì œí•˜ê²Œ ë˜ëŠ”ë°, ì´ë•Œ Destroyí•  ì˜¤ë¸Œì íŠ¸ê°€ ìŒ“ì´ê²Œ ë˜ë©´(ì§€ì—°ì‚­ì œ íê°€ ìŒ“ì´ê²Œ ë˜ë©´) í”„ë ˆìž„ì´ íŠ€ê²Œ ëœë‹¤. ì˜¤ë¸Œì íŠ¸ í’€ë§ì€ ì˜¤ë¸Œì íŠ¸ë¥¼ ì‚­ì œí•  ë•Œ ì˜¤ë¸Œì íŠ¸ë¥¼ ë¹„í™œì„±í™” í•˜ê²Œ í•¨ìœ¼ë¡œì¨ ë¹„ìš©ì„ ì ˆì•½í•œë‹¤.
+     *  4)ì´ˆê¸°í™” ì ˆì°¨ ìƒëžµ: ì˜¤ë¸Œì íŠ¸ í’€ë§ì„ ì‚¬ìš©í•˜ì§€ ì•Šê³  ì˜¤ë¸Œì íŠ¸ë¥¼ íŒŒê´´í•  ê²½ìš° ê° ì˜¤ë¸Œì íŠ¸ì— ì¡´ìž¬í•˜ëŠ” AI, HP ë“±ì˜ ì •ë³´ë¥¼ í•¨ê»˜ íŒŒê´´í•˜ê²Œ ë˜ì§€ë§Œ ì˜¤ë¸Œì íŠ¸ í’€ë§ì„ ì‚¬ìš©í•  ê²½ìš° ê°ì²´ ë‚´ë¶€ë¥¼ ì´ˆê¸°í™”í•˜ëŠ” ê²ƒë§Œìœ¼ë¡œ ë¦¬ì…‹ì„ í•  ìˆ˜ ìžˆì–´ ë¹„ìš©ì„ ì¤„ì¼ ìˆ˜ ìžˆë‹¤.
+     *  5)Garbage Collection ëŒ€ìƒì„ ì¤„ìž„: Garbage Collectionì€ ë”ì´ìƒ ì‚¬ìš©í•˜ì§€ ì•ŠëŠ” ê°ì²´ë¥¼ ìžë™ìœ¼ë¡œ ìˆ˜ê±°í•˜ì—¬ ë©”ëª¨ë¦¬ ê³µê°„ì—ì„œ ì‚­ì œí•˜ëŠ” ì‹œìŠ¤í…œìœ¼ë¡œ ë™ê¸°ì‹ìœ¼ë¡œ ìž‘ë™í•˜ê¸° ë•Œë¬¸ì— ìŒ“ì˜€ë‹¤ ì‚­ì œí•˜ê²Œ ë˜ë©´ ì¼ì‹œì ìœ¼ë¡œ ê²Œìž„ì— ë¶€ë‹´ì„ ì¤„ ìˆ˜ ìžˆë‹¤. ë•Œë¬¸ì— ê°ì²´ë¥¼ ì‚­ì œí•˜ì§€ ì•Šê³  ì´ˆê¸°í™” í›„ ë‹¤ì‹œ ì‚¬ìš©í•˜ê²Œ ë˜ë©´ ê²Œìž„ì˜ ë¶€í•˜ë¥¼ ì¤„ì¼ ìˆ˜ ìžˆë‹¤.
+     * ì‚¬ìš©ê¸°ìˆ : ìœ ë‹ˆí‹° ObjectPool
+     * ë¬¸ì œìƒí™© ë° í•´ê²°ê³¼ì •: GC(Garbage Collector)ì˜ ê°„í—ì  ê°œìž…, ë™ì ìœ¼ë¡œ ìƒì„±ëœ ëª¬ìŠ¤í„°ë“¤ì˜ ë³µìž¡í•œ ì´ˆê¸°í™” ë¡œì§ ë°˜ë³µìœ¼ë¡œ ì¸í•œ ë ‰-->UnityEngine.Pool.ObjectPool<T> APIë¥¼ í•™ìŠµ í›„ ë„ìž…
+     * ë°°ìš´ì 
+     *  1)ObjectPool<T>ì„ ë‹¨ìˆœí•œ ìž¬ì‚¬ìš© ë„êµ¬ê°€ ì•„ë‹Œ, GC ë°œìƒ ì œì–´ ë“± ìµœì í™” ìˆ˜ë‹¨ì˜ í•„ìš”ì„±ì„ ì´í•´í•˜ê³  ì´ë¥¼ êµ¬í˜„í•¨ 
+     *  2)ê¹Šì€ ë³µì‚¬, ë¹„ë™ê¸°ì‹ ì²˜ë¦¬ ëª¨ë¸ ë“±ì— ëŒ€í•œ ì´í•´ë¥¼ í™•ìž¥í•˜ì—¬ ìµœì í™”ì˜ í•„ìš”ì„±ì„ í•™ìŠµí•¨
+     * ì„±ìž¥í•œ ë¶€ë¶„: C#ìƒì„±ìžì— ëŒ€í•œ ì´í•´, ê¹Šì€ ë³µì‚¬ì— ëŒ€í•œ ì´í•´
+     * í–¥í›„ ë³´ì™„í•  ì : í˜„ìž¬ ì½”ë“œì—ì„œëŠ” ë‹¨ìˆœížˆ ì˜¤ë¸Œì íŠ¸ë¥¼ í™œì„±í™”/ë¹„í™œì„±í™”ë§Œ í•˜ê³  ìžˆë‹¤, ì¶”í›„ì—ëŠ” ì´ë¥¼ ìˆ˜ì •í•˜ì—¬ í™œì„±í™” ì‹œ í•¨ê»˜ ì‹¤í–‰í•  ì½”ë“œë¥¼ GetMonster()ì— ì¶”ê°€í•˜ì—¬ ì½”ë“œë¥¼ ë” íš¨ìœ¨ì ìœ¼ë¡œ ë§Œë“¤ ê³„íšì´ë‹¤. ë˜í•œ 
      * 
      */
 }
