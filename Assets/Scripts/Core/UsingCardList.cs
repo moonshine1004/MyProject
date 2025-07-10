@@ -11,10 +11,7 @@ public class UsingCardList : MonoBehaviour
     private const int initialHandSize = 5; //드로우 카드 수
     [SerializeField] private Deck _deck; //카드 덱 위임
 
-    private void Start()
-    {
-        
-    }
+    
     public void Init(Deck deck)
     {
         List<CardData> shuffled = new List<CardData>(deck.cardDeck); //카드 덱 위임
