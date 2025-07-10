@@ -1,10 +1,11 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+// ReSharper disable All
 
 public class CardView : MonoBehaviour
 {
-    //Ä«µå UI¿ÀºêÁ§Æ® Å¬·¡½ºÀÔ´Ï´Ù.
+    //Ä«ï¿½ï¿½ UIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® Å¬ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.
     
     //
     [SerializeField] private TMP_Text _costText;

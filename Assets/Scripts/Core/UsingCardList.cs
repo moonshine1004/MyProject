@@ -13,7 +13,7 @@ public class UsingCardList : MonoBehaviour
 
     private void Start()
     {
-        Init(_deck);
+        
     }
     public void Init(Deck deck)
     {
