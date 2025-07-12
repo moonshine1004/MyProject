@@ -5,9 +5,7 @@ using UnityEngine.UI;
 
 public class CardView : MonoBehaviour
 {
-    //ī�� UI������Ʈ Ŭ�����Դϴ�.
-    
-    //
+    //카드를 UI상에 표시하는 스크립트
     [SerializeField] private TMP_Text _costText;
     [SerializeField] private TMP_Text _damageText;
     [SerializeField] private Image _image;
@@ -18,7 +16,6 @@ public class CardView : MonoBehaviour
     public void Initialize(CardData card)
     {
         _cardData = card;
-
         _costText.text = card._Cost.ToString();
         _damageText.text = card._Damage.ToString();
 

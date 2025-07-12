@@ -1,51 +1,52 @@
 using UnityEngine;
 using UnityEditor;
-//¸®½ºÆ®¸¦ »ç¿ëÇÏ±â À§ÇÑ ³×ÀÓ½ºÆäÀÌ½º
+//ë¦¬ìŠ¤íŠ¸ë¥¼ ì‚¬ìš©í•˜ê¸° ìœ„í•œ ë„¤ìž„ìŠ¤íŽ˜ì´ìŠ¤
 using System.Collections.Generic;
 
-//Á¤Àû Å¬·¡½º-->ÀÎ½ºÅÏ½º ¾øÀÌ È£Ãâ °¡´É
+//ì •ì  í´ëž˜ìŠ¤-->ì¸ìŠ¤í„´ìŠ¤ ì—†ì´ í˜¸ì¶œ ê°€ëŠ¥
 public static class CardParser
 {
-    //CSVÆÄÀÏÀ» ¹Þ¾Æ Ä«µå Å¸ÀÔ °´Ã¼ÀÇ ¸®½ºÆ®¸¦ ¹ÝÈ¯ÇÏ´Â ½ºÅ©¸³Æ®
+    //CSVíŒŒì¼ì„ ë°›ì•„ ì¹´ë“œ íƒ€ìž… ê°ì²´ì˜ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•˜ëŠ” ìŠ¤í¬ë¦½íŠ¸
     public static List<CardData> ParseCSVToCards(TextAsset csvFile)
     {
-        var result = new List<CardData>(); //Ä«µå ¸®½ºÆ® »ý¼º
-        var rows = ParseCSV(csvFile.text); //CSVÆÄÀÏÀÇ ÅØ½ºÆ®¸¦ ParseCSV¸Þ¼­µå¿¡ ³Ö¾î ¹®ÀÚ¿­ ¹è¿­ÀÇ ¸®½ºÆ®·Î ¸¸µé¾î ´ëÀÔ-->ÀÎµ¦½º°¡ ¹Ù²ð ¶§¸¶´Ù ÇàÀÌ ¹Ù²ñ
-        //µ¥ÀÌÅÍ°¡ Àû¾î ÀÇ¹Ì ¾ø´Â °æ¿ì Á¾·á
+        var result = new List<CardData>(); //ì¹´ë“œ ë¦¬ìŠ¤íŠ¸ ìƒì„±
+        var rows = ParseCSV(csvFile.text); //CSVíŒŒì¼ì˜ í…ìŠ¤íŠ¸ë¥¼ ParseCSVë©”ì„œë“œì— ë„£ì–´ ë¬¸ìžì—´ ë°°ì—´ì˜ ë¦¬ìŠ¤íŠ¸ë¡œ ë§Œë“¤ì–´ ëŒ€ìž…-->ì¸ë±ìŠ¤ê°€ ë°”ë€” ë•Œë§ˆë‹¤ í–‰ì´ ë°”ë€œ
+        //ë°ì´í„°ê°€ ì ì–´ ì˜ë¯¸ ì—†ëŠ” ê²½ìš° ì¢…ë£Œ
         if (rows.Count < 4)
         {
-            Debug.LogError("[CardParser] CSV ÁÙ ¼ö°¡ ³Ê¹« Àû½À´Ï´Ù.");
+            Debug.LogError("[CardParser] CSV ì¤„ ìˆ˜ê°€ ë„ˆë¬´ ì ìŠµë‹ˆë‹¤.");
             return result;
         }
 
-        string[] headers = rows[1]; //¹®ÀÚ¿­ ¹è¿­ ¸®½ºÆ®ÀÇ 2¹øÂ° ¿ä¼Ò(µ¥ÀÌÅÍÀÇ 2¹øÂ° Çà)¸¦ ¹®ÀÚ¿­ ¹è¿­¿¡ ´ëÀÔ
-        //ÁÙº°·Î ÆÄ½Ì
-        for (int i = 3; i < rows.Count; i++) //µ¥ÀÌÅÍ ÇàÀº 4¹øÂ°ºÎÅÍ ½ÃÀÛÇØ¼­ ¸¶Áö¸· Çà±îÁö
+
+        string[] headers = rows[1]; //ë¬¸ìžì—´ ë°°ì—´ ë¦¬ìŠ¤íŠ¸ì˜ 2ë²ˆì§¸ ìš”ì†Œ(ë°ì´í„°ì˜ 2ë²ˆì§¸ í–‰)ë¥¼ ë¬¸ìžì—´ ë°°ì—´ì— ëŒ€ìž…
+        //ì¤„ë³„ë¡œ íŒŒì‹±
+        for (int i = 3; i < rows.Count; i++) //ë°ì´í„° í–‰ì€ 4ë²ˆì§¸ë¶€í„° ì‹œìž‘í•´ì„œ ë§ˆì§€ë§‰ í–‰ê¹Œì§€
         {
-            string[] row = rows[i]; //i¹øÂ° Çà(ÇöÀç Çà)ÀÇ µ¥ÀÌÅÍ¸¦ °¡Á®¿È
-            //ÇöÀç ÇàÀÇ ±æÀÌ°¡ 0ÀÌ°Å³ª ÇàÀÇ 0¹øÂ° ¿ä¼Ò°¡ nullÀÌ¸é ºóÁÙ ½ºÅµÇÔ(³Ñ¾î°¨)
+            string[] row = rows[i]; //ië²ˆì§¸ í–‰(í˜„ìž¬ í–‰)ì˜ ë°ì´í„°ë¥¼ ê°€ì ¸ì˜´
+            //í˜„ìž¬ í–‰ì˜ ê¸¸ì´ê°€ 0ì´ê±°ë‚˜ í–‰ì˜ 0ë²ˆì§¸ ìš”ì†Œê°€ nullì´ë©´ ë¹ˆì¤„ ìŠ¤í‚µí•¨(ë„˜ì–´ê°)
             if (row.Length == 0 || string.IsNullOrWhiteSpace(row[0]))
             {
-                Debug.LogWarning($"[CardParser] ºó ÁÙ ½ºÅµ: row {i}");
+                Debug.LogWarning($"[CardParser] ë¹ˆ ì¤„ ìŠ¤í‚µ: row {i}");
                 continue;
             }
-            //Ä«µå ½ºÅ©¸³ÅÍºí ¿ÀºêÁ§Æ®(ÀÎ½ºÅÏ½º)¸¦ ¸Þ¸ð¸®¿¡ »ý¼º
+            //ì¹´ë“œ ìŠ¤í¬ë¦½í„°ë¸” ì˜¤ë¸Œì íŠ¸(ì¸ìŠ¤í„´ìŠ¤)ë¥¼ ë©”ëª¨ë¦¬ì— ìƒì„±
             CardData card = ScriptableObject.CreateInstance<CardData>();
-            //°¢ ¿­À» ÆÄ½ÌÇÏ´Â ³»ºÎ ·çÇÁ
-            //ÀÌ°Å ¿Ö &&?
+            //ê° ì—´ì„ íŒŒì‹±í•˜ëŠ” ë‚´ë¶€ ë£¨í”„
+            //ì´ê±° ì™œ &&?
             for (int j = 0; j < headers.Length && j < row.Length; j++)
             {
-                string header = headers[j].Trim(); //.Trim(): ¾ÕµÚ °ø¹é Á¦°Å ÈÄ Çì´õ º¯¼ö¿¡ ÀúÀå, Ã¹¹øÂ° ·çÇÁ ¹Û¿¡ ÀÖ´Â headers¹è¿­À» ´ëÀÔÇÔÀ¸·Î¼­ ¿¢¼¿ µ¥ÀÌÅÍÀÇ Çà ÀÌµ¿ ¾øÀÌ ¿­¸¸ ÀÌµ¿
-                string value = row[j].Trim(); //Ã¹ ·çÇÁ ³»ÀÇ rows¹è¿­À» ´ëÀÔ ¹Þ¾Æ ·çÇÁ°¡ ¹Ýº¹ µÉ ¶§¸¶´Ù ¿¢¼¿ ´ëÀÌÅÍÀÇ ´ÙÀ½ ÇàÀ¸·Î ÀÌµ¿ÇÏ¿© Çà ³»ÀÇ j¹øÂ° ÇàÀÇ °ª¿¡ °ø¹é Á¦°Å ÈÄ °ª º¯¼ö¿¡ ÀúÀå
+                string header = headers[j].Trim(); //.Trim(): ì•žë’¤ ê³µë°± ì œê±° í›„ í—¤ë” ë³€ìˆ˜ì— ì €ìž¥, ì²«ë²ˆì§¸ ë£¨í”„ ë°–ì— ìžˆëŠ” headersë°°ì—´ì„ ëŒ€ìž…í•¨ìœ¼ë¡œì„œ ì—‘ì…€ ë°ì´í„°ì˜ í–‰ ì´ë™ ì—†ì´ ì—´ë§Œ ì´ë™
+                string value = row[j].Trim(); //ì²« ë£¨í”„ ë‚´ì˜ rowsë°°ì—´ì„ ëŒ€ìž… ë°›ì•„ ë£¨í”„ê°€ ë°˜ë³µ ë  ë•Œë§ˆë‹¤ ì—‘ì…€ ëŒ€ì´í„°ì˜ ë‹¤ìŒ í–‰ìœ¼ë¡œ ì´ë™í•˜ì—¬ í–‰ ë‚´ì˜ jë²ˆì§¸ í–‰ì˜ ê°’ì— ê³µë°± ì œê±° í›„ ê°’ ë³€ìˆ˜ì— ì €ìž¥
 
-                if (string.IsNullOrEmpty(value)) continue; // ºó °ª ½ºÅµ
+                if (string.IsNullOrEmpty(value)) continue; // ë¹ˆ ê°’ ìŠ¤í‚µ
 
-                try //¿¹¿Ü¸¦ È®ÀÎ
+                try //ì˜ˆì™¸ë¥¼ í™•ì¸
                 {
-                    switch (header) //¹®ÀÚ¿­ º¯¼öÀÎ Çì´õÀÇ °ª¿¡ µû¶ó ½ºÀ§Ä¡¹®
+                    switch (header) //ë¬¸ìžì—´ ë³€ìˆ˜ì¸ í—¤ë”ì˜ ê°’ì— ë”°ë¼ ìŠ¤ìœ„ì¹˜ë¬¸
                     {
                         case "CardID":
-                            if (int.TryParse(value, out var id)) //value¹®ÀÚ¿­À» int·Î º¯È¯ ½Ãµµ ¼º°ø ½Ã id¿¡ ´ëÀÔµÊ, ½ÇÆÐ ½Ã false¹ÝÈ¯
+                            if (int.TryParse(value, out var id)) //valueë¬¸ìžì—´ì„ intë¡œ ë³€í™˜ ì‹œë„ ì„±ê³µ ì‹œ idì— ëŒ€ìž…ë¨, ì‹¤íŒ¨ ì‹œ falseë°˜í™˜
                                 card.CardID = id;
                             break;
                         case "Cost":
@@ -68,93 +69,93 @@ public static class CardParser
                         
                     }
                 }
-                catch (System.Exception ex) //try°¡ ¿¹¿Ü¸¦ È®ÀÎÇÏ¸é ½ÇÇà
+                catch (System.Exception ex) //tryê°€ ì˜ˆì™¸ë¥¼ í™•ì¸í•˜ë©´ ì‹¤í–‰
                 {
-                    Debug.LogWarning($"[CardParser] '{header}' °ª '{value}' Ã³¸® ½ÇÆÐ (row {i}): {ex.Message}");
+                    Debug.LogWarning($"[CardParser] '{header}' ê°’ '{value}' ì²˜ë¦¬ ì‹¤íŒ¨ (row {i}): {ex.Message}");
                 }
             }
 
-            result.Add(card); //Ä«µå ¸®½ºÆ®¿¡ Ãß°¡
+            result.Add(card); //ì¹´ë“œ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
         }
 
-        return result; //Ä«µå ¸®½ºÆ® ¹ÝÈ¯
+        return result; //ì¹´ë“œ ë¦¬ìŠ¤íŠ¸ ë°˜í™˜
     }
 
-    //CSVÆÄÀÏÀ» ¹Þ¾Æ¿Í ¹®ÀÚ¿­ ¹è¿­ ¸®½ºÆ®¸¦ ¹ÝÈ¯ÇÏ´Â ½ºÅ©¸³Æ®
-    //±¸ºÐÀÚ¸¦ ±âÁØÀ¸·Î ÅØ½ºÆ®¸¦ Àß¶ó ¹®ÀÚ¿­ ¹è¿­ ¸®½ºÆ®·Î ¸¸µê
+    //CSVíŒŒì¼ì„ ë°›ì•„ì™€ ë¬¸ìžì—´ ë°°ì—´ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•˜ëŠ” ìŠ¤í¬ë¦½íŠ¸
+    //êµ¬ë¶„ìžë¥¼ ê¸°ì¤€ìœ¼ë¡œ í…ìŠ¤íŠ¸ë¥¼ ìž˜ë¼ ë¬¸ìžì—´ ë°°ì—´ ë¦¬ìŠ¤íŠ¸ë¡œ ë§Œë“¦
     private static List<string[]> ParseCSV(string csvText)
     {
-        List<string[]> result = new List<string[]>(); //¹®ÀÚ¿­ ¹è¿­ ¸®½ºÆ® result¼±¾ð
-        //csvText.Split: ¹®ÀÚ¿­À» Æ¯Á¤ ±¸ºÐÀÚ·Î ³ª´©¾î ¹®ÀÚ¿­À» ºÐ¸®ÇÏ´Â C# Ç¥ÁØ ¶óÀÌºê·¯¸®¿¡ Æ÷ÇÔµÈ ¸Þ¼­µå
-        var lines = csvText.Split(new[] { "\r\n", "\n" }, System.StringSplitOptions.RemoveEmptyEntries); //ºó ¹®ÀÚ¿­À» Á¦¿ÜÇÏ°í Æ¯Á¤ ±¸ºÐÀÚ("\r\n", "\n"-->ÁÙ¹Ù²Þ) ´ÜÀ§·Î Àß¶ó Çà(line)¿¡ ÀúÀå
+        List<string[]> result = new List<string[]>(); //ë¬¸ìžì—´ ë°°ì—´ ë¦¬ìŠ¤íŠ¸ resultì„ ì–¸
+        //csvText.Split: ë¬¸ìžì—´ì„ íŠ¹ì • êµ¬ë¶„ìžë¡œ ë‚˜ëˆ„ì–´ ë¬¸ìžì—´ì„ ë¶„ë¦¬í•˜ëŠ” C# í‘œì¤€ ë¼ì´ë¸ŒëŸ¬ë¦¬ì— í¬í•¨ëœ ë©”ì„œë“œ
+        var lines = csvText.Split(new[] { "\r\n", "\n" }, System.StringSplitOptions.RemoveEmptyEntries); //ë¹ˆ ë¬¸ìžì—´ì„ ì œì™¸í•˜ê³  íŠ¹ì • êµ¬ë¶„ìž("\r\n", "\n"-->ì¤„ë°”ê¿ˆ) ë‹¨ìœ„ë¡œ ìž˜ë¼ í–‰(line)ì— ì €ìž¥
 
-        foreach (var line in lines)//À§¿¡¼­ ¾òÀº linesÇàÀÇ ¿ä¼Ò¸¦ ÇÏ³ª¾¿ ²¨³»¾î ParseCSVLine¸Þ¼­µå¸¦ ÅëÇØ ¹®ÀÚ¿­ ¹è¿­·Î ¹Ù²Þ (i.e.¹®ÀÚ¿­À» Àß¶ó ¹®ÀÚ¿­ ¹è¿­·Î ¹Ù²Þ)
+        foreach (var line in lines)//ìœ„ì—ì„œ ì–»ì€ linesí–‰ì˜ ìš”ì†Œë¥¼ í•˜ë‚˜ì”© êº¼ë‚´ì–´ ParseCSVLineë©”ì„œë“œë¥¼ í†µí•´ ë¬¸ìžì—´ ë°°ì—´ë¡œ ë°”ê¿ˆ (i.e.ë¬¸ìžì—´ì„ ìž˜ë¼ ë¬¸ìžì—´ ë°°ì—´ë¡œ ë°”ê¿ˆ)
         {
-            result.Add(ParseCSVLine(line));//result ¸®½ºÆ®¿¡ lineÀ» ¸Å°Ôº¯¼ö·Î ¹Þ´Â ParseCSVLine¸Þ¼­µå ½ÇÇàÇÏ¿© ¾òÀº °ªÀ» ´ëÀÔ
+            result.Add(ParseCSVLine(line));//result ë¦¬ìŠ¤íŠ¸ì— lineì„ ë§¤ê²Œë³€ìˆ˜ë¡œ ë°›ëŠ” ParseCSVLineë©”ì„œë“œ ì‹¤í–‰í•˜ì—¬ ì–»ì€ ê°’ì„ ëŒ€ìž…
         }
 
         return result;
     }
-    //¹®ÀÚ¿­À» ¹Þ¾Æ¿Í ¹®ÀÚ¿­ ¹è¿­À» ¹ÝÈ¯ÇÏ´Â ¸Þ¼­µå
-    //ParseCSV¿¡¼­ ±¸ºÐÀÚ¸¦ ±âÁØÀ¸·Î ÀÚ¸¥ °¢ ´Ü¾î¸¦ 
+    //ë¬¸ìžì—´ì„ ë°›ì•„ì™€ ë¬¸ìžì—´ ë°°ì—´ì„ ë°˜í™˜í•˜ëŠ” ë©”ì„œë“œ
+    //ParseCSVì—ì„œ êµ¬ë¶„ìžë¥¼ ê¸°ì¤€ìœ¼ë¡œ ìžë¥¸ ê° ë‹¨ì–´ë¥¼ 
     private static string[] ParseCSVLine(string line)
     {
-        List<string> values = new List<string>(); //values¶ó´Â ¹®ÀÚ¿­ ¸®½ºÆ® ¼±¾ð
+        List<string> values = new List<string>(); //valuesë¼ëŠ” ë¬¸ìžì—´ ë¦¬ìŠ¤íŠ¸ ì„ ì–¸
         bool inQuotes = false;
-        string current = ""; //¹®ÀÚ¸¦ ´ã¾ÆµÑ ¹®ÀÚ¿­ 
+        string current = ""; //ë¬¸ìžë¥¼ ë‹´ì•„ë‘˜ ë¬¸ìžì—´ 
 
-        for (int i = 0; i < line.Length; i++) //¹®ÀÚ¿­ÀÇ ±æÀÌ ¸¸Å­ ¹Ýº¹
+        for (int i = 0; i < line.Length; i++) //ë¬¸ìžì—´ì˜ ê¸¸ì´ ë§Œí¼ ë°˜ë³µ
         {
-            char c = line[i]; //¹®ÀÚ¿­ÀÇ i¹øÂ° ¹®ÀÚ ÀúÀåÇÏ´Â ¹®ÀÚ º¯¼ö
+            char c = line[i]; //ë¬¸ìžì—´ì˜ ië²ˆì§¸ ë¬¸ìž ì €ìž¥í•˜ëŠ” ë¬¸ìž ë³€ìˆ˜
 
-            if (c == '"') //i¹øÂ° ¹®ÀÚ°¡ °ø¹éÀÌ¸é 
+            if (c == '"') //ië²ˆì§¸ ë¬¸ìžê°€ ê³µë°±ì´ë©´ 
             {
-                inQuotes = !inQuotes; //inQuotes¸¦ Æ®·ç·Î
+                inQuotes = !inQuotes; //inQuotesë¥¼ íŠ¸ë£¨ë¡œ
             }
-            else if (c == ',' && !inQuotes) //i¹øÂ° ¹®»ç°¡ ÄÞ¸¶°Å³ª inQuotes°¡ Æ®·ç¸é
+            else if (c == ',' && !inQuotes) //ië²ˆì§¸ ë¬¸ì‚¬ê°€ ì½¤ë§ˆê±°ë‚˜ inQuotesê°€ íŠ¸ë£¨ë©´
             {
-                values.Add(current.Trim()); //values ¹è¿­¿¡ ¹®ÀÚµéÀ» ÀúÀåÇØµÐ current¸¦ ¾ÕµÚ °ø¹é Á¦°ÅÈÄ ³ÖÀ½
-                current = ""; //current´Â ´Ù½Ã °ø¹éÀ¸·Î ÃÊ±âÈ­
+                values.Add(current.Trim()); //values ë°°ì—´ì— ë¬¸ìžë“¤ì„ ì €ìž¥í•´ë‘” currentë¥¼ ì•žë’¤ ê³µë°± ì œê±°í›„ ë„£ìŒ
+                current = ""; //currentëŠ” ë‹¤ì‹œ ê³µë°±ìœ¼ë¡œ ì´ˆê¸°í™”
             }
             else
             {
-                current += c; //¹®ÀÚ¿­¿¡ i¹øÂ° ¹®ÀÚ ÀúÀå
+                current += c; //ë¬¸ìžì—´ì— ië²ˆì§¸ ë¬¸ìž ì €ìž¥
             }
         }
 
         values.Add(current.Trim()); 
-        return values.ToArray(); //¸®½ºÆ®¸¦ ¹è¿­·Î ¹Ù²Ù¾î ¹ÝÈ¯
+        return values.ToArray(); //ë¦¬ìŠ¤íŠ¸ë¥¼ ë°°ì—´ë¡œ ë°”ê¾¸ì–´ ë°˜í™˜
     }
 
-    /* °³¹ß ±â´É: ¿¢¼¿ µ¥ÀÌÅÍ Å×ÀÌºíÀ» ÆÄ½ÌÇÏ¿© ½ºÅ©¸³ÅÍºí ¿ÀºêÁ§Æ®¸¦ µ¿ÀûÀ¸·Î »ý¼ºÇÒ ¼ö ÀÖ´Â ÆÄÀÌÇÁ¶óÀÎ °³¹ß --> ÀÌ´Â °ÔÀÓ Æ¯¼º »ó ¹Ýº¹ÀûÀÎ ¹ë·±½Ì°ú ¸¹Àº ¾çÀÇ ¿ÀºêÁ§Æ®¸¦ ´Ù·ë¿¡ ÀÖ¾î Å« ÀÌÁ¡À» °¡Áü
-     * »ç¿ë ±â¼ú: À¯´ÏÆ¼ ½ºÅ©¸³ÅÍºí ¿ÀºêÁ§Æ®, using System.IO, AssetDatabase, [ContextMenu]
-     *  1)À¯´ÏÆ¼ ½ºÅ©¸³ÅÍºí ¿ÀºêÁ§Æ®: À¯´ÏÆ¼ÀÇ ½ºÅ©¸³ÅÍºí ¿ÀºêÁ§Æ®´Â ±¸Á¶°¡ °°Àº ´ë·®ÀÇ ¼­·Î ´Ù¸¥ ¿ÀºêÁ§Æ®¸¦ ´Ù·ç´Âµ¥¿¡ ¿ëÀÌÇÑ À¯´ÏÆ¼ÀÇ µ¥ÀÌÅÍ ÄÁÅ×ÀÌ³ÊÀÌ´Ù. 
-     *                                ÀÌ ±â´ÉÀ» »ç¿ëÇÏ¸é º¹¼öÀÇ µ¥ÀÌÅÍ¸¦ ºü¸£°Ô ¿¡¼ÂÀ¸·Î ¸¸µå¾î ÀúÀåÇÏ¿© »ç¿ëÇÒ ¼ö ÀÖ´Ù´Â ÀÌÁ¡ÀÌ ÀÖ´Ù.
-     *                                º» ÇÁ·ÎÁ§Æ®´Â ÀÌ¸¦ ÀÌ¿ëÇÏ¿© ÇÁ·ÎÁ§Æ®ÀÇ ÇÙ½É ½Ã½ºÅÛÀÎ 'Ä«µå ½Ã½ºÅÛ'¿¡ ÇÊ¿äÇÑ Ä«µå¸¦ °£ÆíÇÏ°í ºü¸£°Ô Á¦ÀÛÇß´Ù.
-     *                                ½ºÅ©¸³ÅÍºí ¿ÀºêÁ§Æ® ±â´ÉÀº ±âÈ¹ÀÚ¿Í Çù¾÷ÇÏ¿© µ¥ÀÌÅÍ Å×ÀÌºíÀ» ÅëÇØ »ç¿ëÇÏ¸é ´õ¿í È¿°úÀûÀÎ ±â´ÉÀ¸·Î, º» ÇÁ·ÎÁ§Æ® ¶ÇÇÑ ±âÈ¹ÀÚ°¡ Á¦ÀÛÇÑ Ä«µå µ¥ÀÌÅÍ Å×ÀÌºíÀ» ÅëÇØ Ä«µå ½ºÅ©¸³ÅÍºí ¿ÀºêÁ§Æ®¸¦ Á¦ÀÛÇß´Ù.
-     *  2)System.IO: System.IOÀº .NET ¶óÀÌºê·¯¸®°¡ Á¦°øÇÏ´Â ³×ÀÓ ½ºÆäÀÌ½º·Î ÆÄÀÏ, ½ºÆ®¸²ÀÇ ÀÔÃâ·ÂÀ» µ½´Â´Ù. º» ÇÁ·ÎÁ§Æ®¿¡¼­´Â System.IOÀÇ Directory¸¦ ÀÌ¿ëÇÏ¿© AssetDatabaseÀÇ Æú´õ¸¦ ´Ù·ç¾ú´Ù.
+    /* ê°œë°œ ê¸°ëŠ¥: ì—‘ì…€ ë°ì´í„° í…Œì´ë¸”ì„ íŒŒì‹±í•˜ì—¬ ìŠ¤í¬ë¦½í„°ë¸” ì˜¤ë¸Œì íŠ¸ë¥¼ ë™ì ìœ¼ë¡œ ìƒì„±í•  ìˆ˜ ìžˆëŠ” íŒŒì´í”„ë¼ì¸ ê°œë°œ --> ì´ëŠ” ê²Œìž„ íŠ¹ì„± ìƒ ë°˜ë³µì ì¸ ë°¸ëŸ°ì‹±ê³¼ ë§Žì€ ì–‘ì˜ ì˜¤ë¸Œì íŠ¸ë¥¼ ë‹¤ë£¸ì— ìžˆì–´ í° ì´ì ì„ ê°€ì§
+     * ì‚¬ìš© ê¸°ìˆ : ìœ ë‹ˆí‹° ìŠ¤í¬ë¦½í„°ë¸” ì˜¤ë¸Œì íŠ¸, using System.IO, AssetDatabase, [ContextMenu]
+     *  1)ìœ ë‹ˆí‹° ìŠ¤í¬ë¦½í„°ë¸” ì˜¤ë¸Œì íŠ¸: ìœ ë‹ˆí‹°ì˜ ìŠ¤í¬ë¦½í„°ë¸” ì˜¤ë¸Œì íŠ¸ëŠ” êµ¬ì¡°ê°€ ê°™ì€ ëŒ€ëŸ‰ì˜ ì„œë¡œ ë‹¤ë¥¸ ì˜¤ë¸Œì íŠ¸ë¥¼ ë‹¤ë£¨ëŠ”ë°ì— ìš©ì´í•œ ìœ ë‹ˆí‹°ì˜ ë°ì´í„° ì»¨í…Œì´ë„ˆì´ë‹¤. 
+     *                                ì´ ê¸°ëŠ¥ì„ ì‚¬ìš©í•˜ë©´ ë³µìˆ˜ì˜ ë°ì´í„°ë¥¼ ë¹ ë¥´ê²Œ ì—ì…‹ìœ¼ë¡œ ë§Œë“œì–´ ì €ìž¥í•˜ì—¬ ì‚¬ìš©í•  ìˆ˜ ìžˆë‹¤ëŠ” ì´ì ì´ ìžˆë‹¤.
+     *                                ë³¸ í”„ë¡œì íŠ¸ëŠ” ì´ë¥¼ ì´ìš©í•˜ì—¬ í”„ë¡œì íŠ¸ì˜ í•µì‹¬ ì‹œìŠ¤í…œì¸ 'ì¹´ë“œ ì‹œìŠ¤í…œ'ì— í•„ìš”í•œ ì¹´ë“œë¥¼ ê°„íŽ¸í•˜ê³  ë¹ ë¥´ê²Œ ì œìž‘í–ˆë‹¤.
+     *                                ìŠ¤í¬ë¦½í„°ë¸” ì˜¤ë¸Œì íŠ¸ ê¸°ëŠ¥ì€ ê¸°íšìžì™€ í˜‘ì—…í•˜ì—¬ ë°ì´í„° í…Œì´ë¸”ì„ í†µí•´ ì‚¬ìš©í•˜ë©´ ë”ìš± íš¨ê³¼ì ì¸ ê¸°ëŠ¥ìœ¼ë¡œ, ë³¸ í”„ë¡œì íŠ¸ ë˜í•œ ê¸°íšìžê°€ ì œìž‘í•œ ì¹´ë“œ ë°ì´í„° í…Œì´ë¸”ì„ í†µí•´ ì¹´ë“œ ìŠ¤í¬ë¦½í„°ë¸” ì˜¤ë¸Œì íŠ¸ë¥¼ ì œìž‘í–ˆë‹¤.
+     *  2)System.IO: System.IOì€ .NET ë¼ì´ë¸ŒëŸ¬ë¦¬ê°€ ì œê³µí•˜ëŠ” ë„¤ìž„ ìŠ¤íŽ˜ì´ìŠ¤ë¡œ íŒŒì¼, ìŠ¤íŠ¸ë¦¼ì˜ ìž…ì¶œë ¥ì„ ë•ëŠ”ë‹¤. ë³¸ í”„ë¡œì íŠ¸ì—ì„œëŠ” System.IOì˜ Directoryë¥¼ ì´ìš©í•˜ì—¬ AssetDatabaseì˜ í´ë”ë¥¼ ë‹¤ë£¨ì—ˆë‹¤.
      *  3)AssetDatabase: 
-     * ¹®Á¦»óÈ² ¹× ÇØ°á°úÁ¤
-     *  1)ÆÄ½ÌÇØ ¿Â µ¥ÀÌÅÍ¿¡ ´ëÇÑ µ¥ÀÌÅÍ Å¸ÀÔ Á¤ÀÇ¿¡ ÀÖ¾î¼­ÀÇ ¹®Á¦Á¡
-     *   -->ÆÄ½ÌÇØ ¿Â µ¥ÀÌÅÍ¸¦ º¯¼ö¿¡ ´ëÀÔÇÏ´Â °úÁ¤¿¡ ÀÖ¾î ¸ðµç °ªÀ» ¹®ÀÚ¿­·Î °¡Á®¿Ô±â ¶§¹®¿¡ ¹®ÀÚ¿­ÀÌ ¾Æ´Ñ µ¥ÀÌÅÍ¸¦ ¹Þ¾Æµå¸®Áö ¸øÇÏ´Â ¹®Á¦ ¹ß»ý
-     *   -->ÀÌ¸¦ ¼öÁ¤ÇÏ°íÀÚ ¸í½ÃÀû Çüº¯È¯À» ÀÌ¿ëÇÏ¿© µ¥ÀÌÅÍ¸¦ ¹Þ¾Æ¿ÔÀ¸³ª À¯È¿ÇÏÁö ¾ÊÀº enumÀ» ¹Þ¾Æ¿À´Â ¹®Á¦¸¦ È®ÀÎÇÔ
-     *   -->ÀÌ¸¦ ÇØ°áÇÏ±â À§ÇØ int.Parse(), enum.Parse()µî Parse¸¦ »ç¿ëÇÏ¿´Áö¸¸ Parse´Â Á¸ÀçÇÏÁö ¾Ê´Â enum°ª, Æ÷¸Ë ¿À·ù µîÀÇ ¿¹¿Ü »óÈ²¿¡ ´ëÇÑ ´ëÃ³°¡ ¾î·Á¿ò
-     *   -->µû¶ó¼­ TryParse()¸¦ »ç¿ëÇÏ¿© ÀÌ·¯ÇÑ ¹®Á¦ »óÈ²À» °³¼±ÇÔ
+     * ë¬¸ì œìƒí™© ë° í•´ê²°ê³¼ì •
+     *  1)íŒŒì‹±í•´ ì˜¨ ë°ì´í„°ì— ëŒ€í•œ ë°ì´í„° íƒ€ìž… ì •ì˜ì— ìžˆì–´ì„œì˜ ë¬¸ì œì 
+     *   -->íŒŒì‹±í•´ ì˜¨ ë°ì´í„°ë¥¼ ë³€ìˆ˜ì— ëŒ€ìž…í•˜ëŠ” ê³¼ì •ì— ìžˆì–´ ëª¨ë“  ê°’ì„ ë¬¸ìžì—´ë¡œ ê°€ì ¸ì™”ê¸° ë•Œë¬¸ì— ë¬¸ìžì—´ì´ ì•„ë‹Œ ë°ì´í„°ë¥¼ ë°›ì•„ë“œë¦¬ì§€ ëª»í•˜ëŠ” ë¬¸ì œ ë°œìƒ
+     *   -->ì´ë¥¼ ìˆ˜ì •í•˜ê³ ìž ëª…ì‹œì  í˜•ë³€í™˜ì„ ì´ìš©í•˜ì—¬ ë°ì´í„°ë¥¼ ë°›ì•„ì™”ìœ¼ë‚˜ ìœ íš¨í•˜ì§€ ì•Šì€ enumì„ ë°›ì•„ì˜¤ëŠ” ë¬¸ì œë¥¼ í™•ì¸í•¨
+     *   -->ì´ë¥¼ í•´ê²°í•˜ê¸° ìœ„í•´ int.Parse(), enum.Parse()ë“± Parseë¥¼ ì‚¬ìš©í•˜ì˜€ì§€ë§Œ ParseëŠ” ì¡´ìž¬í•˜ì§€ ì•ŠëŠ” enumê°’, í¬ë§· ì˜¤ë¥˜ ë“±ì˜ ì˜ˆì™¸ ìƒí™©ì— ëŒ€í•œ ëŒ€ì²˜ê°€ ì–´ë ¤ì›€
+     *   -->ë”°ë¼ì„œ TryParse()ë¥¼ ì‚¬ìš©í•˜ì—¬ ì´ëŸ¬í•œ ë¬¸ì œ ìƒí™©ì„ ê°œì„ í•¨
      * 
      * 
-     * ¹è¿îÁ¡
-     *  1)Çù¾÷ÀÇ ÀÖ¾î¼­ÀÇ ÇÊ¿ä¼º ¹× Áß¿ä¼º: ¿À´Ã³¯ÀÇ °ÔÀÓÀº ÇÏµå¿þ¾î ½ºÆåÀÇ ºñ¾àÀû »ó½Â°ú ÇÔ²² Á¡Á¡ ´õ º¹ÀâÇØÁ® °¡°í ÀÖ´Ù. ÀÌ¿¡ µû¶ó ±âÈ¹ÀÚ¿Í ÇÁ·Î±×·¡¸Ó°¡ ´Ù·ï¾ßÇÏ´Â µ¥ÀÌÅÍÀÇ ¾ç ¶ÇÇÑ ´Ã¾î°¡°í ÀÖ´Ù.
-     *                                      º» ÇÁ·ÎÁ§Æ®¿¡¼­ »ç¿ëÇÑ Ä«µå(¿ÀºêÁ§Æ®)ÀÇ °³¼ö´Â ¾à 30°³¿´À½¿¡µµ Ä«µåÀÇ ÀÌ¸§À» Á¤ÀÇÇÏ°í ÀÌ¸¦ È°¿ëÇÏ´Âµ¥¿¡ ÀÖ¾î ¸¹Àº ¾î·Á¿òÀ» °Þ¾ú´Ù.
-     *                                      Áï, °íÂ÷¿øÀûÀ¸·Î ÁøÈ­ÇØ °¡´Â Çö´ë °ÔÀÓ¿¡¼­ÀÇ ¿ÀºêÁ§Æ®¸¦ ´Ù·ç´Â µ¥´Â ÀÌº¸´Ù ´õÇÑ ¼ö°í½º·¯¿òÀÌ µé±â ¶§¹®¿¡, ÀÌ·¯ÇÑ ¼ö°í¸¦ ´ú±â À§ÇØ ¸¸µé¾îÁö´Â µ¥ÀÌÅÍ Å×ÀÌºíÀº 
-     *                                      °ÔÀÓ Á¦ÀÛ¿¡ ÇÊ¼ö ¿ä¼Ò°¡ µÇ¾úÀ¸¸ç, ÇÁ·Î±×·¡¸Ó¿¡°Ô ÀÖ¾î¼­´Â ÀÌ¸¦ Á¦ÀÛÇÏ´Â ±âÈ¹ÀÚ¿ÍÀÇ ¼ÒÅëÀÌ ´õ¿í Áß¿äÇØÁ³´Ù°í º¼ ¼ö ÀÖ´Ù.
-     *                                      º» ÇÁ·ÎÁ§Æ®¸¦ Á¦ÀÛÇÔ¿¡ ÀÖ¾î¼­ ÀÌ·¯ÇÑ Çù¾÷ÀÇ ÇÊ¿ä¼ºÀ» ´À²¼À¸¸ç, ÇÁ·Î±×·¡¸Ó¿Í ±âÈ¹ÀÚÀÇ ¼ÒÅë°ú ÀÌ·¯ÇÑ ¼ÒÅëÀÇ ´Ù¸®°¡ µÇ¾îÁÖ´Â ¹®¼­ÀÇ Áß¿ä¼º ¶ÇÇÑ »ÀÀú¸®°Ô ½Ç°¨ÇÒ ¼ö ÀÖ¾ú´Ù.
+     * ë°°ìš´ì 
+     *  1)í˜‘ì—…ì˜ ìžˆì–´ì„œì˜ í•„ìš”ì„± ë° ì¤‘ìš”ì„±: ì˜¤ëŠ˜ë‚ ì˜ ê²Œìž„ì€ í•˜ë“œì›¨ì–´ ìŠ¤íŽ™ì˜ ë¹„ì•½ì  ìƒìŠ¹ê³¼ í•¨ê»˜ ì ì  ë” ë³µìž¡í•´ì ¸ ê°€ê³  ìžˆë‹¤. ì´ì— ë”°ë¼ ê¸°íšìžì™€ í”„ë¡œê·¸ëž˜ë¨¸ê°€ ë‹¤ë¤„ì•¼í•˜ëŠ” ë°ì´í„°ì˜ ì–‘ ë˜í•œ ëŠ˜ì–´ê°€ê³  ìžˆë‹¤.
+     *                                      ë³¸ í”„ë¡œì íŠ¸ì—ì„œ ì‚¬ìš©í•œ ì¹´ë“œ(ì˜¤ë¸Œì íŠ¸)ì˜ ê°œìˆ˜ëŠ” ì•½ 30ê°œì˜€ìŒì—ë„ ì¹´ë“œì˜ ì´ë¦„ì„ ì •ì˜í•˜ê³  ì´ë¥¼ í™œìš©í•˜ëŠ”ë°ì— ìžˆì–´ ë§Žì€ ì–´ë ¤ì›€ì„ ê²ªì—ˆë‹¤.
+     *                                      ì¦‰, ê³ ì°¨ì›ì ìœ¼ë¡œ ì§„í™”í•´ ê°€ëŠ” í˜„ëŒ€ ê²Œìž„ì—ì„œì˜ ì˜¤ë¸Œì íŠ¸ë¥¼ ë‹¤ë£¨ëŠ” ë°ëŠ” ì´ë³´ë‹¤ ë”í•œ ìˆ˜ê³ ìŠ¤ëŸ¬ì›€ì´ ë“¤ê¸° ë•Œë¬¸ì—, ì´ëŸ¬í•œ ìˆ˜ê³ ë¥¼ ëœê¸° ìœ„í•´ ë§Œë“¤ì–´ì§€ëŠ” ë°ì´í„° í…Œì´ë¸”ì€ 
+     *                                      ê²Œìž„ ì œìž‘ì— í•„ìˆ˜ ìš”ì†Œê°€ ë˜ì—ˆìœ¼ë©°, í”„ë¡œê·¸ëž˜ë¨¸ì—ê²Œ ìžˆì–´ì„œëŠ” ì´ë¥¼ ì œìž‘í•˜ëŠ” ê¸°íšìžì™€ì˜ ì†Œí†µì´ ë”ìš± ì¤‘ìš”í•´ì¡Œë‹¤ê³  ë³¼ ìˆ˜ ìžˆë‹¤.
+     *                                      ë³¸ í”„ë¡œì íŠ¸ë¥¼ ì œìž‘í•¨ì— ìžˆì–´ì„œ ì´ëŸ¬í•œ í˜‘ì—…ì˜ í•„ìš”ì„±ì„ ëŠê¼ˆìœ¼ë©°, í”„ë¡œê·¸ëž˜ë¨¸ì™€ ê¸°íšìžì˜ ì†Œí†µê³¼ ì´ëŸ¬í•œ ì†Œí†µì˜ ë‹¤ë¦¬ê°€ ë˜ì–´ì£¼ëŠ” ë¬¸ì„œì˜ ì¤‘ìš”ì„± ë˜í•œ ë¼ˆì €ë¦¬ê²Œ ì‹¤ê°í•  ìˆ˜ ìžˆì—ˆë‹¤.
      *  
-     * ¼ºÀåÇÑ ºÎºÐ: 
+     * ì„±ìž¥í•œ ë¶€ë¶„: 
      * 
      * 
-     * ÇâÈÄ º¸¿ÏÇÒ Á¡
-     *  1)ÇöÀç´Â ¸ðµç °ªÀ» StringÀ¸·Î ÆÄ½ÌÇØ ¿Â ÈÄ ¸í½ÃÀû Çüº¯È¯ÇÏ´Â ¹æ½ÄÀ» »ç¿ëÇÏ¿´Áö¸¸, ÀÌ´Â ¹æ´ëÇÑ ÀÚ·á¸¦ ´Ù·ê ¶§ÀÇ ºñ¿ë ¹®Á¦¿Í °¢ µ¥ÀÌÅÍ¸¦ ÀçÁ¤ÀÇÇÏ´Â ÄÚµå¸¦ µû·Î ÀÛ¼ºÇØ¾ß µÇ´Â ºñÈ¿À²¼º¿¡ ÀÖ¾î °³¼±ÀÌ ¿ä±¸µÊ
-     *      µû¶ó¼­ ÇâÈÄ¿¡´Â µ¥ÀÌÅÍ Å×ÀÌºíÀÇ Çì´õ¸¦ ÀÎ½ÄÇÏ¿© µ¥ÀÌÅÍ¸¦ ÆÄ½ÌÇÒ ¶§ºÎÅÍ ÇØ´ç ÀÚ·áÇüÀ¸·Î µ¥ÀÌÅÍ¸¦ ¹Þ¾Æ¿Ã ¼ö ÀÖµµ·Ï °³¼±ÇÒ ¿¹Á¤ÀÓ
+     * í–¥í›„ ë³´ì™„í•  ì 
+     *  1)í˜„ìž¬ëŠ” ëª¨ë“  ê°’ì„ Stringìœ¼ë¡œ íŒŒì‹±í•´ ì˜¨ í›„ ëª…ì‹œì  í˜•ë³€í™˜í•˜ëŠ” ë°©ì‹ì„ ì‚¬ìš©í•˜ì˜€ì§€ë§Œ, ì´ëŠ” ë°©ëŒ€í•œ ìžë£Œë¥¼ ë‹¤ë£° ë•Œì˜ ë¹„ìš© ë¬¸ì œì™€ ê° ë°ì´í„°ë¥¼ ìž¬ì •ì˜í•˜ëŠ” ì½”ë“œë¥¼ ë”°ë¡œ ìž‘ì„±í•´ì•¼ ë˜ëŠ” ë¹„íš¨ìœ¨ì„±ì— ìžˆì–´ ê°œì„ ì´ ìš”êµ¬ë¨
+     *      ë”°ë¼ì„œ í–¥í›„ì—ëŠ” ë°ì´í„° í…Œì´ë¸”ì˜ í—¤ë”ë¥¼ ì¸ì‹í•˜ì—¬ ë°ì´í„°ë¥¼ íŒŒì‹±í•  ë•Œë¶€í„° í•´ë‹¹ ìžë£Œí˜•ìœ¼ë¡œ ë°ì´í„°ë¥¼ ë°›ì•„ì˜¬ ìˆ˜ ìžˆë„ë¡ ê°œì„ í•  ì˜ˆì •ìž„
      * 
      * 
      * 

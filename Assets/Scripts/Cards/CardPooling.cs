@@ -4,13 +4,13 @@ using UnityEngine.Pool;
 
 public class CardPooling : MonoBehaviour
 {
-    //Ä«µå Ç®¸µÀ» À§ÇÑ Å¬·¡½º
-    [SerializeField] private CardView _cardViewPrefab; //Ä«µå ÇÁ¸®ÆÕ À§ÀÓ
-    [SerializeField] private Transform _cardParent; //Ä«µå°¡ »ı¼ºµÉ ºÎ¸ğ ¿ÀºêÁ§Æ®
-    private ObjectPool<CardView> _cardPool; //Ä«µå ÇÁ¸®ÆÕ Ç®
+    //ì¹´ë“œ í’€ë§ì„ ìœ„í•œ í´ë˜ìŠ¤
+    [SerializeField] private CardView _cardViewPrefab; //ì¹´ë“œ í”„ë¦¬íŒ¹ ìœ„ì„
+    [SerializeField] private Transform _cardParent; //ì¹´ë“œê°€ ìƒì„±ë  ë¶€ëª¨ ì˜¤ë¸Œì íŠ¸
+    private ObjectPool<CardView> _cardPool; //ì¹´ë“œ í”„ë¦¬íŒ¹ í’€
     private void Start()
     {
-        //Ä«µå ¿ÀºêÁ§Æ® Ç® »ı¼º
+        //ì¹´ë“œ ì˜¤ë¸Œì íŠ¸ í’€ ìƒì„±
         _cardPool = new ObjectPool<CardView>(
             CreateCard,
             OnTakeFromPool,
@@ -18,41 +18,41 @@ public class CardPooling : MonoBehaviour
             OnDestroyCard,
             collectionCheck: false,
             defaultCapacity: 10,
-            maxSize: 20
+            maxSize: 10
         );
-        //ÃÊ±â Ä«µå 12Àå »ı¼º
+        //ì´ˆê¸° ì¹´ë“œ 12ì¥ ìƒì„±
         for (int i = 0; i < 12; i++)
         {
             var card = CreateCard();
             _cardPool.Release(card);
         }
     }
-    //Ä«µå »ı¼º ¸Ş¼­µå
+    //ì¹´ë“œ ìƒì„± ë©”ì„œë“œ
     private CardView CreateCard()
     {
-        //Ä«µå ÇÁ¸®ÆÕÀ» ÀÎ½ºÅÏ½ºÈ­ ÈÄ ¹İÈ¯
+        //ì¹´ë“œ í”„ë¦¬íŒ¹ì„ ì¸ìŠ¤í„´ìŠ¤í™” í›„ ë°˜í™˜
         var card = Instantiate(_cardViewPrefab, _cardParent);
-        card.gameObject.SetActive(false); //ÀÎ½ºÅÏ½ºÈ­ ÈÄ ºñÈ°¼ºÈ­
+        card.gameObject.SetActive(false); //ì¸ìŠ¤í„´ìŠ¤í™” í›„ ë¹„í™œì„±í™”
         return card; 
     }
-    //Ä«µå Ç®¿¡¼­ Ä«µå¸¦ ²¨³¾ ¶§(È°¼ºÈ­)
+    //ì¹´ë“œ í’€ì—ì„œ ì¹´ë“œë¥¼ êº¼ë‚¼ ë•Œ(í™œì„±í™”)
     private void OnTakeFromPool(CardView card)
     {
         card.gameObject.SetActive(true);
     }
-    //Ä«µå¸¦ Ç®¿¡ ¹İÈ¯(ºñÈ°¼ºÈ­)
+    //ì¹´ë“œë¥¼ í’€ì— ë°˜í™˜(ë¹„í™œì„±í™”)
     private void OnReturnedToPool(CardView card)
     {
         card.ResetView();
         card.gameObject.SetActive(false);
     }
-    //Ç®ÀÇ Å©±â¸¦ ÃÊ°úÇßÀ» ¶§ ¸ó½ºÅÍ¸¦ »èÁ¦
+    //í’€ì˜ í¬ê¸°ë¥¼ ì´ˆê³¼í–ˆì„ ë•Œ ëª¬ìŠ¤í„°ë¥¼ ì‚­ì œ
     private void OnDestroyCard(CardView card)
     {
         Destroy(card.gameObject);
     }
 
-    // Ä«µå ²¨³»´Â ¸Ş¼­µå
+    // ì¹´ë“œ êº¼ë‚´ëŠ” ë©”ì„œë“œ
     public CardView GetCardView(CardData data)
     {
         var card = _cardPool.Get();
@@ -60,7 +60,7 @@ public class CardPooling : MonoBehaviour
         return card;
     }
 
-    // Ä«µå ¹İÈ¯ ¸Ş¼­µå
+    // ì¹´ë“œ ë°˜í™˜ ë©”ì„œë“œ
     public void ReturnCardView(CardView card)
     {
         _cardPool.Release(card);

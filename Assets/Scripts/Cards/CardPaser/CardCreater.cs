@@ -1,3 +1,4 @@
+
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
@@ -5,26 +6,26 @@ using System.IO;
 
 public class CardCreater : MonoBehaviour
 {
-    //ÀÎÇ² ¾Æ¿ôÇ² ¼³Á¤
+    //ì¸í’‹ ì•„ì›ƒí’‹ ì„¤ì •
     public TextAsset csvFile;
     public string outputFolder = "Assets/Cards";
-    //ÀÎ½ºÆåÅÍ Ã¢¿¡¼­ ½ÇÇàÇÒ ¼ö ÀÖµµ·Ï ÇÔ
+    //ì¸ìŠ¤í™í„° ì°½ì—ì„œ ì‹¤í–‰í•  ìˆ˜ ìˆë„ë¡ í•¨
     [ContextMenu("Import Cards From CSV")]
 
     public void ImportCards()
     {
-        var cards = CardParser.ParseCSVToCards(csvFile); //ÀĞ¾î ¿Â CSVÆÄÀÏÀ» CardPaserÅ¬·¡½ºÀÇ ParseCSVToCards¸Ş¼­µå¿¡ ³Ö¾î¼­ Ä«µå °´Ã¼ ¸®½ºÆ®·Î ¸¸µé¾î cards Ä«µå ¸®½ºÆ®Çü º¯¼ö¿¡ ´ëÀÔ
-        //Æú´õ°¡ ¾øÀ¸¸é »ı¼º
+        var cards = CardParser.ParseCSVToCards(csvFile); //ì½ì–´ ì˜¨ CSVíŒŒì¼ì„ CardPaserí´ë˜ìŠ¤ì˜ ParseCSVToCardsë©”ì„œë“œì— ë„£ì–´ì„œ ì¹´ë“œ ê°ì²´ ë¦¬ìŠ¤íŠ¸ë¡œ ë§Œë“¤ì–´ cards ì¹´ë“œ ë¦¬ìŠ¤íŠ¸í˜• ë³€ìˆ˜ì— ëŒ€ì…
+        //í´ë”ê°€ ì—†ìœ¼ë©´ ìƒì„±
         if (!AssetDatabase.IsValidFolder(outputFolder))
         {
             Directory.CreateDirectory(outputFolder);
         }
-        //cards¸®½ºÆ®¿¡ ÀÖ´Â ¸ğµç ¿ä¼ÒµéÀ» ÇÏ³ª¾¿ ²¨³»¾î ½ºÅ©¸³ÅÍºí ¿ÀºêÁ§Æ® ¿¡¼ÂÀ¸·Î ÀúÀå
+        //cardsë¦¬ìŠ¤íŠ¸ì— ìˆëŠ” ëª¨ë“  ìš”ì†Œë“¤ì„ í•˜ë‚˜ì”© êº¼ë‚´ì–´ ìŠ¤í¬ë¦½í„°ë¸” ì˜¤ë¸Œì íŠ¸ ì—ì…‹ìœ¼ë¡œ ì €ì¥
         foreach (var card in cards)
         {
             AssetDatabase.CreateAsset(card, $"{outputFolder}/Card_{card.CardID}.asset");
         }
-        //ÀÌ»óÀÇ ³»¿ëÀ» ¿¡µğÅÍ¿¡ ÀúÀå
+        //ì´ìƒì˜ ë‚´ìš©ì„ ì—ë””í„°ì— ì €ì¥
         AssetDatabase.SaveAssets();
     }
 }

@@ -4,8 +4,8 @@ using static UnityEngine.Rendering.GPUSort;
 
 public class Deck : MonoBehaviour
 {
-    //ÇÃ·¹ÀÌ¾î°¡ ±¸¼ºÇÑ Ä«µå µ¦ Å¬·¡½º ÀÔ´Ï´Ù
-    //Ä«µå µ¦ ¸®½ºÆ®
+    //í”Œë ˆì´ì–´ê°€ êµ¬ì„±í•œ ì¹´ë“œ ë± í´ë˜ìŠ¤ ì…ë‹ˆë‹¤
+    //ì¹´ë“œ ë± ë¦¬ìŠ¤íŠ¸
     public List<CardData> cardDeck =new List<CardData>(12);
 
     

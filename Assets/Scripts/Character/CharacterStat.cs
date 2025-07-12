@@ -50,8 +50,8 @@ public class CharacterStat : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //충돌하는 오브젝트의 Damageabla 컴포넌트를 가져옴
-        Damageable hit = collision.gameObject.GetComponent<Damageable>();
+        Damageable damage = collision.gameObject.GetComponent<Damageable>();
         //GetHit 이벤트를 데미지를 매게변수로 하여 이벤트
-        GetHit.Invoke(hit.damage);
+        GetHit.Invoke(damage.damage);
     }
 }

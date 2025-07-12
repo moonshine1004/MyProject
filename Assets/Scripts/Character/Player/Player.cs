@@ -17,9 +17,14 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _UsingCardList.Init(_UsingCardList.GetComponent<Deck>());
+        
+        
+        
+    }
+    private void Update()
+    {
         _cardData = new List<CardData>(_UsingCardList.hand);
         _UsingCardList.AddCardToHand(_cardData);
-        
     }
     //스킬 액션 이벤트가 인보크 되면 카드 풀에 있는 카드를 꺼내 옴
     public void CardKeyInput(InputAction.CallbackContext callback)
@@ -31,10 +36,5 @@ public class Player : MonoBehaviour
     }
 
 
-    [ContextMenu("Reset Counter")]
-    private void fill()
-    {
-        _cardData = new List<CardData>(_UsingCardList.hand);
-        Debug.Log("test");
-    }
+    
 }

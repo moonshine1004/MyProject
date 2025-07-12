@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Enum : MonoBehaviour
 {
-    //enumÀ» °ü¸®ÇÏ´Â Å¬·¡½ºÀÔ´Ï´Ù.
+    //enumì„ ê´€ë¦¬í•˜ëŠ” í´ë˜ìŠ¤ì…ë‹ˆë‹¤.
     
-    //Ä«µå ¼Ó¼º °ü¸® enum
+    //ì¹´ë“œ ì†ì„± ê´€ë¦¬ enum
     public enum Element
     {
         Normal = 0,
@@ -14,7 +14,7 @@ public class Enum : MonoBehaviour
         Rock = 4,
         Elect =5,
     }
-    //Ä«µå ¹üÀ§ enum
+    //ì¹´ë“œ ë²”ìœ„ enum
     public enum RangeType
     {
         Projectile	= 0,
@@ -24,7 +24,7 @@ public class Enum : MonoBehaviour
         Circle = 4,
 
     }
-    //Ä«µå Å¸°Ù Å¸ÀÔ enum
+    //ì¹´ë“œ íƒ€ê²Ÿ íƒ€ì… enum
     public enum TargetType
     {
         NoneTarget = 0,
@@ -32,9 +32,9 @@ public class Enum : MonoBehaviour
         EnemyTarget = 2,
         AllTarget = 3,
     }
-    //ÄÁÆ®·Ñ·¯ Å°¿¡ ¹øÈ£ ÇÒ´ç
-    public enum SkillType
+    //ì»¨íŠ¸ë¡¤ëŸ¬ í‚¤ì— ë²ˆí˜¸ í• ë‹¹
+    public enum SkillKey
     {
-        Q = 0, W = 1, E = 2, R = 3, T = 4
+        q = 0, w = 1, e = 2, r = 3, t = 4
     }
 }

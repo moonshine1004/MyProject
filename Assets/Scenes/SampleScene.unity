@@ -1968,7 +1968,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 30
-  NowSkillIndex: 2
+  NowSkillIndex: 0
+  _UsingCardList: {fileID: 1393031577}
 --- !u!4 &1276253322 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: 4bd0f04d4d5d7a74285047a62b96e713, type: 3}
@@ -5124,6 +5125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5590f7e35cdaa9a489130da5fb76042e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  undealtDeck: []
+  discardPile: []
   hand:
   - {fileID: 0}
   - {fileID: 0}

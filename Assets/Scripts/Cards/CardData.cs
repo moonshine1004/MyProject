@@ -1,16 +1,17 @@
 using UnityEngine;
 
-//Card¶ó´Â ÀÌ¸§ÀÇ ÆÄÀÏÀ» ¸¸µê
+//Cardë¼ëŠ” ì´ë¦„ì˜ íŒŒì¼ì„ ë§Œë“¦
 [CreateAssetMenu(fileName = "Card", menuName = "Scriptable Objects/Card")]
-//½ºÅ©¸³ÅÍºí ¿ÀºêÁ§Æ®¿¡ ´ëÇØ Á¤ÀÇÇÏ´Â ½ºÅ©¸³Æ®
+//ìŠ¤í¬ë¦½í„°ë¸” ì˜¤ë¸Œì íŠ¸ì— ëŒ€í•´ ì •ì˜í•˜ëŠ” ìŠ¤í¬ë¦½íŠ¸
 public class CardData : ScriptableObject
 {
-    //Ä«µå ½ºÅ©¸³ÅÍºí ¿ÀºêÁ§Æ® Å¬·¡½º ÀÔ´Ï´Ù
+    //ì¹´ë“œ ìŠ¤í¬ë¦½í„°ë¸” ì˜¤ë¸Œì íŠ¸ í´ë˜ìŠ¤ ì…ë‹ˆë‹¤
     public int CardID;
     public int _Cost;
     public float _Damage;
     public Enum.Element _element;
     public Enum.RangeType _RangeType;
     public Enum.TargetType _TargetType;
+
 
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,7 +19,7 @@ public class PlayerController : MonoBehaviour
     bool isMoving = false;
     //스킬 인덱스
     public int NowSkillIndex=0;
-    UsingCardList _UsingCardList;
+    [SerializeField] private UsingCardList _UsingCardList;
 
     
     private void Start()
@@ -67,13 +68,12 @@ public class PlayerController : MonoBehaviour
     //방향 전환 메서드
     private void OnSetDirection()
     {
-        //캐릭터 방향 변수 --> 더 효율적인 방법 질문
         Vector3 scale = transform.localScale;
-        if (transform.localScale.x > 0 && targetPos.x < 0)
+        if (targetPos.x - transform.position.x < 0 && scale.x > 0)
         {
             scale.x *= -1;
         }
-        else if (transform.localScale.x < 0 && targetPos.x > 0)
+        else if (targetPos.x - transform.position.x > 0 && scale.x < 0)
         {
             scale.x *= -1;
         }
@@ -85,12 +85,12 @@ public class PlayerController : MonoBehaviour
     {
         _animator.SetBool(PlayerAnimatorCore.OnSkillInput, true);
         var name = callback.control.name; //인풋 액션의 컨트롤 이름을 가져옴
-        if (System.Enum.TryParse(name, out Enum.SkillType keyEnum))
+        
+        if (System.Enum.TryParse(name, out Enum.SkillKey keyEnum))//이름을 enum값에 따라 숫자로 변환
         {
             NowSkillIndex = (int)keyEnum;
             _UsingCardList.UseCard(NowSkillIndex); //현재 스킬 인덱스에 해당하는 카드 사용
-            _animator.SetInteger(PlayerAnimatorCore.SkillIndex, _UsingCardList.hand[NowSkillIndex].CardID); //애니메이터 인티저를 카드덱
-
+            _animator.SetInteger(PlayerAnimatorCore.SkillIndex, _UsingCardList.hand[NowSkillIndex].CardID); //애니메이터 인티저를 카드덱의 카드 아이디로 초기화
         }
     }
     

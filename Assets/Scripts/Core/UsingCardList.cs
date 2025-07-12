@@ -1,12 +1,12 @@
-﻿using NUnit.Framework;
+using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class UsingCardList : MonoBehaviour
 {
-    private List<CardData> undealtDeck = new List<CardData>(); //드로우 전 카드 리스트
-    private List<CardData> discardPile = new List<CardData>(); //사용된 카드 리스트
+    [SerializeField] private List<CardData> undealtDeck = new List<CardData>(); //드로우 전 카드 리스트
+    [SerializeField] private List<CardData> discardPile = new List<CardData>(); //사용된 카드 리스트
     public CardData[] hand = new CardData[5]; //qwert키에 할당되는 카드 배열
     private const int initialHandSize = 5; //드로우 카드 수
     [SerializeField] private Deck _deck; //카드 덱 위임
