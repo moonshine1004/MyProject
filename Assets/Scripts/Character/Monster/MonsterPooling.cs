@@ -1,12 +1,16 @@
+using System.Threading;
 using UnityEngine;
 using UnityEngine.Pool;
 
 public class MonsterPooling : MonoBehaviour
 {
+    //몬스터 풀링을 담당하는 스크립트입니다.
+    
+    
     //몬스터 프리팹을 받을 게임 오브젝트 선언
     [SerializeField] private GameObject _MonsterPrefab;
     //유니티 오브젝트 풀 선언
-    private ObjectPool<GameObject> _MonsterPool;
+    private ObjectPool<GameObject> _pool;
     
 
 
@@ -15,13 +19,14 @@ public class MonsterPooling : MonoBehaviour
         //ObjectPool 생성자
         //초기 10개 생성
         //최대 30개까지 풀에 저장
-        _MonsterPool = new ObjectPool<GameObject>(CreatMonster, null, OnMonsterRelease, OnDestroyMonster,true, defaultCapacity: 10, maxSize: 30);
+        _pool = new ObjectPool<GameObject>(CreatMonster, null, OnMonsterRelease, OnDestroyMonster,true, defaultCapacity: 10, maxSize: 30);
         //10개 생성
         for (int i = 0; i < 10; i++)
         {
             var monster = CreatMonster(); //몬스터풀에서 꺼내옴
-            _MonsterPool.Release(monster); //바로 넣음
+            _pool.Release(monster); //바로 넣음
         }
+        var monster1 = CreatMonster();
     }
     //몬스터 생성
     private GameObject CreatMonster()
@@ -44,7 +49,7 @@ public class MonsterPooling : MonoBehaviour
     [ContextMenu("Creat Monster")]
     public GameObject SpawnMonster()
     {
-        GameObject monster = _MonsterPool.Get();
+        GameObject monster = _pool.Get();
         monster.SetActive(true);
         return monster;
     }

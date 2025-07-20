@@ -6,7 +6,7 @@ public class Deck : MonoBehaviour
 {
     //플레이어가 구성한 카드 덱 클래스 입니다
     //카드 덱 리스트
-    public List<CardData> cardDeck =new List<CardData>(12);
+    [SerializeField] public List<CardData> cardDeck =new List<CardData>(12);
 
     
 }

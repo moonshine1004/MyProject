@@ -32,6 +32,11 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+        Move();
+    }
+    //클릭 기반 이동 메서드
+    private void Move()
+    {
         if (isMoving)
         {
             //현재 위치와 목표 위치를 노말라이제이션하여 방향 계산
@@ -54,7 +59,6 @@ public class PlayerController : MonoBehaviour
         }
         OnSetDirection();
     }
-    //클릭 기반 이동 메서드
     public void OnClickMove(InputAction.CallbackContext callback)
     {
         //이벤트를 받아오면 실행되는 함수
@@ -83,14 +87,17 @@ public class PlayerController : MonoBehaviour
     //공격 트리거를 온, 각 공격에 해당하는 키를 온
     public void OnSkillInput(InputAction.CallbackContext callback)
     {
-        _animator.SetBool(PlayerAnimatorCore.OnSkillInput, true);
-        var name = callback.control.name; //인풋 액션의 컨트롤 이름을 가져옴
-        
-        if (System.Enum.TryParse(name, out Enum.SkillKey keyEnum))//이름을 enum값에 따라 숫자로 변환
+        if (callback.started)
         {
-            NowSkillIndex = (int)keyEnum;
-            _UsingCardList.UseCard(NowSkillIndex); //현재 스킬 인덱스에 해당하는 카드 사용
-            _animator.SetInteger(PlayerAnimatorCore.SkillIndex, _UsingCardList.hand[NowSkillIndex].CardID); //애니메이터 인티저를 카드덱의 카드 아이디로 초기화
+            _animator.SetBool(PlayerAnimatorCore.OnSkillInput, true);
+            var name = callback.control.name; //인풋 액션의 컨트롤 이름을 가져옴
+
+            if (System.Enum.TryParse(name, out Enum.SkillKey keyEnum))//이름을 enum값에 따라 숫자로 변환
+            {
+                NowSkillIndex = (int)keyEnum;
+                _UsingCardList.UseCard(NowSkillIndex); //현재 스킬 인덱스에 해당하는 카드 사용
+                _animator.SetInteger(PlayerAnimatorCore.SkillIndex, _UsingCardList.hand[NowSkillIndex].CardID); //애니메이터 인티저를 카드덱의 카드 아이디로 초기화
+            }
         }
     }
     
