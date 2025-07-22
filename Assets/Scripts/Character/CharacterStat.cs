@@ -51,7 +51,11 @@ public class CharacterStat : MonoBehaviour
     {
         //충돌하는 오브젝트의 Damageabla 컴포넌트를 가져옴
         Damageable damage = collision.gameObject.GetComponent<Damageable>();
-        //GetHit 이벤트를 데미지를 매게변수로 하여 이벤트
-        GetHit.Invoke(damage.damage);
+        if(damage != null)
+        {
+            //GetHit 이벤트를 데미지를 매게변수로 하여 이벤트
+            GetHit.Invoke(damage.damage);
+        }
+        
     }
 }
