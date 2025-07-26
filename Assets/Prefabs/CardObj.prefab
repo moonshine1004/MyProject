@@ -432,6 +432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2441774203002167217}
   - component: {fileID: 6935796601457279823}
+  - component: {fileID: 889821377095871735}
   m_Layer: 5
   m_Name: CardObj
   m_TagString: Untagged
@@ -460,8 +461,8 @@ RectTransform:
   - {fileID: 2684435679370278499}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -24, y: -23}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -480,6 +481,18 @@ MonoBehaviour:
   _costText: {fileID: 5625239961413042814}
   _damageText: {fileID: 2412573029417310401}
   _image: {fileID: 4173193702737207964}
+--- !u!114 &889821377095871735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4917504365446651917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4280893da34422d4f88849ba5a34a017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5021837106823095240
 GameObject:
   m_ObjectHideFlags: 0

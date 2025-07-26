@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts\Character\Monster\MonsterPooling.cs" />
     <Compile Include="Assets\Scripts\Character\Player\ProjectileLauncher.cs" />
     <Compile Include="Assets\Scripts\Core\PlayerAnimatorCore.cs" />
+    <Compile Include="Assets\Scripts\Cards\CardUI.cs" />
     <Compile Include="Assets\Scripts\Cards\Deck.cs" />
     <Compile Include="Assets\Scripts\Core\Enum.cs" />
     <Compile Include="Assets\Scripts\Core\UsingCardList.cs" />

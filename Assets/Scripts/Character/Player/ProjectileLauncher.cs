@@ -91,10 +91,7 @@ public class ProjectileLauncher : MonoBehaviour
 
         
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        _pool.Release(gameObject);
-    }
+    
     private void RenderProjectileSprite(GameObject sprite, int i)
     {
         SpriteRenderer renderer = sprite.GetComponent<SpriteRenderer>();
