@@ -12,8 +12,10 @@ public class Player : MonoBehaviour
     [SerializeField] private List<CardData> _cardData; //카드 데이터(스크립터블 오브젝트) 리스트
     private CardView _currentCard; //카드 프리팹
     [SerializeField] private PlayerController _playerController; //현재 사용 중인 카드 인덱스를 위임 받아옴
+    [SerializeField] private CardUIRenderer _cardUIRenderer;
 
-    
+
+
     private void Start()
     {
         _UsingCardList.Init(_UsingCardList.GetComponent<Deck>());
@@ -31,7 +33,7 @@ public class Player : MonoBehaviour
     {
         if (callback.started)
         {
-            _currentCard = _cardPooling.GetCardView(_cardData[_playerController.NowSkillIndex]);
+            //_currentCard = _cardPooling.GetCardView(_cardData[_playerController.NowSkillIndex]);
         }
     }
 

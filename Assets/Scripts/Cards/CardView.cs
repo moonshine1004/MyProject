@@ -1,4 +1,5 @@
 using TMPro;
+using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 using UnityEngine.UI;
 // ReSharper disable All
@@ -8,10 +9,10 @@ public class CardView : MonoBehaviour
     //카드를 UI상에 표시하는 스크립트
     [SerializeField] private TMP_Text _costText;
     [SerializeField] private TMP_Text _damageText;
-    [SerializeField] private Image _image;
-    //[SerializeField] private Image elementIcon;
-
+    [SerializeField] public Image _image;
+    [SerializeField] private CardManager _cardManager;
     private CardData _cardData;
+
 
     public void Initialize(CardData card)
     {
@@ -19,8 +20,8 @@ public class CardView : MonoBehaviour
         _costText.text = card._Cost.ToString();
         _damageText.text = card._Damage.ToString();
 
-        
     }
+    
 
     public void ResetView()
     {

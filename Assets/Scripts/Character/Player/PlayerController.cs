@@ -18,10 +18,12 @@ public class PlayerController : MonoBehaviour
     //이동 상태
     bool isMoving = false;
     //스킬 인덱스
-    public int NowSkillIndex=0;
-    [SerializeField] private UsingCardList _UsingCardList;
+    public int UsingSkillSlot=0;
+    [SerializeField] private UsingCardList _usingCardList;
+    [SerializeField] private CardUIRenderer _cardUIRenderer;
+    [SerializeField] private ProjectileLauncher _projectileLauncher;
 
-    
+
     private void Start()
     {
         //컴포넌트 겟
@@ -91,12 +93,14 @@ public class PlayerController : MonoBehaviour
         {
             _animator.SetBool(PlayerAnimatorCore.OnSkillInput, true);
             var name = callback.control.name; //인풋 액션의 컨트롤 이름을 가져옴
-
+            _projectileLauncher.Shoot();
             if (System.Enum.TryParse(name, out Enum.SkillKey keyEnum))//이름을 enum값에 따라 숫자로 변환
             {
-                NowSkillIndex = (int)keyEnum;
-                _UsingCardList.UseCard(NowSkillIndex); //현재 스킬 인덱스에 해당하는 카드 사용
-                _animator.SetInteger(PlayerAnimatorCore.SkillIndex, _UsingCardList.hand[NowSkillIndex].CardID); //애니메이터 인티저를 카드덱의 카드 아이디로 초기화
+                UsingSkillSlot = (int)keyEnum;
+                _usingCardList.UseCard(UsingSkillSlot); //현재 스킬 인덱스에 해당하는 카드 사용
+                _animator.SetInteger(PlayerAnimatorCore.SkillIndex, _usingCardList.hand[UsingSkillSlot].CardID); //애니메이터 인티저를 카드덱의 카드 아이디로 초기화
+                _cardUIRenderer.cardAnimation((int)keyEnum); //입력 받은 키에 해당하는 칸의 카드 사용 애니메이션 재생
+
             }
         }
     }

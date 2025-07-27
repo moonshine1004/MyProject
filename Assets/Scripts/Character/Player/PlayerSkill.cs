@@ -11,7 +11,7 @@ public class PlayerSkill : MonoBehaviour
 
     private void Update()
     {
-        int nowSkillIndex = _controller.NowSkillIndex;
+        int nowSkillIndex = _controller.UsingSkillSlot;
     }
 
     private void SkillIndexToSkill(int skillIndex)

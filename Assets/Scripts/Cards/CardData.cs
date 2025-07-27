@@ -14,4 +14,5 @@ public class CardData : ScriptableObject
     public Enum.TargetType _TargetType;
 
 
+
 }

@@ -16,7 +16,6 @@ public class ProjectileLauncher : MonoBehaviour
     private ObjectPool<GameObject> _pool;
 
     [Header("투사체 설정")]
-    [Range(0f, 7f)] public float lifetime;
     public float speed = 5.0f;
 
     private Camera _camera;
@@ -24,6 +23,8 @@ public class ProjectileLauncher : MonoBehaviour
     [SerializeField] public Sprite[] _sprites = new Sprite[12];
 
     private Dictionary<int, Sprite> _dictionary;
+
+
 
     private void Start()
     {
@@ -43,7 +44,7 @@ public class ProjectileLauncher : MonoBehaviour
         //딕셔너리 12칸 생성
         for (int i = 1; i <= 12; i++)
         {
-            _dictionary[i] = null; // Add → 대입으로 변경
+            _dictionary[i] = null; 
         }
 
         for (int i = 1; i <= _sprites.Length; i++)
@@ -54,20 +55,13 @@ public class ProjectileLauncher : MonoBehaviour
             }
         }
     }
-    //스킬 입력 이벤트가 입력되면 발사를 실행하는 스크립트
-    public void OnSkillInput(InputAction.CallbackContext callback)
-    {
-        if (callback.started)
-        {
-            Shoot();
-        }
-    }
+    
     //투사체 발사 스크립트
-    private void Shoot()
+    public void Shoot()
     {
         //오브젝트 풀에서 투사체를 꺼내옴
         GameObject projectile = _pool.Get();
-        RenderProjectileSprite(projectile, _usingCardList.hand[_playerController.NowSkillIndex].CardID);
+        RenderProjectileSprite(projectile, _usingCardList.hand[_playerController.UsingSkillSlot].CardID);
 
 
 
@@ -82,14 +76,13 @@ public class ProjectileLauncher : MonoBehaviour
         //투사체 시작 위치 초기화
         projectile.transform.position = startPos;
         //투사체에서 Damageable 컴포넌트를 가져와 데미지 설정
-        projectile.GetComponent<Damageable>().damage = _usingCardList.GetDamage(_playerController.NowSkillIndex);
+        projectile.GetComponent<Damageable>().damage = _usingCardList.GetDamage(_playerController.UsingSkillSlot);
         //쿼터니언을 통해 투사체 스프라이트 방향 지정
         projectile.transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
         projectile.SetActive(true);
         //방향과 속도를 곱해서 투사체 발사(lionearVelocity값을 한 번 지정하면 유지됨으로 update 필요없음)
         projectile.GetComponent<Rigidbody2D>().linearVelocity = direction * speed;
 
-        
     }
     
     private void RenderProjectileSprite(GameObject sprite, int i)
@@ -107,6 +100,10 @@ public class ProjectileLauncher : MonoBehaviour
     private void OnProjectileRelease(GameObject projectile)
     {
         projectile.SetActive(false);
+    }
+    public void ReturnToPool(GameObject projectile)
+    {
+        _pool.Release(projectile);
     }
     private void OnDestroyProjectile(GameObject projectile)
     {

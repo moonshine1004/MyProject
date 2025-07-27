@@ -71,14 +71,16 @@
     <Compile Include="Assets\Scripts\Cards\CardPooling.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterStat.cs" />
     <Compile Include="Assets\Scripts\Cards\CardPaser\CardPaser.cs" />
+    <Compile Include="Assets\Scripts\Cards\CardUIRenderer.cs" />
     <Compile Include="Assets\외부 에셋\Gif\Super_Retro_Collection\Resources\Prefabs_with_behavior\chest_open_on_contact\Scripts\ChestAnimationOnContact.cs" />
     <Compile Include="Assets\Scripts\Character\Player\DamageableForProjectile.cs" />
     <Compile Include="Assets\Scripts\Character\Monster\MonsterPooling.cs" />
     <Compile Include="Assets\Scripts\Character\Player\ProjectileLauncher.cs" />
     <Compile Include="Assets\Scripts\Core\PlayerAnimatorCore.cs" />
-    <Compile Include="Assets\Scripts\Cards\CardUI.cs" />
     <Compile Include="Assets\Scripts\Cards\Deck.cs" />
     <Compile Include="Assets\Scripts\Core\Enum.cs" />
+    <Compile Include="Assets\Scripts\Cards\CardManager.cs" />
+    <Compile Include="Assets\Scripts\Core\ProjectileLifetime.cs" />
     <Compile Include="Assets\Scripts\Core\UsingCardList.cs" />
     <Compile Include="Assets\Scripts\Cards\CardData.cs" />
     <Compile Include="Assets\Scripts\Character\Player\PlayerController.cs" />
