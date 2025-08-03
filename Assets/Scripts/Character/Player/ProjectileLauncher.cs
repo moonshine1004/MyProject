@@ -13,7 +13,7 @@ public class ProjectileLauncher : MonoBehaviour
     
     [Header("풀링 시스템")]
     [SerializeField] GameObject _projectile;
-    private ObjectPool<GameObject> _pool;
+    private ObjectPool<GameObject> pool;
 
     [Header("투사체 설정")]
     public float speed = 5.0f;
@@ -23,6 +23,8 @@ public class ProjectileLauncher : MonoBehaviour
     [SerializeField] public Sprite[] _sprites = new Sprite[12];
 
     private Dictionary<int, Sprite> _dictionary;
+    private Rigidbody2D _rb;
+    
 
 
 
@@ -34,17 +36,17 @@ public class ProjectileLauncher : MonoBehaviour
         //ObjectPool 생성자
         //초기 10개 생성
         //최대 30개까지 풀에 저장
-        _pool = new ObjectPool<GameObject>(CreatProjectile, null, OnProjectileRelease, OnDestroyProjectile, true, defaultCapacity: 10, maxSize: 30);
+        pool = new ObjectPool<GameObject>(CreatProjectile, null, OnProjectileRelease, OnDestroyProjectile, true, defaultCapacity: 10, maxSize: 30);
         //10개 생성
         for (int i = 0; i < 10; i++)
         {
             var projectile = CreatProjectile(); //프로젝타일 풀을 만들어서 꺼내옴
-            _pool.Release(projectile); //바로 넣음
+            pool.Release(projectile); //바로 넣음
         }
         //딕셔너리 12칸 생성
         for (int i = 1; i <= 12; i++)
         {
-            _dictionary[i] = null; 
+            _dictionary[i] = null;
         }
 
         for (int i = 1; i <= _sprites.Length; i++)
@@ -60,7 +62,7 @@ public class ProjectileLauncher : MonoBehaviour
     public void Shoot()
     {
         //오브젝트 풀에서 투사체를 꺼내옴
-        GameObject projectile = _pool.Get();
+        GameObject projectile = pool.Get();
         RenderProjectileSprite(projectile, _usingCardList.hand[_playerController.UsingSkillSlot].CardID);
 
 
@@ -103,7 +105,7 @@ public class ProjectileLauncher : MonoBehaviour
     }
     public void ReturnToPool(GameObject projectile)
     {
-        _pool.Release(projectile);
+        pool.Release(projectile);
     }
     private void OnDestroyProjectile(GameObject projectile)
     {

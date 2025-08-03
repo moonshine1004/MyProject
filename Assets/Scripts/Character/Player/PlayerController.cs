@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
         worldPos = transform.position;
     }
-    private void Update()
+    private void FixedUpdate()
     {
         Move();
     }
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
             Vector2 direction = ((Vector2)targetPos - currentPos).normalized;
             //목표 위치까지의 거리 계산(거리에 따라 이동 여부 변환)
             float distance = Vector2.Distance(currentPos, targetPos);
-            if (distance < 0.1f) //도착하면
+            if (distance < 0.5f) //도착하면
             {
                 _rb.linearVelocity = Vector2.zero; //속도 0
                 isMoving = false; //이동 해제
@@ -54,8 +54,8 @@ public class PlayerController : MonoBehaviour
             }
             else //도착하지 않았으면
             {
-
-                _rb.linearVelocity = direction * _moveSpeed; //방향과 속도 곱함
+                Vector2 newPos = currentPos + direction * _moveSpeed * Time.fixedDeltaTime;
+                _rb.MovePosition(newPos);
                 _animator.SetBool(PlayerAnimatorCore.isMoving, true); //애니메이터 파라메터 변환
             }
         }
@@ -74,16 +74,22 @@ public class PlayerController : MonoBehaviour
     //방향 전환 메서드
     private void OnSetDirection()
     {
-        Vector3 scale = transform.localScale;
-        if (targetPos.x - transform.position.x < 0 && scale.x > 0)
+        float xDiff = targetPos.x - _rb.position.x;
+
+        // 일정 거리 이상일 때만 방향 전환
+        if (Mathf.Abs(xDiff) > 0.05f)
         {
-            scale.x *= -1;
+            Vector3 scale = transform.localScale;
+            if (xDiff < 0 && scale.x > 0)
+            {
+                scale.x *= -1;
+            }
+            else if (xDiff > 0 && scale.x < 0)
+            {
+                scale.x *= -1;
+            }
+            transform.localScale = scale;
         }
-        else if (targetPos.x - transform.position.x > 0 && scale.x < 0)
-        {
-            scale.x *= -1;
-        }
-        transform.localScale = scale;
     }
     //스킬 발동 메서드들-->하나로 관리할 수 있도록 수정 요망
     //공격 트리거를 온, 각 공격에 해당하는 키를 온

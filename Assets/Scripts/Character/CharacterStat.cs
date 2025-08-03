@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
@@ -5,12 +6,10 @@ using UnityEngine.Events;
 public class CharacterStat : MonoBehaviour
 {
     public UnityEvent<int> GetHit;
-    
-
-
+    private Animator _animator;
     [SerializeField] private int _maxHealth=100;
     [SerializeField] private int _health;
-    private bool isAlive = true;
+    private bool _isAlive = true;
 
     public Slider healthSlider;
 
@@ -29,11 +28,18 @@ public class CharacterStat : MonoBehaviour
     {
         // 코드로 이벤트 연결
         GetHit.AddListener(TakeDamage);
-        
     }
     private void Update()
     {
         healthSlider.value = _health; //healthSlider변화
+        if (_health <= 0)
+        {
+            _isAlive = false;
+        }
+        if (!_isAlive)
+        {
+            _animator.SetBool(MonsterAnimationCore.isAlive, false);
+        }
     }
     private void OnDestroy()
     {

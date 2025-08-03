@@ -16,12 +16,13 @@ public class Player : MonoBehaviour
 
 
 
+
     private void Start()
     {
         _UsingCardList.Init(_UsingCardList.GetComponent<Deck>());
-        
-        
-        
+
+
+
     }
     private void Update()
     {
