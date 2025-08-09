@@ -102,6 +102,8 @@ public class ProjectileLauncher : MonoBehaviour
     private void OnProjectileRelease(GameObject projectile)
     {
         projectile.SetActive(false);
+        var pro = projectile.GetComponent<ProjectileLifetime>();
+        pro.ProjectileDestroy(this);
     }
     public void ReturnToPool(GameObject projectile)
     {

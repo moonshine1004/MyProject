@@ -4,7 +4,7 @@ public class ProjectileLifetime : MonoBehaviour
 {
     public float _lifetime = 6;
     private float _timer;
-    [SerializeField] private ProjectileLauncher _pool;
+    private ProjectileLauncher _pool;
 
     private void Start()
     {
@@ -37,5 +37,9 @@ public class ProjectileLifetime : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         _pool.ReturnToPool(this.gameObject);
+    }
+    public void ProjectileDestroy(ProjectileLauncher launcher)
+    {
+        _pool = launcher;
     }
 }

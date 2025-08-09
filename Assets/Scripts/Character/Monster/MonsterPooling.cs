@@ -10,7 +10,7 @@ public class MonsterPooling : MonoBehaviour
     //몬스터 프리팹을 받을 게임 오브젝트 선언
     [SerializeField] private GameObject _MonsterPrefab;
     //유니티 오브젝트 풀 선언
-    private ObjectPool<GameObject> _pool;
+    public ObjectPool<GameObject> _pool;
     
 
 
@@ -26,7 +26,7 @@ public class MonsterPooling : MonoBehaviour
             var monster = CreatMonster(); //몬스터풀에서 꺼내옴
             _pool.Release(monster); //바로 넣음
         }
-        var monster1 = CreatMonster();
+        var monster1 = SpawnMonster();
     }
     //몬스터 생성
     private GameObject CreatMonster()
@@ -37,9 +37,11 @@ public class MonsterPooling : MonoBehaviour
 
 
     //객체를 풀에 넣을 때
-    private void OnMonsterRelease(GameObject monster)
+    public void OnMonsterRelease(GameObject monster)
     {
         monster.SetActive(false);
+        var stat = monster.GetComponent<CharacterStat>();
+        stat.StatReset();
     }
     //풀의 크기를 초과하였을 때 몬스터를 삭제
     private void OnDestroyMonster(GameObject monster)
@@ -51,6 +53,12 @@ public class MonsterPooling : MonoBehaviour
     {
         GameObject monster = _pool.Get();
         monster.SetActive(true);
+
+        var stat = monster.GetComponent<CharacterStat>();
+        if (stat != null)
+        {
+            stat.SetPool(this);
+        }
         return monster;
     }
 

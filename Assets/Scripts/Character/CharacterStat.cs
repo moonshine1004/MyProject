@@ -7,9 +7,10 @@ public class CharacterStat : MonoBehaviour
 {
     public UnityEvent<int> GetHit;
     private Animator _animator;
-    [SerializeField] private int _maxHealth=100;
+    [SerializeField] private int _maxHealth = 100;
     [SerializeField] private int _health;
     private bool _isAlive = true;
+    private MonsterPooling _monsterPooling;
 
     public Slider healthSlider;
 
@@ -38,7 +39,8 @@ public class CharacterStat : MonoBehaviour
         }
         if (!_isAlive)
         {
-            _animator.SetBool(MonsterAnimationCore.isAlive, false);
+            //_animator.SetBool(MonsterAnimationCore.isAlive, false);
+            _monsterPooling.OnMonsterRelease(gameObject);
         }
     }
     private void OnDestroy()
@@ -46,22 +48,32 @@ public class CharacterStat : MonoBehaviour
         // 구독 해제
         GetHit.RemoveListener(TakeDamage);
     }
-    
+
     //데미지를 입을 때 발생하는 상황 모두 넣어둠
     public void TakeDamage(int damage)
     {
         Health -= damage; //Health 프로퍼티로 _health-damage
-        healthSlider.value=_health; //healthSlider변화
+        healthSlider.value = _health; //healthSlider변화
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //충돌하는 오브젝트의 Damageabla 컴포넌트를 가져옴
         Damageable damage = collision.gameObject.GetComponent<Damageable>();
-        if(damage != null)
+        if (damage != null)
         {
             //GetHit 이벤트를 데미지를 매게변수로 하여 이벤트
             GetHit.Invoke(damage.damage);
         }
-        
+
+    }
+    public void SetPool(MonsterPooling pool)
+    {
+        _monsterPooling = pool;
+    }
+    public void StatReset()
+    {
+        _health = _maxHealth;
+        healthSlider.maxValue = _maxHealth;
+        _isAlive = true;
     }
 }
