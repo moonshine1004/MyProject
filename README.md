@@ -7,7 +7,7 @@
 - **개발 기간**: 2025.05 ~ 진행 중
 - **개발 도구**: C#
 - **버전 관리**: Git, GitHub
-- **데이터 관리**: Unity ScriptableObject, CSV Import
+- **데이터 관리**: Unity ScriptableObject, CSV, Excel
 - **개발 인원**: 개인 프로젝트
  
 ## 2. 구현상세
@@ -25,10 +25,29 @@
 ## 향후 개발 로드맵
 - 
 
-
-
-
-
+```mermaid
+classDiagram
+        Animal <|-- Duck
+        Animal <|-- Fish
+        Animal <|-- Zebra
+        Animal : +int age
+        Animal : +String gender
+        Animal: +isMammal()
+        Animal: +mate()
+        class Duck {
+          +String beakColor
+          +swim()
+          +quack()
+        }
+        class Fish {
+          -int sizeInFeet
+          -canEat()
+        }
+        class Zebra {
+          +bool is_wild
+          +run()
+        }
+```
 
 
 ## Contact Me
