@@ -20,7 +20,22 @@
 - **Garbage Collection 대상을 줄임**: Garbage Collection은 더이상 사용하지 않는 객체를 자동으로 수거하여 메모리 공간에서 삭제하는 시스템으로, 객체를 삭제하는 동안 게임은 멈추기 때문에 오브젝트 풀링을 통해서 가비지 컬렉터의 실행을 줄임으로서 런타임 중지를 방지했습니다.
 ### 3)캐릭터
 - **유니티 이벤트 시스템**: 스킬 사용 키 입력 시 발생하는 동작들을 손쉽게 관리하기 위하여 유니티 이벤트를 사용하였습니다
-## 3. 기술적 포인트 & 문제해결
+## 3. 몬스터 인공지능
+```mermaid
+classDiagram
+    class UntitledClass {
+    }
+
+    class MonsterStateMachine {
+	    #MonsterBaseState.MonsterState
+	    #GameObject
+	    -Dictionary[*]
+	    #ChangeState(MonsterBaseState.MonsterState) : void
+    }
+
+
+```
+## 4. 기술적 포인트 & 문제해결
 - 카드 덱 순환 시스템을 구현하는 과정에서 배열 초기화 순서에 의해 코드에서 오류가 발생하는 것을 통해서 하나의 스타트문을 중심으로 
 ## 향후 개발 로드맵
 - 
