@@ -7,13 +7,13 @@ public class MonsterChase : MonsterStateMachine, MonsterBaseState.IState
     private int _range = 100;  //몬스터의 적 감지 범위
     private Vector3 _targetPosition; //몬스터가 쫓을 오브젝트
 
-    private MonsterMovement _monsterMovement;
+    private MonsterMovement _monsterMovement; //몬스터의 움직임 오브젝트 복사
 
     public MonsterBaseState.MonsterState StateType => MonsterBaseState.MonsterState.Chase;
 
     public void Enter()
     {
-        _targetPosition = _targetObject.transform.position; //타겟 포지션을 타겟 오브젝트의 위치로 설정
+        _targetPosition = monsterContext.Target.transform.position; //타겟 포지션을 타겟 오브젝트의 위치로 설정
     }
 
     public void Exit()
@@ -30,7 +30,7 @@ public class MonsterChase : MonsterStateMachine, MonsterBaseState.IState
         }
         else
         {
-            _monsterMovement.MonsterMoving(_targetObject.transform); //MonsterMovement를 이용하여 몬스터가 타겟에게 이동하도록 설정
+            _monsterMovement.MonsterMoving(monsterContext.Target.transform); //MonsterMovement를 이용하여 몬스터가 타겟에게 이동하도록 설정
         }
 
     }

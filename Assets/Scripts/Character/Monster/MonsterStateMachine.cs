@@ -1,54 +1,44 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using System.Linq;
 
 
 public class MonsterStateMachine : MonoBehaviour
 {
+    protected MonsterBaseState.MonsterState _currentState; //몬스터 상태를 복사
+    protected MonsterContext monsterContext; //몬스터의 기본적인 정보가 담긴 데이터 컨테이너
 
-    protected MonsterBaseState.MonsterState _currentState;
-    protected GameObject _targetObject = null; //몬스터가 좇는 오브젝트
-
-    private Dictionary<MonsterBaseState.MonsterState, MonsterBaseState.IState> _state;
+    private Dictionary<MonsterBaseState.MonsterState, MonsterBaseState.IState> _state; //몬스터의 스테이트를 키로하고 몬스터의 스테이트 인터페이스(의 enum값)를 값으로 하는 딕셔너리
 
 
     private void Start()
     {
-        var found = GetComponents<MonsterStateMachine>()
+        var found = GetComponents<MonsterStateMachine>() //오브젝트의 MonsterStateMachine 컴포넌트 중 MonsterBaseState.IState 인터페이스를 갖고 있는 컴포넌트만 IEnumerable형 변수 found에 넣음
                     .OfType<MonsterBaseState.IState>();
-        _state = new Dictionary<MonsterBaseState.MonsterState, MonsterBaseState.IState>();
+        _state = new Dictionary<MonsterBaseState.MonsterState, MonsterBaseState.IState>(); //새 딕서너리를 만듦
 
-        foreach (var st in found)
-            _state[st.StateType] = st;
+        foreach (var st in found) //found에서 st를 하나씩 꺼내어
+            _state[st.StateType] = st; //st.StateType을 키로 하는 값에 st을 넣음
 
+    }
+    private void Awake()
+    {
+        monsterContext = new MonsterContext
+        {
+            Owner = GetComponent<GameObject>(),
+            OwenrCollider = GetComponent<CapsuleCollider2D>(),
+            Target = null
+        };
         _currentState = MonsterBaseState.MonsterState.Idle; //시작 상태는 idle
-        _state[_currentState].Enter();
+        _state[_currentState].Enter(); //시작 상태로 진입
     }
 
-    public void ChangeState(MonsterBaseState.MonsterState nextState)
+    //몬스터의 state가 변할 때 호출되는 메서드
+    protected void ChangeState(MonsterBaseState.MonsterState nextState)
     {
-        _state[nextState].Enter();
-    } 
+        _state[nextState].Enter(); //딕셔너리 키에 따라 다음 스테이트 인터페이스의 Enter를 호출
+    }
 
-
-
-    // private void Update()
-    // {
-    //     switch (_currentState)
-    //     {
-    //         case MonsterBaseState.MonsterState.Idle:
-    //             _state[MonsterBaseState.MonsterState.Idle].Enter();
-    //             break;
-    //         case MonsterBaseState.MonsterState.Chase:
-    //             _state[MonsterBaseState.MonsterState.Chase].Enter();
-    //             break;
-    //         case MonsterBaseState.MonsterState.Attack:
-    //             _state[MonsterBaseState.MonsterState.Attack].Enter();
-    //             break;
-    //         case MonsterBaseState.MonsterState.Back:
-    //             _state[MonsterBaseState.MonsterState.Back].Enter();
-    //             break;
-    //     }
-    // }
 }
+
+
