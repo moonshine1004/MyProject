@@ -5,13 +5,11 @@ public class MonsterIdle : MonsterStateMachine, MonsterBaseState.IState
 {
     //몬스터의 idle 상태를 정의한 클래스입니다.
 
-    private CapsuleCollider2D _collider;
-
     public MonsterBaseState.MonsterState StateType => MonsterBaseState.MonsterState.Idle;
 
     public void Enter()
     {
-        _collider = GetComponent<CapsuleCollider2D>();
+
     }
 
     public void Exit()
@@ -21,7 +19,6 @@ public class MonsterIdle : MonsterStateMachine, MonsterBaseState.IState
 
     public void Update()
     {
-        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

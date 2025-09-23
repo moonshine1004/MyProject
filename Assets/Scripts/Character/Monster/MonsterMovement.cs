@@ -5,7 +5,7 @@ public class MonsterMovement : MonoBehaviour
 
     [SerializeField]
     private float _speed = 5f; //이동 속도
-    private bool isMoving; //이동 상태
+    private bool _isMoving; //이동 상태
 
     public void MonsterMoving(Transform targetPos)
     {

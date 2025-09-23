@@ -3,12 +3,12 @@ using UnityEngine;
 public class MonsterChase : MonsterStateMachine, MonsterBaseState.IState
 {
     //몬스터의 chase 상태를 정의한 클래스입니다.
+    #region 필드 변수
     [SerializeField]
     private int _range = 100;  //몬스터의 적 감지 범위
     private Vector3 _targetPosition; //몬스터가 쫓을 오브젝트
-
     private MonsterMovement _monsterMovement; //몬스터의 움직임 오브젝트 복사
-
+    #endregion
     public MonsterBaseState.MonsterState StateType => MonsterBaseState.MonsterState.Chase;
 
     public void Enter()
