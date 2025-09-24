@@ -13,12 +13,18 @@ public class MonsterChase : MonsterStateMachine, MonsterBaseState.IState
 
     public void Enter()
     {
-        _targetPosition = monsterContext.Target.transform.position; //타겟 포지션을 타겟 오브젝트의 위치로 설정
+        monsterStateMachine = GetComponent<MonsterStateMachine>();
+        _monsterMovement = GetComponent<MonsterMovement>();
+
+        _targetPosition = monsterStateMachine.monsterContext.Target.transform.position; //타겟 포지션을 타겟 오브젝트의 위치로 설정
+                
     }
 
     public void Exit()
     {
-        ChangeState(MonsterBaseState.MonsterState.Attack); //상태를 Attack으로 변경
+        monsterStateMachine.ChangeState(MonsterBaseState.MonsterState.Attack); //상태를 Attack으로 변경
+
+        Debug.Log("어택 상태로 진입");
     }
 
     public void Update()
@@ -30,7 +36,7 @@ public class MonsterChase : MonsterStateMachine, MonsterBaseState.IState
         }
         else
         {
-            _monsterMovement.MonsterMoving(monsterContext.Target.transform); //MonsterMovement를 이용하여 몬스터가 타겟에게 이동하도록 설정
+            _monsterMovement.MonsterMoving(monsterStateMachine.monsterContext.Target.transform); //MonsterMovement를 이용하여 몬스터가 타겟에게 이동하도록 설정
         }
 
     }
