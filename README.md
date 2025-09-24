@@ -23,17 +23,43 @@
 ## 3. 몬스터 인공지능
 ```mermaid
 classDiagram
-    class UntitledClass {
-    }
-
+direction TB
     class MonsterStateMachine {
-	    #MonsterBaseState.MonsterState
-	    #GameObject
-	    -Dictionary[*]
-	    #ChangeState(MonsterBaseState.MonsterState) : void
+	    # currentState: MonsterBaseState.MonsterState
+	    # monsterContext: MonsterContext
+	    - _state: Dictionary[*]
+	    # ChangeState(MonsterBaseState.MonsterState) void
     }
 
+    class MonsterIdle {
+	    -OnCollisionEnter2D(CapsuleCollider2D) void
+    }
 
+    class MonsterChase {
+	    - _range: int
+	    - _targetPosition: Vector3
+	    - _monsterMovement: MonsterMovement
+    }
+
+    class IState {
+	    + Enter() void
+	    + Update() void
+	    + Exit() void
+    }
+
+    class MonsterMovement {
+	    - _speed: float
+	    - _isMoving: bool
+	    - MonsterMoving(Transform) void
+    }
+
+	<<Interface>> IState
+
+    IState <|.. MonsterIdle
+    IState <|.. MonsterChase
+    MonsterStateMachine  <|--  MonsterIdle
+    MonsterStateMachine <|-- MonsterChase
+    MonsterMovement <-- MonsterChase
 ```
 ## 4. 기술적 포인트 & 문제해결
 - 카드 덱 순환 시스템을 구현하는 과정에서 배열 초기화 순서에 의해 코드에서 오류가 발생하는 것을 통해서 하나의 스타트문을 중심으로 
