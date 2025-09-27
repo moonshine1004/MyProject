@@ -28,7 +28,7 @@
 - **유니티 이벤트 시스템**: 스킬 사용 키 입력 시 발생하는 동작들을 손쉽게 관리하기 위하여 유니티 이벤트를 사용하였습니다.
 #### 4. 몬스터 인공지능
  -**FSM**: FSM은 어쩌구 저쩌구
-  -구현: ₩MonsterBaseState₩를 베이스로 하여, 몬스터의 상태를 'MonsterIdleState', 'MonsterChaseState', 'MonsterAttackState', 'MonsterBackState'로 나누어 'MonsterStateMachine'을 통해 전이함수를 구현하였습니다.
+  -구현: `MonsterBaseState`를 베이스로 하여, 몬스터의 상태를 `MonsterIdleState`, 'MonsterChaseState', 'MonsterAttackState', 'MonsterBackState'로 나누어 'MonsterStateMachine'을 통해 전이함수를 구현하였습니다.
 ```mermaid
 classDiagram
 direction TB
