@@ -13,13 +13,14 @@ public class MonsterBaseState : MonoBehaviour
             get;
         }
     }
-    
+
     public enum MonsterState //몬스터의 상태
     {
         Idle,
         Chase,
         Attack,
-        Back
+        Back,
+        Death
     }
 
 

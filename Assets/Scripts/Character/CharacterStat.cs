@@ -19,6 +19,7 @@ public class CharacterStat : MonoBehaviour
         get { return _health; }
         set { _health = value; }
     }
+    public bool IsAlive{ get; set; }
 
     private void Start()
     {

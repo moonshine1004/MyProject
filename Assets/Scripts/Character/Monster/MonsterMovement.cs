@@ -7,7 +7,7 @@ public class MonsterMovement : MonoBehaviour
     private float _speed = 5f; //이동 속도
     private bool _isMoving; //이동 상태
 
-    public void MonsterMoving(Transform targetPos)
+    public void MonsterMoveToTarget(Transform targetPos)
     {
         transform.position = Vector3.MoveTowards(
             transform.position,                // 시작점

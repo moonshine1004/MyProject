@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class MonsterAttackState : MonsterStateMachine, MonsterBaseState.IState
@@ -8,20 +9,39 @@ public class MonsterAttackState : MonsterStateMachine, MonsterBaseState.IState
     #region 필드 변수
     [SerializeField]
     private GameObject _target; //타겟 오브젝트
+    private float _attackCooldown = 5.0f;
+    private float _attackRange = 10.0f;
     #endregion
-    
+
     public void Enter()
     {
+        monsterStateMachine = GetComponent<MonsterStateMachine>();
         _target = monsterContext.Target;
     }
 
     public void Exit()
     {
-        throw new System.NotImplementedException();
     }
 
     public void Update()
     {
-        throw new System.NotImplementedException();
     }
+    private IEnumerator Attack()
+    {
+        while (_target.GetComponent<CharacterStat>().IsAlive)
+        {
+            yield return new WaitForSeconds(_attackCooldown);
+        }
+    }
+
+
+
+
+    /*
+    아이들-->체이스-->공격-->죽음(내가 죽으면)
+                        -->아이들(상대가 죽으면)
+                        -->원위치(상대가 도망치면)
+                        
+    
+    */
 }

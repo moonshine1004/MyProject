@@ -31,13 +31,22 @@ public class MonsterStateMachine : MonoBehaviour
         foreach (var st in found) //found에서 st를 하나씩 꺼내어
         {
             _state[st.StateType] = st; //st.StateType을 키로 하는 값에 st을 넣음
-        } 
+        }
         currentState = MonsterBaseState.MonsterState.Idle; //시작 상태는 idle
         _state[currentState].Enter(); //시작 상태로 진입
-        Debug.Log("시작상태로 진입");
+        #if DEBUG
+            Debug.Log("시작상태로 진입");
+        #endif
     }
 
-    //몬스터의 state가 변할 때 호출되는 메서드
+    /// <summary>
+    /// 몬스터의 스테이트를 nextState로 변환합니다.
+    /// </summary>
+    /// <param name="nextState">딕셔너리의 키 값</param>
+    /// <remarks>
+    /// 유지보수 용이를 위한 remarks 기능 테스트 
+    /// </remarks>
+    /// <returns>null</returns>
     public void ChangeState(MonsterBaseState.MonsterState nextState)
     {
         _state[nextState].Enter(); //딕셔너리 키에 따라 다음 스테이트 인터페이스의 Enter를 호출

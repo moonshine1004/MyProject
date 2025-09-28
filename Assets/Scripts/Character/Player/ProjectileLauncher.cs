@@ -24,8 +24,8 @@ public class ProjectileLauncher : MonoBehaviour
 
     private Dictionary<int, Sprite> _dictionary;
     private Rigidbody2D _rb;
-    
-
+    public GameObject Owner{ get; set; }
+    [SerializeField] private GameObject _owner;
 
 
     private void Start()
@@ -64,7 +64,7 @@ public class ProjectileLauncher : MonoBehaviour
         //오브젝트 풀에서 투사체를 꺼내옴
         GameObject projectile = pool.Get();
         RenderProjectileSprite(projectile, _usingCardList.hand[_playerController.UsingSkillSlot].CardID);
-
+        Owner = _owner;
 
 
         //커서 방향 발사를 위한 커서의 위치(스크린 좌표를 뭘드 좌표로 변환)

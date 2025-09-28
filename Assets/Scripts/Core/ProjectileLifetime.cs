@@ -5,10 +5,12 @@ public class ProjectileLifetime : MonoBehaviour
     public float _lifetime = 6;
     private float _timer;
     private ProjectileLauncher _pool;
+    public ProjectileLauncher Pool{ get; set; }
 
     private void Start()
     {
         _lifetime = 6;
+        Pool = _pool;
     }
     private void OnEnable()
     {
